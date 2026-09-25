@@ -1,0 +1,50 @@
+{/* Draft essay — personal experience only, no invented metrics. */}
+
+Between 2007 and now, every platform I learned was replaced by another:
+PBX-era VoIP gave way to unified communications, racks gave way to
+virtualization, virtualization to cloud, cloud to cloud native. Each move
+promised to make the previous one obsolete. What actually became obsolete
+was the *tooling*. The lessons compounded. Here are the ones that survived
+every shift.
+
+## Reproduce, isolate, verify
+
+From years on support desks and NOC floors: almost every outage mystery
+yields to the same discipline. Can you reproduce it? Can you isolate the
+variable? Can you verify the fix did what you think? Sophisticated tooling
+changed the surface of this work, never its core.
+
+## The abstraction ladder is real — and expensive to skip
+
+Each rung — physical, virtualization, cloud, cloud native — hides the rung
+below. That hiding is the product. But when something breaks *across* rungs,
+the person who can still reason about the layer below diagnoses in minutes
+what others chase for days. Abstractions are for building; every rung is for
+debugging.
+
+## Most "technical problems" are interface problems
+
+Between teams, between systems, between on-call rotations. The hardest
+incidents I've been part of were hard not because the technology was
+exotic but because ownership was ambiguous. The fix was usually a sentence:
+*this is yours until we say otherwise*.
+
+## Reliability is a form of respect
+
+Users stake their work on your platform. Every 9 of availability is a claim
+about how much you value their time. This isn't sentimentality — it's the
+product requirement that outlives every feature.
+
+## Write it down
+
+Runbooks, postmortems, decision records. The infrastructure that outlives
+its builders is made of documents, not servers. Every team I've seen
+level up did so by writing more, not by buying more.
+
+## The long view is practical, not decorative
+
+Knowing that the telegraph preceded the telephone, that packet switching
+took a decade to matter, that "the cloud" is the third business model for
+compute in fifty years — this changes how you react to hype cycles. The
+technologies that matter look boring in year one and indispensable in year
+ten. Patience is an engineering skill.

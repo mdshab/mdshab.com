@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# mdshab.com
 
-## Getting Started
+Three thousand years of history, the history of ideas, and one career in
+infrastructure — connected.
 
-First, run the development server:
+A personal knowledge site built as a graph, not a blog: history events link
+to threads and thinkers, thinkers link to questions, articles link back to
+timeline events, and everything is reachable from a global ⌘K command
+palette.
+
+## Sections
+
+| Route | What it is |
+| --- | --- |
+| `/` | The front door: three acts ending in *"this moment is the only one we're actually in."* |
+| `/journey` | A career in five chapters, from a mailed Ubuntu CD to `terraform apply` |
+| `/humanity` | 115 history events, 1000 BCE → present, filterable by thread, region and kind — with a desktop spatial timeline and a mobile/AT vertical list |
+| `/humanity/[event]` | Event detail: significance, people, threads, related events, sources |
+| `/ideas` | 34 thinkers across Greek, Eastern, Persian/Islamic and modern traditions, plus 10 philosophical questions |
+| `/ideas/[thinker]`, `/ideas/questions/[question]` | Detail pages with cross-links between people and questions |
+| `/mind` | "Be here." A breathing exercise (1/3/5/10 min, natural/box/4–6 patterns) and short reflections. No gamification, no claims. |
+| `/lab` | Infrastructure and product case studies in a fixed 8-section format |
+| `/writing` | Long-form essays, cross-linked to timeline events and lab projects |
+| `/about`, `/now` | Who is behind this, and what is happening right now |
+
+## Stack
+
+- **Next.js 16** (App Router, static prerendering — 183 pages, dynamic
+  filtering only on `/humanity` search params)
+- **TypeScript strict**, typed content models in `src/types/content.ts`
+- **Fluent UI v9** (`@fluentui/react-components`) as the accessibility
+  foundation, with a custom near-black/warm-ink mdshab theme — it does not
+  look like Microsoft 365
+- **Tailwind 4** for utility layers; most styling is custom CSS in
+  [src/app/globals.css](src/app/globals.css) using design tokens
+- **motion/react** with `prefers-reduced-motion` support (breathing circle)
+- **d3-scale** for timeline positioning
+- **MDX** for essay bodies (`@next/mdx`, `providerImportSource: null` so
+  articles render inside React Server Components)
+- Self-hosted variable fonts: Space Grotesk (display), Newsreader
+  (editorial serif), JetBrains Mono (data) — SIL OFL, in `public/fonts/`
+
+## Content integrity rules
+
+This site makes a point of not inventing:
+
+- History events carry `approximate` flags and source references; BCE years
+  are encoded as negative integers.
+- Quotations appear only when reliably sourced; otherwise ideas are
+  summarized and the uncertainty is stated.
+- Career facts are limited to a fixed set (see `/journey`). The Ubuntu CD
+  story has no year on purpose — it is told as *"Early computing years."*
+
+## Development
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev     # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Validation before shipping:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run lint    # eslint, zero warnings policy
+npx tsc --noEmit
+npm run build   # production build must succeed
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Accessibility
 
-## Learn More
+- WCAG AA contrast targets, visible focus rings (`:focus-visible`)
+- Keyboard-only operation: skip link, ⌘K palette with full
+  combobox/listbox semantics (`aria-activedescendant`), Escape to close
+- The spatial timeline has a semantically ordered list alternative rendered
+  for mobile and assistive technology; filters announce counts via
+  `role="status"`
+- Reduced-motion users get a still circle and text-only breathing phases
+- Color is never the only carrier of state (accent borders pair with text
+  labels)
 
-To learn more about Next.js, take a look at the following resources:
+## Privacy
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+No trackers, no cookies, no analytics. Nothing leaves the visitor's
+browser.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Documentation
 
-## Deploy on Vercel
+- [docs/architecture.md](docs/architecture.md) — how the app is put together
+- [docs/content-model.md](docs/content-model.md) — the content graph and how to extend it
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+© mdshab. Built with care and a terminal.

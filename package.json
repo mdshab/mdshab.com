@@ -9,6 +9,15 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@fluentui/react-components": "^9.74.9",
+    "@fluentui/react-icons": "^2.0.341",
+    "@mdx-js/loader": "^3.1.1",
+    "@mdx-js/react": "^3.1.1",
+    "@next/mdx": "^16.3.6",
+    "@types/d3-scale": "^4.0.9",
+    "@types/mdx": "^2.0.14",
+    "d3-scale": "^4.0.2",
+    "motion": "^13.4.4",
     "next": "16.3.6",
     "react": "19.2.8",
     "react-dom": "19.2.8"

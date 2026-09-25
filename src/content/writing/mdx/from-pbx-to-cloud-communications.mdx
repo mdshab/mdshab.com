@@ -1,0 +1,53 @@
+{/* Draft essay — personal experience only, no invented metrics. */}
+
+The room I worked in as a VoIP administrator had a sound. Not the phones —
+the **PBX cabinets**. Fans, disks, the deep hum of hardware that had been
+running since before I was hired. When people say "the phone system," they
+used to mean that room.
+
+Today the equivalent is a dashboard and an API. This essay is about what
+changed, what didn't, and why the second list matters more.
+
+## What actually changed
+
+**Where the intelligence lives.** A PBX concentrated everything: call
+control, voicemail, IVR, billing records. A SIP trunk plus a cloud PBX
+splits those jobs across systems owned by different people. Integration —
+once a cable — became a *contract*.
+
+**Where failure lives.** When the cabinet died, the failure was in the room.
+When a cloud telephony integration misbehaves, the failure can be in your
+config, the carrier's routing, a DNS record, or a certificate that expired
+at 2 a.m. on a long weekend. Failure didn't get rarer; it got *distributed*.
+
+**Where the leverage is.** Provisioning a new extension once meant a ticket
+and a technician. Now it's an API call. When configuration became
+programmable, everything downstream of configuration became automatable.
+
+## What didn't change
+
+**Dial tone is a promise.** Users don't care about your architecture. They
+pick up a phone and expect a tone, and their call is expected to connect.
+That expectation was old when the PBX was new, and it survives every
+platform shift since. Whatever you build, the promise is identical.
+
+**Capacity is seasonal.** Call volumes spike at the same moments business
+spikes. The cloud made elasticity a purchase instead of a warehouse, but the
+discipline of *planning for the busy hour* is the same discipline — the math
+just runs in a different ledger.
+
+**Voice is unforgiving.** Data can retry. A dropped word is gone. Jitter
+budgets, codec choices and QoS are the cloud era's version of a clean copper
+pair: invisible until wrong.
+
+## The seam I built a career on
+
+I entered telecom at the moment voice was becoming software — VoIP
+administration in 2007 — and moved into cloud infrastructure just as voice
+finished becoming *someone else's managed service*. That seam, between the
+century of hardware telephony and the decade of cloud communications, is the
+most interesting place I've worked.
+
+The engineers who only know the new stack trust it too much. The engineers
+who only know the old stack distrust it too much. The useful position is
+both: the trunk is a cable, and the cable is a contract.

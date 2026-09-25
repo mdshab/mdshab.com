@@ -1,0 +1,53 @@
+{/* Draft essay — personal experience only, no invented metrics. */}
+
+Every few years someone declares one of these three dead. All three are
+still running the internet. The useful question is not *which one wins* but
+*what each one hides* — because what a layer hides is exactly what it costs
+you when it leaks.
+
+## Physical servers: the ground truth
+
+A physical server is honest. The CPU is divisible only by sleeping. The disk
+is full or it isn't. When the power supply dies, you can point at it.
+
+What it hides: almost nothing — that's its value and its pain. Capacity
+planning is furniture planning. In my datacenter years I learned to hear the
+difference between a healthy rack and a sick one before any dashboard said
+a word. That sense has kept paying off long after the racks: every
+abstraction above still ends in metal, somewhere.
+
+## Virtual machines: the neighborhood
+
+A hypervisor divides one honest machine into several polite ones. Each VM
+believes it owns the hardware; the hypervisor keeps the peace.
+
+What it hides: the neighbors. The noisy-VM problem is the moment the
+abstraction leaks — your instance slows because someone else's workload is
+hammering shared physical resources. Virtualization taught the industry the
+central lesson of the cloud era: *isolation is a product feature*, and
+delivering it is harder than carving up a CPU.
+
+## Containers: the lease, not the building
+
+A container doesn't virtualize hardware — it virtualizes the *operating
+system's view of the world*. Processes share the kernel but see their own
+filesystems, network stacks and limits. It is lightweight because it stops
+pretending: no fake hardware, just a negotiated share of a real one.
+
+What it hides: everything below the process. Which is magnificent for
+deployment velocity and treacherous for intuition. Kubernetes then adds a
+second layer: it hides *the machines themselves* and schedules by declared
+intent.
+
+## The ladder in practice
+
+- **Physical**: you manage *machines*.
+- **Virtualization**: you manage *guests*; the platform manages machines.
+- **Cloud**: you manage *resources*; the provider manages machines.
+- **Cloud native**: you manage *declared state*; the platform manages resources.
+
+Each step up, you trade control for leverage. The mistake I see most often
+is engineers climbing the ladder and then being surprised when the view of
+the ground is gone. Climb, but keep a mental model of the rung below. When
+the incident spans rungs — and the interesting ones always do — the person
+who can still see both ends of the ladder is the one who ends it.

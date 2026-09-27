@@ -54,23 +54,22 @@ export default function AboutPage() {
             <p>
               I&apos;m Mehdi. Since 2022 I&apos;ve been a technical product
               manager for cloud services at a global-scale cloud provider,
-              working on products that serve hundreds of thousands of users.
-              Before that: cloud engineering and NOC leadership, voice and NGN
+              working on products like Cloud Server, VPC, Storage and
+              Migration that serve hundreds of thousands of users. Before
+              that: cloud engineering and NOC leadership, voice and NGN
               infrastructure, network engineering, technical support, and —
-              starting in 2007 — VoIP administration. I climbed the whole
-              stack, and now I decide what gets built on top of it.
+              starting in 2007 — VoIP administration.
             </p>
 
             <h2>Why that path matters</h2>
             <p>
-              Product management borrowed from infrastructure tends to
-              over-promise; engineering without product sense builds elegant
-              systems nobody asked for. I sit on the bridge deliberately.
-              The NOC taught me what a broken promise costs. Support taught
-              me how failure actually feels from the outside. Telecom taught
-              me that reliability is a feature, decades before cloud
-              marketing said so. The product work is where all of that
-              becomes decisions.
+              A product manager who only knows infrastructure from the
+              outside tends to over-promise; engineering without product
+              sense builds clean systems nobody asked for. I work on the
+              product side, with an operator&apos;s habits. The NOC taught me
+              what a broken promise costs. Support taught me how failure
+              feels from the outside. Telecom taught me that reliability is
+              a feature, decades before cloud marketing said so.
             </p>
 
             <h2>The longer version</h2>
@@ -96,22 +95,22 @@ export default function AboutPage() {
 
             <h2>Beyond work</h2>
             <p>
-              I keep a three-thousand-year timeline of the technology that
-              made this career possible — the{" "}
+              I keep a three-thousand-year timeline of communication
+              technology — the{" "}
               <Link href="/humanity">Humanity section</Link> of this site,
               with 115 events from the alphabet to packet switching. The{" "}
-              <Link href="/ideas">Ideas section</Link> holds the thinkers who
-              sharpened the questions I enjoy most, and{" "}
-              <Link href="/mind">Mind</Link> is a small breathing space —
-              uptime for humans. History of computing, Persian poetry, and
-              whatever the footnotes lead to are usually on the nightstand.
+              <Link href="/ideas">Ideas section</Link> holds the thinkers
+              behind the questions I enjoy most, and{" "}
+              <Link href="/mind">Mind</Link> is a small page for breathing.
+              History of computing, Persian poetry, and whatever the
+              footnotes lead to are usually on the nightstand.
             </p>
 
             <h2>How to reach me</h2>
             <p>
               The shortest path is the{" "}
-              <Link href="/contact">contact page</Link> — GitHub reaches me
-              directly. I read everything and I answer.
+              <Link href="/contact">contact page</Link> — GitHub and LinkedIn
+              both reach me directly. I read everything and I answer.
             </p>
 
             <p>

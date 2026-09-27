@@ -57,12 +57,12 @@ const personJsonLd = {
   description: siteMeta.ogDescription,
   knowsAbout: [
     "Cloud infrastructure",
+    "IaaS",
     "Product management",
     "Network engineering",
     "VoIP and telecommunications",
-    "AI infrastructure",
   ],
-  sameAs: ["https://github.com/mdshab"],
+  sameAs: ["https://github.com/mdshab", "https://www.linkedin.com/in/mdshab/"],
 };
 
 export default function RootLayout({
@@ -73,6 +73,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      data-scroll-behavior="smooth"
       className={`${siteFonts.sans.variable} ${siteFonts.serif.variable} ${siteFonts.mono.variable} ${siteFonts.fa.variable}`}
     >
       <body>

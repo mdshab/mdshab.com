@@ -14,7 +14,7 @@ import { articles } from "@/content/writing";
 export const metadata: Metadata = {
   title: "Journey",
   description:
-    "From a home computer and a mailed CD to cloud product management — the path that gives the product judgment its technical depth, in five chapters.",
+    "From a home computer and a mailed Linux CD to cloud product management, in five chapters — with dates. The path that the product decisions sit on.",
   alternates: {
     canonical: "/journey",
     languages: { en: "/journey", fa: "/fa/journey" },
@@ -61,11 +61,10 @@ export default function JourneyPage() {
           <p className="page-kicker mono-meta">A career in five chapters</p>
           <h1 className="page-title">Journey</h1>
           <p className="page-lede">
-            The unusual part of this career is the direction: up the whole
-            stack, from analog systems to cloud products, one rung at a time.
-            This is why the product judgment has the smell of the datacenter
-            on it — told chronologically, with the history that rhymes. Only
-            dated facts carry dates; the early years are honestly untimed.
+            The path ran from analog systems up through networking and the
+            datacenter, one rung at a time, and reached product in 2022.
+            Told chronologically, with the history that rhymes. Only dated
+            facts carry dates; the early years are deliberately untimed.
           </p>
         </header>
 

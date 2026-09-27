@@ -77,25 +77,25 @@ export default async function Image() {
           <div
             style={{
               display: "flex",
-              fontSize: 66,
-              lineHeight: 1.12,
+              fontSize: 58,
+              lineHeight: 1.16,
               color: "#1a1d23",
-              maxWidth: 900,
+              maxWidth: 940,
               fontWeight: 600,
-              letterSpacing: -1.5,
+              letterSpacing: -1.2,
             }}
           >
-            I turn complex infrastructure into products people can use.
+            Product management for cloud infrastructure. Before that, I ran it for fifteen years.
           </div>
           <div
             style={{
               display: "flex",
-              marginTop: 34,
+              marginTop: 30,
               fontSize: 27,
               color: "#565c66",
             }}
           >
-            Technical Product Manager · Cloud &amp; AI Infrastructure
+            Cloud Server · VPC · Storage · Migration — hundreds of thousands of users
           </div>
         </div>
 
@@ -110,7 +110,7 @@ export default async function Image() {
             color: "#7c828c",
           }}
         >
-          <div style={{ display: "flex" }}>20 years up the stack</div>
+          <div style={{ display: "flex" }}>Since 2007 · VoIP → cloud → product</div>
           <div
             style={{
               display: "flex",
@@ -120,9 +120,7 @@ export default async function Image() {
               background: "#1c4fb8",
             }}
           />
-          <div style={{ display: "flex" }}>
-            Hundreds of thousands of users
-          </div>
+          <div style={{ display: "flex" }}>IaaS · networking · storage</div>
           <div
             style={{
               display: "flex",
@@ -132,7 +130,7 @@ export default async function Image() {
               background: "#1c4fb8",
             }}
           />
-          <div style={{ display: "flex" }}>PSTN → AI infrastructure</div>
+          <div style={{ display: "flex" }}>github.com/mdshab</div>
         </div>
       </div>
     ),

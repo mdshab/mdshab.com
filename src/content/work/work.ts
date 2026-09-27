@@ -4,67 +4,67 @@ import type { CaseStudy } from "@/types/content";
  * Professional case studies.
  *
  * Writing rules for this file:
- * - Employers appear only with the names already published on this site
- *   (Tel4Tel, FCP) or at the already-published abstraction ("a
- *   global-scale cloud provider").
+ * - Plain sentences over impressive ones. Evidence over positioning
+ *   language. A senior peer explaining their work, not an award entry.
+ * - Employers appear only with names already published on this site
+ *   (Tel4Tel, FCP) or at the published abstraction ("a global-scale
+ *   cloud provider").
  * - No confidential internals: architecture, customers, numbers, roadmaps.
  * - Outcomes qualitative unless a figure was already public.
- * - The point of each study is the JUDGMENT — what made the decision hard,
- *   what alternatives existed, what was traded away — not a project report.
  */
 export const caseStudies: CaseStudy[] = [
   {
     id: "cloud-services-at-scale",
     title: "Product decisions for cloud services at scale",
     summary:
-      "Technical product management for infrastructure services used by hundreds of thousands of people — where reliability is the product and the best UX is less UX.",
+      "Cloud Server, VPC, Storage, Migration: deciding what gets built, which defaults ship, and which promises the platform can keep. Hundreds of thousands of users.",
     track: "practice",
     domain: "cloud",
     period: "2022 – present",
     role: "Technical Product Manager",
     organization: "Global-scale cloud provider",
     lede:
-      "Infrastructure products are judged by what never happens. This is what deciding what gets built looks like when the user's definition of success is silence.",
+      "Since 2022 I've decided what gets built, for whom and why, for cloud services used by hundreds of thousands of people. This is how those decisions actually get made.",
     sections: [
       {
         heading: "context",
-        body: "Since 2022 I've worked as a technical product manager on cloud services serving hundreds of thousands of users. The customers are engineers and enterprises running real workloads; the stakes are their production systems, not their leisure time. The product surface I work on sits on top of infrastructure I used to operate myself, a decade earlier.",
+        body: "I work on the IaaS layer of a global-scale cloud provider: Cloud Server, networking and VPC, Storage, Migration, and more recently GPU services. The customers are engineers and enterprises running production workloads — their applications, not their spare time. The infrastructure I now shape in product decisions is the kind I operated myself for the decade before.",
       },
       {
         heading: "problem",
-        body: "Nobody wants cloud infrastructure. They want their application to work, their backups to exist, their launch to survive its traffic. The product's success is measured by its own invisibility — which inverts most consumer product instincts. Desire cannot be manufactured; only friction can be removed and trust earned.",
+        body: "Users of infrastructure don't want the product. They want their application to work, their backups to exist, their launch to survive its traffic. Success is measured by nothing happening, and only failure is visible. That changes what product work means here: you can't manufacture desire, you can only remove decisions and keep promises.",
       },
       {
         heading: "why-it-mattered",
-        body: "For an infrastructure provider, differentiation is not delight — it is working under specific, quantified, adversarial conditions. Durability, latency ceilings, failure-domain behavior: for the customer these are not fine print, they are the purchase. The product organization's job is to decide which of those promises to make, and what each one costs to keep.",
+        body: "For infrastructure, differentiation isn't delight — it's working under specific, adversarial conditions. Durability figures, latency ceilings, failure-domain behavior: for the customer that is not fine print, it's the thing being purchased.",
       },
       {
         heading: "my-role",
-        body: "I own the 'what, for whom, and why' side of the services I cover: reading usage and support signals, defining direction with engineering, negotiating scope with stakeholders, and turning architecture constraints into roadmap choices a business can evaluate. The previous decade operating this class of system is the tool I use daily — I can read an architecture discussion and know which corner cuts will page someone at 3 a.m.",
+        body: "I own the what-for-whom-why side: reading usage and support signals, setting direction with engineering, negotiating scope with stakeholders, and turning architecture constraints into roadmap items the business can evaluate. Ten years of operating this class of system is what I use daily — when I read an architecture proposal, I can tell which shortcuts will page someone later.",
       },
       {
         heading: "constraints",
-        body: "The cast is the constraint set: the engineer who integrates the service, the operator who runs it at 3 a.m., the finance owner who pays, the security reviewer who gates. A change that delights one can punish another. Add enterprise buyers with long decision cycles, compliance requirements, and migration costs that make switching painful in both directions.",
+        body: "Four audiences at once: the engineer who integrates the service, the operator who runs it at 3 a.m., finance, and security. A change that helps one can hurt another. Enterprise sales cycles are long, compliance requirements are real, and switching costs work in both directions.",
       },
       {
         heading: "discovery",
-        body: "The honest signals in infrastructure are behavioral, not aspirational: what users do at 2 a.m. during an incident, which API calls cluster together, where support tickets repeat, what prospects ask before they buy, what the ops floor says in postmortems. Feature requests are data about frustration, not specifications — the work is digging back to the job the user was trying to do.",
+        body: "The honest signals are behavioral: what users do during an incident at 2 a.m., which API calls cluster together, which tickets repeat, what prospects ask before buying, what the ops floor says in postmortems. Feature requests are data about frustration, not specifications — the work is digging back to the task the user was trying to finish.",
       },
       {
         heading: "product-reasoning",
-        body: "Three rules I apply, distilled in the Thinking section of this site: default to defaults (make the right path the path of least decisions); price the promise (every reliability figure is a roadmap item with an engineering cost); write like an operator (if the runbook can't be followed at 3 a.m., the feature isn't done).",
+        body: "Three rules I actually apply: default to defaults — make the right path the one with the fewest decisions. Price the promise — every reliability figure is a roadmap item with an engineering cost. Write like an operator — if the runbook can't be followed at 3 a.m., the feature isn't done.",
       },
       {
         heading: "trade-offs",
-        body: "The recurring one: flexibility versus inevitability. Every configuration option we expose is a decision we push onto the user and a state the platform must support forever. Removing an option is often the more valuable roadmap item than adding one — and the harder conversation. The second: transparency versus cognitive load — showing every failure domain builds trust and overwhelms most users; the design work is layering.",
+        body: "The recurring one is flexibility versus defaults. Every option we expose is a decision we push onto the user, and a state the platform supports forever. Removing an option is often worth more than adding one, though it's the harder conversation. The other is transparency versus noise: showing every failure domain builds trust with some users and overwhelms the rest, so the work is layering.",
       },
       {
         heading: "outcome",
-        body: "Services that kept their promises at growing scale, a product direction that engineers could defend in architecture reviews because it accounted for how the system actually fails, and roadmap choices the business could evaluate on cost-of-promise rather than feature-count. The qualitative outcome that matters most to me: fewer decisions required from each user to get to a safe, working setup.",
+        body: "Services that kept their promises as scale grew, and setup paths where users take fewer decisions to reach a safe working configuration. I can't publish internal figures; the shape of the outcome is what I can describe.",
       },
       {
         heading: "what-i-learned",
-        body: "Infrastructure product management is the craft of making powerful things feel inevitable. The decade I spent in the NOC was not a detour before product — it was the qualification. You cannot price a promise you have never had to keep.",
+        body: "You can't price a promise you've never had to keep. The decade in operations wasn't a detour before product — it was the qualification.",
       },
     ],
     technologies: [
@@ -79,56 +79,56 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     id: "keeping-the-network-up",
-    title: "The room where the internet stays up",
+    title: "The network operations center in 2020",
     summary:
-      "Leading a Network Operations Center through 2020: incident response as applied epistemology — what do we know, how do we know it, who needs to know it next.",
+      "The first pandemic year: the world's traffic moved home. Escalation paths, shift handovers, and runbooks for the people awake at 3 a.m.",
     track: "practice",
     domain: "infrastructure",
     period: "2020",
     role: "Team Lead, Network Operations Center",
     organization: "Global-scale cloud provider",
     lede:
-      "In a NOC, every incident is a race between two systems: the one that is failing, and the one of people, escalations and handovers trying to understand it. I led the second one.",
+      "In 2020 I led the network operations center at a global-scale cloud provider — the year work, school and family traffic all moved home at once. This is what running incidents at scale taught me about how organizations fail.",
     sections: [
       {
         heading: "context",
-        body: "In 2020 the world's traffic moved indoors and stayed there. The cloud provider I had joined as an engineer the year before was running infrastructure that suddenly carried everything — work, school, family. I was leading the Network Operations Center team through it.",
+        body: "I had joined as a cloud engineer in 2019. A year later the pandemic moved everything onto the platform at the same time, and I was leading the NOC team through it.",
       },
       {
         heading: "problem",
-        body: "A NOC fails in two ways: technically, when an incident outpaces understanding, and organizationally, when the right information exists in the room but never reaches the right person. The second failure is more common and more damaging — and it is a design problem, not a staffing one.",
+        body: "A NOC fails two ways. Technically: an incident outruns understanding. Organizationally: the right information exists in the room but never reaches the right person. The second failure is more common and more damaging — and it's a design problem, not a staffing one.",
       },
       {
         heading: "my-role",
-        body: "Owning incidents end to end: escalation paths, handovers between shifts, runbooks, and the humans at 3 a.m. Building the operating rhythm — what gets escalated, when, to whom, with what information — and coaching the team through the hardest educational year most of us had worked.",
+        body: "Owning incidents end to end: escalation paths, shift handovers, runbooks, and the people awake at 3 a.m.",
       },
       {
         heading: "constraints",
-        body: "Scale meant no single person could hold the system in their head. On-call rotations meant context had to survive handovers intact. Public stakes meant pressure was constant. And the constraint I cared about most: the youngest engineer on shift at 4 a.m. still had to make good decisions with imperfect information.",
+        body: "At that scale no single person holds the system in their head, so context has to survive handovers intact. On-call rotations, constant pressure, and the constraint I cared about most: the youngest engineer on the 4 a.m. shift still had to make good calls with incomplete information.",
       },
       {
         heading: "discovery",
-        body: "Pattern-reading across incidents taught the durable lessons: which alerts actually predicted trouble versus noise; which escalation paths worked and which just moved anxiety; where runbooks were written for the author instead of the reader. Postmortems were the curriculum — not for assigning cause, but for finding where information had stopped flowing.",
+        body: "Patterns across incidents taught the durable lessons: which alerts predicted trouble and which were noise, which escalation paths worked and which just relocated anxiety, where runbooks had been written for their author instead of their reader. Postmortems were the curriculum — for finding where information stopped flowing, not for assigning blame.",
       },
       {
         heading: "decision",
-        body: "Invest in the information system, not just the technical one: handovers with a fixed structure (what we know, what we've ruled out, what we're watching, who owns next steps), runbooks written to be executed by a tired stranger, and explicit norms that saying 'we don't know yet' is an acceptable status. Ambiguity stated clearly beats false confidence every time.",
+        body: "Three decisions that stuck. One: a fixed handover format — what we know, what we've ruled out, what we're watching, who owns the next step. Two: runbooks written to be executed by a tired stranger, not their author. Three: an explicit norm that 'we don't know yet' is an acceptable status. Stated ambiguity beats false confidence every time.",
       },
       {
         heading: "trade-offs",
-        body: "Structure costs speed in the easy moments to buy correctness in the hard ones. A fixed handover format feels bureaucratic at 15:00 on a quiet Tuesday and priceless at 03:00 during a multi-region event. Choosing clarity over heroics also means accepting that the brilliant-individual-improvisation path is deliberately closed.",
+        body: "Structure costs speed in quiet moments to buy correctness in bad ones. A fixed handover format feels bureaucratic on a quiet Tuesday and is priceless during a multi-region event. Choosing clarity over heroics also means the brilliant-improvisation path is deliberately closed.",
       },
       {
         heading: "execution",
-        body: "Working with engineering teams on alert quality, with the shift leads on handover discipline, and with every incident review on feeding the lessons back into the runbooks. Coordination with engineering leadership on what the NOC was seeing before it became their postmortem. The job was equal parts protocol and trust.",
+        body: "Working with engineering on alert quality, with shift leads on handover discipline, and with every incident review on feeding lessons back into the runbooks. Half the job was protocol; the other half was trust.",
       },
       {
         heading: "outcome",
-        body: "A team that held through the most demanding year in the platform's traffic history, escalation paths people actually used, and an incident language precise enough that engineering could act on our reports without re-deriving them. The reflection I kept from that year: incident response is applied epistemology.",
+        body: "A team that got through the platform's hardest traffic year, and incident reports engineering could act on without re-deriving them.",
       },
       {
         heading: "what-i-learned",
-        body: "Most 'technical' problems at scale are interface problems between humans. That insight is why I later moved toward product: a product is just an interface between an organization and its users, and the discipline of designing one well is the same.",
+        body: "Most 'technical' failures at scale are interface failures between humans. That conclusion is what later moved me toward product.",
       },
     ],
     technologies: [
@@ -142,56 +142,56 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     id: "voice-becomes-software",
-    title: "Voice becomes software",
+    title: "Voice platforms, 2007–2018",
     summary:
-      "Eleven years in telephony while the phone network was rewritten as software — from administering VoIP systems to leading voice infrastructure for real customers.",
+      "Eleven years while the phone network became software: VoIP administration at Tel4Tel, then network engineering and leading the voice team at FCP.",
     track: "practice",
     domain: "telecom",
     period: "2007 – 2018",
-    role: "VoIP Administrator → Network Engineer → VoIP Expert & Manager",
+    role: "VoIP Administrator → Network Engineer → Voice Team Lead",
     organization: "Tel4Tel, then FCP",
     lede:
-      "Telephony spent a century as copper and switches, then became configuration. I spent eleven years on the bridge between the two — and the view from there shaped everything after.",
+      "Between 2007 and 2018 the phone network stopped being hardware and became software. I spent those years at Tel4Tel and FCP, moving from administering VoIP systems to leading the voice team.",
     sections: [
       {
         heading: "context",
-        body: "I started in 2007 administering VoIP systems at Tel4Tel: call flows, SIP trunks, codecs, gateways. The century-old empire of copper was being rewritten as applications, and real customers depended on the rewrite working. In 2011 I moved to FCP — technical support first, network engineering a year later, then years of VoIP specialization and eventually managing the VoIP function through 2018.",
+        body: "I started in 2007 administering VoIP at Tel4Tel: call flows, SIP trunks, codecs, gateways. In 2011 I moved to FCP — technical support first, network engineering a year later, then VoIP specialization and eventually managing the voice function through 2018.",
       },
       {
         heading: "problem",
-        body: "Voice is unforgiving product territory: people notice a broken phone call instantly, everyone from a CEO to a grandmother is a user, and the system spans analog handsets, ISDN lines, IP networks and carrier interconnects — each layer with its own failure modes. When a call breaks, 'the network' is blamed; finding which layer actually broke is the work.",
+        body: "Voice is unforgiving product territory. Users notice a broken call instantly — everyone from a CEO to a grandmother — and the system spans analog handsets, ISDN lines, IP networks and carrier interconnects, each with its own failure modes. When a call breaks, 'the network' gets blamed; finding which layer actually broke is the work.",
       },
       {
         heading: "why-it-mattered",
-        body: "For the businesses we served, telephony was not a feature — it was revenue, safety, and sometimes the only line to their own customers. Reliability was a form of respect long before I could articulate it as a product principle.",
+        body: "For the businesses we served, telephony wasn't a feature. It was revenue, safety, and sometimes the only line to their own customers.",
       },
       {
         heading: "my-role",
-        body: "Across the years: administering production VoIP platforms; answering the phone when things broke; engineering the networks voice ran over; designing NGN and Cisco voice platforms; and finally leading the people who kept them alive. The progression mattered — support taught me how systems actually fail, engineering taught me why, and management taught me that coordination is its own discipline.",
+        body: "Across the years: administering production VoIP platforms; answering the phone when things broke; engineering the networks voice ran over; designing NGN and Cisco voice platforms; and finally leading the people who kept them alive.",
       },
       {
         heading: "constraints",
-        body: "Legacy everywhere: equipment designed decades before IP, interconnects with monolithic carriers, customers who could not describe their own call flows, and the hard realtime constraint of voice — latency and jitter are not degradeable UX, they are broken calls.",
+        body: "Legacy everywhere: equipment designed decades before IP, interconnects with monolithic carriers, customers who couldn't describe their own call flows — and voice's hard real-time constraint. Latency and jitter aren't degraded UX; they're broken calls.",
       },
       {
         heading: "discovery",
-        body: "Answering the support line was the best product education I ever received, before I knew the word 'discovery'. Every ticket was a lesson in how systems actually fail — and how people experience failure. Reproduce, isolate, verify: the skill that outlived every technology I've used since.",
+        body: "Answering the support line was the best product education I ever received, years before I heard the word discovery. Every ticket showed how systems actually fail and how people experience the failure. Reproduce, isolate, verify — the one skill that has outlived every technology I've used since.",
       },
       {
         heading: "decision",
-        body: "When I led the VoIP function, the standing decisions were about where to standardize: which platforms to build on, how to structure the team so knowledge lived in the systems and documentation rather than in one expert's head, and how to keep the analog discipline — physical-layer thinking — alive in an IP world that preferred to forget it.",
+        body: "As the voice lead: which platforms to standardize on; how to structure the team so knowledge lived in systems and documentation instead of one expert's head; and how to keep physical-layer thinking alive in an IP world that preferred to forget it.",
       },
       {
         heading: "trade-offs",
-        body: "Deep specialization in voice was narrowing; the compensation was mastering a whole vertical end to end — signaling, transport, switching, and the human organization around them. The clearest trade of the management years: solving problems through people instead of through my own keyboard, which felt slower and turned out to scale.",
+        body: "Deep specialization in voice was narrowing; the compensation was knowing one vertical end to end — signaling, transport, switching, and the organization around them. Managing meant solving problems through people instead of my own keyboard, which felt slower and turned out to scale.",
       },
       {
         heading: "outcome",
-        body: "Voice platforms designed and operated for real customers over years, a team structured to survive its own expertise, and — in the direction that mattered most to my later career — a firsthand understanding of what it means when a network service becomes a product: the promises, the failure modes, and the user on the other end of a silent line.",
+        body: "Voice platforms designed and operated for real customers over years, and a team that didn't depend on any single expert.",
       },
       {
         heading: "what-i-learned",
-        body: "Voice was my first infrastructure product: invisible when working, binary when broken, judged by everyone. Every product principle I hold now — defaults, promises, operational honesty — has a telephony ancestor.",
+        body: "Voice was my first infrastructure product: invisible when working, binary when broken. Every product principle I hold has a telephony ancestor.",
       },
     ],
     technologies: [
@@ -211,52 +211,48 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     id: "this-website",
-    title: "mdshab.com — this website",
+    title: "This website",
     summary:
-      "A personal knowledge platform built data-first: typed content models, static generation, and accessibility as an architectural constraint, not a coat of paint.",
+      "A bilingual static site of about 200 pages: typed content models, no trackers, built by one person.",
     track: "build",
     domain: "web",
     period: "Built 2026",
-    role: "Designer, engineer, content",
+    role: "Design, engineering, writing",
     organization: "Personal project",
     lede:
-      "Most personal sites are pages. I wanted a graph — events, thinkers, career entries and essays referencing each other — and I wanted it to survive neglect. This site is the result, and it is its own case study.",
+      "My own site: bilingual, about 200 static pages, no trackers. It serves as its own case study.",
     sections: [
       {
         heading: "context",
-        body: "Twenty years across telecom and cloud, plus a long-standing interest in history and philosophy, produce a lot of connected material. The site is the intersection, structured so that every event, thinker, question, journey entry and article can reference its neighbors.",
+        body: "A personal site where the content is supposed to connect: history events link to essays, essays link to projects, all on a shared data model.",
       },
       {
         heading: "problem",
-        body: "Personal sites usually isolate their content: an about page, some posts, no connective tissue. Meanwhile every 'personal brand' template optimizes for appearing impressive rather than being explorable. I wanted the opposite: a site whose structure communicates how the person thinks.",
+        body: "Personal sites are usually disconnected pages: an about, some posts, no relationships. I wanted a graph. And since some of the readers sit behind restricted networks, the fonts are self-hosted too.",
       },
       {
-        heading: "constraints",
-        body: "Static-friendly with no backend or database; fast on flaky connections (some of my readers are behind restricted networks — which is also why the fonts are self-hosted); accessible to keyboard and screen readers; honest content with no invented facts; maintainable by one person in spare time.",
+        heading: "my-role",
+        body: "Design, engineering and writing — one person, in the time that's left over.",
       },
       {
         heading: "architecture",
-        body: "Next.js App Router with static prerendering; content as typed TypeScript modules forming a knowledge graph with Map-backed lookups; a shared design system on Fluent UI v9 primitives under a custom theme; a ⌘K command palette driven by a search index built from the same content modules the pages render; MDX essays compiled as React Server Components with zero client-side MDX runtime.",
-      },
-      {
-        heading: "product-reasoning",
-        body: "The product decision is the graph: every entity is an entry point, and every page offers its neighbors. The homepage was redesigned around a professional narrative — value, evidence, thinking, then the deeper library — while the library sections (a 115-event historical timeline, 34 thinkers, a breathing space) remain one click away, repositioned as depth rather than noise.",
+        body: "Content lives as typed TypeScript data, not a CMS — heavier to write, but type-checked and diffable in git. Fully static rendering. The timeline has two views: a spatial one for desktop, a semantic list for screen readers and small screens. No analytics served at all.",
       },
       {
         heading: "trade-offs",
-        body: "TypeScript data files are heavier to write than a CMS but type-checked, diffable in git, and free of runtime dependencies — the right trade for a site that must survive neglect. Dual-rendering the timeline (spatial for desktop eyes, semantic list for screen readers and small screens) costs code and buys accessibility. Serving no analytics protects readers and costs me data I decided I don't need.",
+        body: "TypeScript data files over a CMS cost writing speed and buy type safety and zero runtime dependencies — the right trade for a site that must survive neglect. Dual-rendering the timeline costs code and buys accessibility. Serving no analytics protects readers and costs me data I decided I don't need.",
       },
       {
         heading: "execution",
-        body: "Design system first (tokens, type, Fluent theme), then content models, then rendering. The timeline engine positions 115 events across thirty centuries with d3-scale in one view and a semantically ordered list in the other; filters are URL state so every view is shareable and works without JavaScript. The command palette implements the WAI-ARIA combobox pattern with aria-activedescendant tracking.",
+        body: "Next.js App Router with static prerendering, a command palette built over the same content modules the pages render, MDX essays compiled as React Server Components with no client-side MDX runtime, and a Persian edition written independently rather than translated.",
       },
       {
         heading: "outcome",
-        body: "This site: fully static, bilingual (English and native Persian), WCAG-AA-minded, with zero trackers and a content graph a single person can extend by editing typed files. You are reading an entry in it.",
+        body: "This site. A content model one person can extend by editing typed files — you're reading one of its pages.",
       },
       {
         heading: "what-i-learned",
-        body: "Content models are architecture: deciding what an 'event' is — fields, types, relations — was harder and more valuable than any page layout. The same is true of every product I have worked on; this site just made it visible.",
+        body: "The content model is the architecture. Deciding what fields an 'event' has was harder and more useful than any page layout.",
       },
     ],
     technologies: [

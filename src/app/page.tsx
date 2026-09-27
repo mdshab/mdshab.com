@@ -40,15 +40,15 @@ const trackLabels: Record<string, string> = {
 
 const depth = {
   title: "The stack under the product",
-  lede: "One career, climbed bottom to top. Product decisions made here are grounded in what each layer actually does when it fails — because I have been the person it failed on.",
+  lede: "This career went bottom to top. When I make product decisions, I know what each layer does when it fails, because I've debugged most of them myself.",
   layers: [
     { name: "Product", note: "Direction, promises, defaults — since 2022" },
-    { name: "Cloud & platform", note: "Fleets, control planes, abstractions — 2019" },
+    { name: "Cloud & platform", note: "Hosts, virtualization, automation — 2019" },
     { name: "Networking", note: "Routing, switching, the paths packets take — 2012" },
-    { name: "Telecom", note: "Voice, signaling, the century of copper — 2007" },
+    { name: "Telecom", note: "Voice, signaling, lines — 2007" },
     { name: "Systems", note: "The physical layer that answers eventually" },
   ],
-  coda: "Most product managers learn this stack from slide decks. I learned it from pager alerts — which is why my roadmaps tend to remember the on-call rotation.",
+  coda: "Most product managers learn these layers from slides. I learned them from the pager.",
 };
 
 export default function HomePage() {
@@ -71,8 +71,8 @@ export default function HomePage() {
     selectedImpact,
     helpWith,
     featuredWork: {
-      title: "Featured work",
-      lede: "Three case studies from the practice — judgment, constraints, trade-offs — plus the site you're reading, documented like it matters.",
+      title: "Case studies",
+      lede: "Each in a fixed format: what it was, the problem, my role, the decisions, the constraints, the outcome.",
       cta: { href: "/work", label: "All case studies" },
       cards: featured.map((c) => ({
         href: `/work/${c.id}`,

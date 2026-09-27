@@ -4,6 +4,67 @@ This document records the durable strategic decisions behind the 2026
 repositioning of mdshab.com, so future maintainers (human or agent) can
 extend the site without re-deriving them.
 
+## North Star — best-in-class personal brand (2026-09, confirmed)
+
+The goal is not a redesigned website; it is a **cohesive, high-impact
+personal brand** spanning two surfaces of one identity:
+
+- **LinkedIn** (`linkedin.com/in/mdshab`) — discovery and professional
+  credibility.
+- **mdshab.com** — the deeper layer: depth, proof, thinking, projects,
+  personality, differentiation.
+
+The site must hold its own beside the strongest personal sites of senior
+technical product managers, product and infrastructure leaders, and
+AI-era builders — distinctive and premium, never a template portfolio or
+a résumé. Positioning emphasis: **Technical Product Management × Cloud
+Infrastructure × AI × Complex Systems** — someone who shapes products
+around difficult technology, not someone who manages tickets. Optimize
+for credibility over hype: evidence, real systems, decisions, outcomes —
+no "passionate/visionary/enthusiast" filler. Visitor targets: recruiters,
+hiring managers, founders, CTOs, product and engineering leaders,
+collaborators. Desired reaction: *"This person understands both product
+and technology at a serious level. I want to know more."*
+
+Existing sections, copy and layouts are raw material, not constraints —
+anything weak, generic or redundant gets restructured or removed.
+Factual integrity rules below still apply without exception: nothing is
+invented beyond the repo, the LinkedIn profile, and owner-supplied facts.
+
+## Voice (2026-09, confirmed — overrides any earlier copy)
+
+The site must read like a real senior technical PM wrote it himself:
+calm, precise, understated, technical where necessary, specific instead
+of inspirational. A plain true sentence beats an impressive-sounding
+one. Rules of thumb:
+
+- **Evidence over positioning language**: what I worked on, what the
+  problem was, what I decided, what the constraints were, what changed.
+  Never replace facts with brand sentences.
+- **No slogan machinery**: no "not X, but Y" patterns, no symmetrical
+  three-item constructions, no dramatic headings, no clever taglines on
+  every section. Descriptive headings win.
+- **Banned-flavored words** (EN): transform, empower, unlock, elevate,
+  redefine, seamless, passionate, intersection-of. **Persian**:
+  «در تقاطعِ…»، «خلق»، «تحول»، «ماموریت»، «نوآوری»، «راهکار»،
+  «تجربه‌ای که فراتر از…»، and heavy use of «چالش / مسیر / تاثیر /
+  ارزش / پیچیدگی».
+- **Persian is authored, never translated.** Independent text in
+  contemporary professional Persian; Latin technical terms where Iranian
+  practitioners use them (Cloud Server, VPC, Storage, Migration, GPU,
+  IaaS, DBaaS, S3, NFS, VMware). No literary register, no agency copy,
+  no translated-English sentence structures.
+- **First person is natural**, but not every paragraph starts with "I".
+  Shorter beats longer. Concrete product/service names are facts, not
+  hype: use them.
+- The durable test: someone who knows Mehdi professionally should read
+  the site and think "yes, this sounds like him."
+
+**Deployment:** Vercel from `master`; DNS for mdshab.com is managed
+manually by the owner in Cloudflare (mail records especially are
+off-limits to automation). Only touch DNS when diagnosing a concrete
+deployment failure that requires it.
+
 ## Audience
 
 - **Primary:** recruiters, hiring managers, founders, CTOs/CPOs, VPs of
@@ -22,7 +83,8 @@ his Product × Technology combination is unusual.
 ## Positioning
 
 > **Product-minded, technically deep.**
-> I turn complex infrastructure into products people can use.
+> I do product management for cloud infrastructure. Before that, I ran it
+> for fifteen years.
 
 - Direction: **technical product management** for cloud & AI
   infrastructure.

@@ -38,17 +38,16 @@ export default function WorkPage() {
           <p className="page-kicker mono-meta">Work</p>
           <h1 className="page-title">Case studies</h1>
           <p className="page-lede">
-            The format is the one I wish every project document used:
-            context, problem, constraints, decision, trade-offs, outcome.
-            Where numbers don&apos;t exist, none are invented.
+            Each project in the same format: context, problem, my role,
+            constraints, decisions, trade-offs, outcome. Where a number
+            doesn&apos;t exist, none is invented.
           </p>
         </header>
 
         <p className="work-note">
-          Employer names and internal figures stay private where that privacy
-          was promised — the cloud-provider work is described at the level of
-          judgment, not architecture diagrams. The reasoning is the point;
-          the confidentiality is the constraint, and both are real.
+          For the cloud-provider work I keep internal details private — what
+          follows is the decisions and the reasoning, which is the part that
+          transfers to anyone else&apos;s situation.
         </p>
 
         <section aria-labelledby="practice-h">

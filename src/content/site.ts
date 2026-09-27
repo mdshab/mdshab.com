@@ -14,9 +14,10 @@ export const site = {
   shortName: "mdshab",
   domain: "mdshab.com",
   role: "Technical Product Manager — Cloud Infrastructure",
-  positioning: "I turn complex infrastructure into products people can use.",
+  positioning:
+    "I do product management for cloud infrastructure. Before that, I ran it for fifteen years.",
   supportLine:
-    "Technical product manager at a global-scale cloud provider. Twenty years up the stack — from analog telephony and enterprise networks to datacenters, cloud platforms, and now AI-era infrastructure — deciding what gets built, for whom, and why.",
+    "Technical product manager at a global-scale cloud provider, working on services like Cloud Server, VPC, Storage and Migration. Before product: VoIP administration, network engineering, cloud operations, NOC leadership.",
   location: "Tehran, Iran · working internationally",
 } as const;
 
@@ -24,9 +25,8 @@ export const site = {
 export const contact = {
   /** Verified: this repository lives at github.com/mdshab (remote origin). */
   github: "https://github.com/mdshab",
-  /** Add the profile URL when it is approved for publication, e.g.
-   *  "https://www.linkedin.com/in/…" — it then appears across the site. */
-  linkedin: undefined as string | undefined,
+  /** Approved 2026-09: public profile, confirmed by the site owner. */
+  linkedin: "https://www.linkedin.com/in/mdshab/",
   /** Add when approved, e.g. "hello@mdshab.com". */
   email: undefined as string | undefined,
 } as const;
@@ -35,10 +35,10 @@ export const contact = {
 export const siteMeta = {
   title: "Mehdi Shabestari — Technical Product Manager, Cloud Infrastructure",
   description:
-    "Product-minded and technically deep: twenty years from analog telephony to cloud and AI infrastructure, now technical product management for cloud services used by hundreds of thousands of people. Case studies, thinking, and how to get in touch.",
+    "Technical product manager for cloud services like Cloud Server, VPC, Storage and Migration, used by hundreds of thousands of people. Fifteen years in VoIP, networking and datacenters before product, since 2022. Case studies, principles, contact.",
   ogTitle: "Mehdi Shabestari",
   ogDescription:
-    "Technical product management for cloud and AI infrastructure — product-minded, technically deep. Twenty years from analog telephony to products used by hundreds of thousands of people.",
+    "Technical product manager for cloud infrastructure — Cloud Server, VPC, Storage, Migration — with hundreds of thousands of users. Fifteen years running the same stack before moving to product.",
 } as const;
 
 /* ------------------------------------------------------------------ */

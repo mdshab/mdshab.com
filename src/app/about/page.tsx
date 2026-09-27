@@ -11,8 +11,7 @@ export const metadata: Metadata = {
   description:
     "Mehdi Shabestari — technical product manager for cloud infrastructure. Twenty years from analog telephony to cloud products, and the habit of asking what it all looked like three thousand years ago.",
   alternates: {
-    canonical: "/about",
-    languages: { en: "/about", fa: "/fa/about" },
+    canonical: "/about"
   },
 };
 
@@ -56,7 +55,7 @@ export default function AboutPage() {
               manager for cloud services at a global-scale cloud provider,
               working on products like Cloud Server, VPC, Storage and
               Migration that serve hundreds of thousands of users. Before
-              that: cloud engineering and NOC leadership, voice and NGN
+              that: cloud engineering and support leadership, voice and NGN
               infrastructure, network engineering, technical support, and —
               starting in 2007 — VoIP administration.
             </p>
@@ -66,10 +65,10 @@ export default function AboutPage() {
               A product manager who only knows infrastructure from the
               outside tends to over-promise; engineering without product
               sense builds clean systems nobody asked for. I work on the
-              product side, with an operator&apos;s habits. The NOC taught me
-              what a broken promise costs. Support taught me how failure
-              feels from the outside. Telecom taught me that reliability is
-              a feature, decades before cloud marketing said so.
+              product side, with an operator&apos;s habits. Support taught me
+              what a broken promise costs and how failure feels from the
+              outside. Telecom taught me that reliability is a feature,
+              decades before cloud marketing said so.
             </p>
 
             <h2>The longer version</h2>

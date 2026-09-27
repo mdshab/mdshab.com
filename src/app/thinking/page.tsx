@@ -14,8 +14,7 @@ export const metadata: Metadata = {
   description:
     "Product principles earned in infrastructure: users buy outcomes, abstractions are promises, reliability is the product — plus the models behind them, drawn from real work.",
   alternates: {
-    canonical: "/thinking",
-    languages: { en: "/thinking", fa: "/fa/thinking" },
+    canonical: "/thinking"
   },
 };
 

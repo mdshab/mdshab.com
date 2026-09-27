@@ -37,9 +37,6 @@ export const metadata: Metadata = {
     description: siteMeta.ogDescription,
   },
   robots: { index: true, follow: true },
-  alternates: {
-    languages: { en: "/", fa: "/fa" },
-  },
 };
 
 export const viewport: Viewport = {
@@ -74,7 +71,7 @@ export default function RootLayout({
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={`${siteFonts.sans.variable} ${siteFonts.serif.variable} ${siteFonts.mono.variable} ${siteFonts.fa.variable}`}
+      className={`${siteFonts.sans.variable} ${siteFonts.serif.variable} ${siteFonts.mono.variable}`}
     >
       <body>
         <FluentProviderWrapper>

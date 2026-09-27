@@ -28,10 +28,6 @@ export async function generateMetadata({
     description: study.summary,
     alternates: {
       canonical: `/work/${study.id}`,
-      languages: {
-        en: `/work/${study.id}`,
-        fa: `/fa/work/${study.id}`,
-      },
     },
   };
 }

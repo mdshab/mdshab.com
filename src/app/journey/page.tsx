@@ -16,8 +16,7 @@ export const metadata: Metadata = {
   description:
     "From a home computer and a mailed Linux CD to cloud product management, in five chapters — with dates. The path that the product decisions sit on.",
   alternates: {
-    canonical: "/journey",
-    languages: { en: "/journey", fa: "/fa/journey" },
+    canonical: "/journey"
   },
 };
 

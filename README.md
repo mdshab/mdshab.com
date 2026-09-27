@@ -1,8 +1,8 @@
 # mdshab.com
 
 **Mehdi Shabestari — technical product manager for cloud and AI
-infrastructure.** A bilingual professional platform, a case-study
-portfolio, and a personal knowledge graph — connected.
+infrastructure.** A professional platform, a case-study portfolio, and a
+personal knowledge graph — connected.
 
 The site's one job: make the right visitor want to start a
 conversation. Value and positioning in the first viewport, evidence and
@@ -15,22 +15,21 @@ history, the great questions, a quiet breathing space) one click deep.
 | --- | --- |
 | `/` | The front door: hero → selected impact → problems I solve → featured work → how I think → technical depth → journey → writing → beyond work → final CTA |
 | `/work` | Case studies in a fixed format: context, problem, constraints, decision, trade-offs, outcome, learning — employers anonymized where promised, no invented numbers |
-| `/work/[case]` | 4 studies: cloud services at scale · NOC leadership 2020 · voice→software 2007–2018 · this website |
+| `/work/[case]` | 4 studies: cloud services at scale · customer service & support leadership 2020 · voice→software 2007–2018 · this website |
 | `/thinking` | Nine product principles with their origins, plus two working models: the abstraction ladder and the telecom→cloud evolution map |
 | `/journey` | A career in five chapters, from a mailed Ubuntu CD to `terraform apply` |
 | `/writing` | Long-form essays, cross-linked to timeline events |
 | `/about`, `/contact` | Who is behind this, and how to start a conversation |
-| `/fa/…` | همین سایت به فارسی — Persian edition of the professional core, native RTL with Vazirmatn |
 | `/humanity` | 115 history events, 1000 BCE → present, filterable by thread, region and kind — desktop spatial timeline, mobile/AT vertical list |
 | `/ideas` | 34 thinkers across Greek, Eastern, Persian/Islamic and modern traditions, plus 10 philosophical questions |
 | `/mind` | "Be here." A breathing exercise and short reflections. No gamification, no claims. |
 | `/now` | What is happening right now |
 
-Old `/lab` URLs redirect permanently to `/work` and `/thinking`.
+Old `/lab` and `/fa` URLs redirect permanently to their English successors.
 
 ## Stack
 
-- **Next.js 16** (App Router, static prerendering — ~196 pages, dynamic
+- **Next.js 16** (App Router, static prerendering — ~186 pages, dynamic
   filtering only on `/humanity` search params)
 - **TypeScript strict**, typed content models in `src/types/content.ts`
 - **Fluent UI v9** (`@fluentui/react-components`) as the accessibility
@@ -44,8 +43,7 @@ Old `/lab` URLs redirect permanently to `/work` and `/thinking`.
   articles render inside React Server Components)
 - **next/og** build-time OG image (satori) from subset TTFs in `assets/`
 - Self-hosted variable fonts: Space Grotesk (display), Newsreader
-  (editorial serif), JetBrains Mono (data), **Vazirmatn** (Persian) —
-  SIL OFL, in `public/fonts/`
+  (editorial serif), JetBrains Mono (data) — SIL OFL, in `public/fonts/`
 
 ## Content integrity rules
 
@@ -88,8 +86,6 @@ npm run build   # production build must succeed
   rendered for mobile and assistive technology; filters announce counts
   via `role="status"`
 - Reduced-motion users get a still circle and text-only breathing phases
-- Persian pages are `dir="rtl"` end-to-end with logical-property CSS and
-  independently tuned typography
 
 ## Privacy
 

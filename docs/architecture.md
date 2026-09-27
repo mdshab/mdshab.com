@@ -19,8 +19,6 @@ src/
 │   ├── work/               # Case studies + [case] detail (was /lab)
 │   ├── thinking/           # Principles + models
 │   ├── contact/            # Conversion page
-│   ├── fa/                 # Persian edition (layout + home, work, [case],
-│   │                       #   thinking, journey, about, contact)
 │   ├── humanity/           # Timeline + [event] detail pages (EN)
 │   ├── journey/            # Career chapters
 │   ├── ideas/              # [thinker] + questions/[question] (EN)
@@ -41,7 +39,6 @@ src/
 │   ├── contact.ts          # Contact page copy (EN)
 │   ├── work/               # Case studies (EN)
 │   ├── thinking/           # Principles + models (EN)
-│   ├── i18n/fa.ts          # Persian edition content (home, work, thinking…)
 │   ├── history/            # 115 events in 4 era files + threads + index
 │   ├── ideas/              # 34 thinkers, 10 questions
 │   ├── journey/            # 5 chapters, 11 entries
@@ -49,7 +46,7 @@ src/
 │   └── writing/            # 6 article metas + MDX bodies
 ├── design-system/
 │   ├── theme.ts            # mdshab light theme on a Fluent light theme
-│   └── fonts.ts            # next/font/local incl. Vazirmatn (fa)
+│   └── fonts.ts            # next/font/local
 ├── lib/
 │   ├── format.ts           # formatYear (BCE), formatEventRange, formatDate
 │   └── search-index.ts     # ⌘K index built from the content graph
@@ -60,8 +57,8 @@ src/
 ## Rendering strategy
 
 - Everything is static. `generateStaticParams` prerenders all 115 event
-  pages, 34 thinker pages, 10 question pages, 4+4 case study pages (EN
-  + FA) and 6 articles. The production build emits ~196 pages.
+  pages, 34 thinker pages, 10 question pages, 4 case study pages and 6
+  articles. The production build emits ~186 pages.
 - `/humanity` accepts `?thread=&region=&category=` search params. The page
   reads them via `await searchParams` (Next 16 async request API) and
   renders filtered static HTML per request; filter "navigation" is plain
@@ -70,21 +67,10 @@ src/
   `src/app/writing/[article]/page.tsx` and mapped by slug. `next.config.ts`
   sets `providerImportSource: null` so the MDX output has no
   `@mdx-js/react` dependency — articles are React Server Components.
-- `/lab/*` URLs 308-redirect to their successors under `/work` and
-  `/thinking` (`next.config.ts` redirects).
+- `/lab/*` and retired `/fa/*` URLs 308-redirect to their English
+  successors (`next.config.ts` redirects; the Persian edition was
+  retired in 2026-09 by owner decision).
 
-## Localization architecture
-
-English pages live at the root (`/work`, `/thinking`, …); the Persian
-edition mirrors the professional core under `/fa/…`. The root layout owns
-`<html lang="en">`; the fa subtree wraps its pages in
-`<div lang="fa" dir="rtl">`, which scopes Vazirmatn and mirrors layout
-via CSS logical properties. FA pages render through the *same* server
-components (e.g. `HomeMain`) fed from `content/i18n/fa.ts`, so structure
-cannot drift between locales. Every bilingual route declares
-`alternates.languages` metadata (hreflang) and the sitemap emits
-`xhtml:link` alternates. The command palette is EN-only (it searches the
-EN content graph); fa pages therefore omit it.
 
 ## Theming
 
@@ -102,16 +88,15 @@ the accessible interaction primitives and token system, while the
 editorial look is custom CSS in `globals.css` driven by CSS custom
 properties. See [design-system.md](design-system.md).
 
-Fonts are self-hosted with `next/font/local` (variable woff2 files under
-`public/fonts/`, Vazirmatn excluded from preload so EN pages never fetch
-it), exposed as CSS variables `--font-sans`, `--font-serif`,
-`--font-mono`, `--font-fa`.
+Fonts are self-hosted with `next/font/local` (variable woff2 files
+under `public/fonts/`), exposed as CSS variables `--font-sans`,
+`--font-serif`, `--font-mono`.
 
 ## Interactive islands
 
 Only three components ship JavaScript:
 
-1. **CommandPalette** — global ⌘K/Ctrl+K (EN pages only). The search index
+1. **CommandPalette** — global ⌘K/Ctrl+K. The search index
    (`src/lib/search-index.ts`) is built from the same content modules the
    pages use: static pages + every event, thread, thinker, question,
    journey entry, case study and article. Implements the WAI-ARIA

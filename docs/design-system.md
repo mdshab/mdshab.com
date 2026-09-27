@@ -51,13 +51,6 @@ Fluid, clamped: `--text-xs` .75rem → `--text-hero`
 600, tracking −0.02em, `text-wrap: balance`. Body: 1rem/1.6 on 68ch
 measure max. Editorial prose: Newsreader at `clamp(1.05–1.2rem)/1.75`.
 
-### Persian (RTL) tuning
-
-Vazirmatn scoped to `[dir="rtl"]`; separate hero/heading scale
-(Persian runs optically smaller — hero clamps ~20% lower); body 1.03rem
-/ 1.85; **letter-spacing 0 always** (tracking breaks joining);
-`.mono-meta` becomes Vazirmatn 500 (JetBrains has no Arabic glyphs);
-Latin runs inside Persian text (code, handles) get `dir="ltr"` spans.
 
 ## Motion
 

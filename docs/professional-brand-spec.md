@@ -117,7 +117,6 @@ one click deep, never deleted.
 /about           professional narrative + beyond work + facts
 /contact         intents + channels
 /humanity /ideas /mind /now      personal library (EN)
-/fa/…            Persian edition of the professional core
 ```
 
 - Primary nav: Work, Thinking, Journey, Writing, About (5 links) +
@@ -150,23 +149,11 @@ why it mattered → my role → constraints → discovery → product reasoning
 story). The unit of credibility is *judgment*: what was hard, what
 alternatives existed, what was traded away.
 
-## Localization
+## Language
 
-- English at `/`, Persian at `/fa` (home, work + cases, thinking,
-  journey, about, contact). Library routes stay EN-only and the fa
-  footer labels them in Persian.
-- Persian is authored content (intent-translated, natural professional
-  Persian; Latin technical terms where that is normal usage), never
-  machine-mirrored UI.
-- Typography: Vazirmatn, self-hosted, scoped to `[dir="rtl"]` so EN
-  pages never download it. Independent size/leading scale for Persian;
-  no letter-spacing on Arabic script; `.mono-meta` swaps to Vazirmatn
-  in RTL (JetBrains Mono has no Arabic-script glyphs).
-- Structure: `app/fa/*` renders through the same server components as
-  EN from `content/i18n/fa.ts`; `/fa/layout.tsx` wraps pages in
-  `lang="fa" dir="rtl"`.
-- hreflang + sitemap alternates for every bilingual route; per-page
-  `alternates.languages` metadata.
+English only (2026-09-27: the owner retired the Persian `/fa` edition;
+old URLs 308-redirect to their English successors). The Persian voice
+rules in §Voice remain for any future localized content.
 
 ## Visual system
 
@@ -183,8 +170,7 @@ Light-first, modern editorial × Swiss clarity. See
 
 ## Maintenance quick starts
 
-- Add a case study → `content/work/work.ts` (+ fa twin in
-  `content/i18n/fa.ts`), everything else derives.
+- Add a case study → `content/work/work.ts`, everything else derives.
 - Add a principle → `content/thinking/thinking.ts` (+ fa).
 - Add a contact channel → fill `linkedin`/`email` in `content/site.ts`;
   header, contact page, footer pick it up.

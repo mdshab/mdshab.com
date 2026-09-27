@@ -58,7 +58,7 @@ export default async function Image() {
               padding: "8px 18px",
             }}
           >
-            EN · فارسی
+            Since 2007
           </div>
         </div>
 

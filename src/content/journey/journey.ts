@@ -36,7 +36,7 @@ export const journeyChapters: JourneyChapter[] = [
     title: "The abstraction ladder",
     era: "2019 – 2022",
     description:
-      "Cloud engineering and NOC leadership at a global-scale cloud provider: from physical hosts to fleets, from fixing to coordinating.",
+      "Cloud engineering and support leadership at a global-scale cloud provider: from physical hosts to fleets, from fixing to coordinating.",
   },
   {
     id: "cloud-product",
@@ -177,14 +177,14 @@ export const journeyEntries: JourneyEntry[] = [
     chapter: "datacenter",
     year: 2020,
     period: "2020",
-    role: "Team Lead (NOC)",
+    role: "Team Lead — Customer Service & Support",
     organization: "Global-scale cloud provider",
     title: "Leading the room where it never sleeps",
     story:
-      "Leading a Network Operations Center meant owning incidents end to end: the escalation paths, the runbooks, the handovers, and the humans at 3 a.m. In a year when the world's traffic moved indoors, the NOC was where the internet stayed up.",
+      "Leading the customer service and support function meant owning incidents end to end: the escalation paths, the runbooks, the handovers, and the humans at 3 a.m. In the year the world's traffic moved indoors, this was where the internet stayed up.",
     reflection:
       "Incident response is applied epistemology: what do we know, how do we know it, and who needs to know it next? Everything else is keyboard work.",
-    technologies: ["NOC operations", "Incident management", "On-call", "Runbooks"],
+    technologies: ["Customer service design", "Incident management", "On-call", "Runbooks"],
     relatedArticles: ["what-infrastructure-taught-me"],
   },
 

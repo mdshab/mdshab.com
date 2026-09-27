@@ -11,8 +11,7 @@ export const metadata: Metadata = {
   description:
     "Case studies from twenty years of infrastructure and product work: cloud services at scale, network operations, telephony platforms, and this site. Judgment, constraints, trade-offs — described honestly.",
   alternates: {
-    canonical: "/work",
-    languages: { en: "/work", fa: "/fa/work" },
+    canonical: "/work"
   },
 };
 

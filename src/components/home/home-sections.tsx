@@ -63,8 +63,6 @@ export interface HomeContent {
   selectedWriting: {
     title: string;
     lede: string;
-    /** true when the essay titles themselves are English on a localized page */
-    english?: boolean;
     cta: { href: string; label: string };
     articles: { href: string; title: string; desc: string }[];
   };
@@ -267,7 +265,7 @@ export function HomeMain({ content }: { content: HomeContent }) {
         <ul className="home-writing-list">
           {t.selectedWriting.articles.map((article) => (
             <li key={article.href}>
-              <Link href={article.href} className="home-writing-item" lang={t.selectedWriting.english ? "en" : undefined}>
+              <Link href={article.href} className="home-writing-item">
                 <span className="home-writing-title">{article.title}</span>
                 <span className="home-writing-desc">{article.desc}</span>
               </Link>

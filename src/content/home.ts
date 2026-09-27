@@ -1,7 +1,5 @@
 /**
- * Homepage copy. English source of truth; the Persian edition lives in
- * content/i18n/fa.ts and is written independently — it is NOT a
- * translation.
+ * Homepage copy.
  *
  * Voice: a real senior technical PM writing his own site. Plain
  * sentences over impressive ones, facts over positioning language.
@@ -12,7 +10,7 @@ export const hero = {
   roleLine: "Technical Product Manager · Cloud Infrastructure",
   h1: "I do product management for cloud infrastructure. Before that, I ran it for fifteen years.",
   support:
-    "Since 2022 I've been a technical product manager at a global-scale cloud provider, working on services like Cloud Server, VPC, Storage and Migration that hundreds of thousands of people rely on. Before product, I came up through the same stack: VoIP administration, network engineering, cloud operations, NOC leadership.",
+    "Since 2022 I've been a technical product manager at a global-scale cloud provider, working on services like Cloud Server, VPC, Storage and Migration that hundreds of thousands of people rely on. Before product, I came up through the same stack: VoIP administration, network engineering, cloud operations, support leadership.",
   primaryCta: { href: "/work", label: "See the work" },
   secondaryCta: { href: "/contact", label: "Let's talk" },
   facts: [
@@ -32,9 +30,9 @@ export const selectedImpact = {
       link: { href: "/work/cloud-services-at-scale", label: "Case study" },
     },
     {
-      headline: "The network operations center through 2020",
-      body: "I led the NOC team in 2020, the year everyone's traffic moved home. Escalation paths, shift handovers, and runbooks a tired engineer could actually follow.",
-      link: { href: "/work/keeping-the-network-up", label: "Case study" },
+      headline: "Customer support through 2020",
+      body: "I led the support operation in 2020, the year everyone's traffic moved home. Service design, escalation paths, shift handovers, and runbooks a tired engineer could actually follow.",
+      link: { href: "/work/support-leadership", label: "Case study" },
     },
     {
       headline: "Voice platforms, 2007–2018",
@@ -43,7 +41,7 @@ export const selectedImpact = {
     },
     {
       headline: "This site",
-      body: "A bilingual, ~200-page static site with typed content models and no trackers. Designed, built and written by one person, Persian edition included.",
+      body: "A static site of ~190 pages with typed content models and no trackers. Designed, built and written by one person.",
       link: { href: "/work/this-website", label: "Case study" },
     },
   ],
@@ -107,7 +105,7 @@ export const journeyTeaser = {
     { era: "Early years", label: "A home computer, a Linux CD that came by post" },
     { era: "2007", label: "VoIP administration at Tel4Tel" },
     { era: "2011 – 2018", label: "Networks and voice at FCP" },
-    { era: "2019 – 2020", label: "Cloud engineering, then the NOC room" },
+    { era: "2019 – 2020", label: "Cloud engineering, then support leadership" },
     { era: "2022 –", label: "Infrastructure as a product" },
   ],
   cta: { href: "/journey", label: "The whole journey" },

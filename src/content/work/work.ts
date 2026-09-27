@@ -78,37 +78,37 @@ export const caseStudies: CaseStudy[] = [
     relatedHistory: ["aws-launch"],
   },
   {
-    id: "keeping-the-network-up",
-    title: "The network operations center in 2020",
+    id: "support-leadership",
+    title: "Customer service design and support leadership",
     summary:
-      "The first pandemic year: the world's traffic moved home. Escalation paths, shift handovers, and runbooks for the people awake at 3 a.m.",
+      "2020, the first pandemic year: leading the support operation of a global-scale cloud platform — service design, escalations, handovers, and runbooks for the people awake at 3 a.m.",
     track: "practice",
     domain: "infrastructure",
     period: "2020",
-    role: "Team Lead, Network Operations Center",
+    role: "Team Lead — Customer Service & Support",
     organization: "Global-scale cloud provider",
     lede:
-      "In 2020 I led the network operations center at a global-scale cloud provider — the year work, school and family traffic all moved home at once. This is what running incidents at scale taught me about how organizations fail.",
+      "In 2020 I led the customer support operation of a global-scale cloud provider — the year work, school and family traffic all moved home at once. This is what running support at scale taught me about how service fails.",
     sections: [
       {
         heading: "context",
-        body: "I had joined as a cloud engineer in 2019. A year later the pandemic moved everything onto the platform at the same time, and I was leading the NOC team through it.",
+        body: "I had joined as a cloud engineer in 2019. A year later the pandemic moved everything onto the platform at the same time, and I was leading the team that answered when it broke — customer-facing support and network operations in one function.",
       },
       {
         heading: "problem",
-        body: "A NOC fails two ways. Technically: an incident outruns understanding. Organizationally: the right information exists in the room but never reaches the right person. The second failure is more common and more damaging — and it's a design problem, not a staffing one.",
+        body: "Support fails two ways. Technically: an incident outruns our understanding. As service: the right information exists somewhere in the company but never reaches the person waiting for it — the customer, or the engineer who could fix it. The second failure is more common and more damaging, and it's a design problem, not a staffing one.",
       },
       {
         heading: "my-role",
-        body: "Owning incidents end to end: escalation paths, shift handovers, runbooks, and the people awake at 3 a.m.",
+        body: "Owning the service end to end: how customers get helped, escalation paths, shift handovers, runbooks, and the people awake at 3 a.m.",
       },
       {
         heading: "constraints",
-        body: "At that scale no single person holds the system in their head, so context has to survive handovers intact. On-call rotations, constant pressure, and the constraint I cared about most: the youngest engineer on the 4 a.m. shift still had to make good calls with incomplete information.",
+        body: "At that scale no single person holds the system in their head, so context has to survive handovers intact. The customer on the other end of a broken service doesn't care whose layer it is. And the constraint I cared about most: the youngest engineer on the 4 a.m. shift still had to make good calls with incomplete information.",
       },
       {
         heading: "discovery",
-        body: "Patterns across incidents taught the durable lessons: which alerts predicted trouble and which were noise, which escalation paths worked and which just relocated anxiety, where runbooks had been written for their author instead of their reader. Postmortems were the curriculum — for finding where information stopped flowing, not for assigning blame.",
+        body: "Patterns across incidents and tickets taught the durable lessons: which alerts predicted trouble and which were noise, which escalation paths worked and which just relocated anxiety, where runbooks had been written for their author instead of their reader, and what customers actually needed to hear during an outage — honest status, not reassurance. Postmortems were the curriculum.",
       },
       {
         heading: "decision",
@@ -120,11 +120,11 @@ export const caseStudies: CaseStudy[] = [
       },
       {
         heading: "execution",
-        body: "Working with engineering on alert quality, with shift leads on handover discipline, and with every incident review on feeding lessons back into the runbooks. Half the job was protocol; the other half was trust.",
+        body: "Working with engineering on alert quality, with shift leads on handover discipline, with every incident review on feeding lessons back into the runbooks — and keeping what we told customers during incidents honest. Half the job was protocol; the other half was trust.",
       },
       {
         heading: "outcome",
-        body: "A team that got through the platform's hardest traffic year, and incident reports engineering could act on without re-deriving them.",
+        body: "A support function that got through the platform's hardest traffic year, and incident reports engineering could act on without re-deriving them.",
       },
       {
         heading: "what-i-learned",
@@ -132,11 +132,11 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
     technologies: [
+      "Customer service design",
       "Incident management",
-      "NOC operations",
+      "Support operations",
       "On-call",
       "Runbooks",
-      "Team leadership",
     ],
     relatedArticles: ["what-infrastructure-taught-me"],
   },
@@ -213,14 +213,14 @@ export const caseStudies: CaseStudy[] = [
     id: "this-website",
     title: "This website",
     summary:
-      "A bilingual static site of about 200 pages: typed content models, no trackers, built by one person.",
+      "A static site of about 190 pages: typed content models, no trackers, built by one person.",
     track: "build",
     domain: "web",
     period: "Built 2026",
     role: "Design, engineering, writing",
     organization: "Personal project",
     lede:
-      "My own site: bilingual, about 200 static pages, no trackers. It serves as its own case study.",
+      "My own site: about 190 static pages, no trackers. It serves as its own case study.",
     sections: [
       {
         heading: "context",
@@ -244,7 +244,7 @@ export const caseStudies: CaseStudy[] = [
       },
       {
         heading: "execution",
-        body: "Next.js App Router with static prerendering, a command palette built over the same content modules the pages render, MDX essays compiled as React Server Components with no client-side MDX runtime, and a Persian edition written independently rather than translated.",
+        body: "Next.js App Router with static prerendering, a command palette built over the same content modules the pages render, MDX essays compiled as React Server Components with no client-side MDX runtime, and a command palette over the same content graph.",
       },
       {
         heading: "outcome",
@@ -275,6 +275,6 @@ export const getCaseStudy = (() => {
 /** Featured on the homepage (order matters). */
 export const featuredCaseStudyIds = [
   "cloud-services-at-scale",
-  "keeping-the-network-up",
+  "support-leadership",
   "voice-becomes-software",
 ];

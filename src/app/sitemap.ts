@@ -12,77 +12,27 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://mdshab.com";
 
 export const dynamic = "force-static";
 
-/** Routes that have a Persian edition at /fa/… */
-const bilingual = new Set(["", "/work", "/thinking", "/journey", "/about", "/contact"]);
-
-function entry(path: string, lastModified: Date, priority = 0.7) {
-  const languages = bilingual.has(path)
-    ? { en: path === "" ? "/" : path, fa: `/fa${path === "/" ? "" : path}` }
-    : undefined;
-  return {
-    url: `${siteUrl.replace(/\/$/, "")}${path}`,
-    lastModified,
-    priority,
-    alternates: languages ? { languages } : undefined,
-  };
-}
-
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = siteUrl.replace(/\/$/, "");
   const now = new Date();
 
-  /* Professional core (bilingual) */
-  const coreRoutes: MetadataRoute.Sitemap = [
-    entry("", now, 1.0),
-    entry("/work", now, 0.9),
-    entry("/thinking", now, 0.8),
-    entry("/journey", now, 0.8),
-    entry("/about", now, 0.7),
-    entry("/contact", now, 0.8),
-  ];
-
-  /* Persian edition roots */
-  const faRoutes: MetadataRoute.Sitemap = [
-    "/fa",
-    "/fa/work",
-    "/fa/thinking",
-    "/fa/journey",
-    "/fa/about",
-    "/fa/contact",
-  ].map((path) => ({
-    url: `${base}${path}`,
-    lastModified: now,
-    priority: 0.6,
-    alternates: { languages: { en: path === "/fa" ? "/" : path.replace("/fa", ""), fa: path } },
-  }));
+  const staticRoutes: MetadataRoute.Sitemap = [
+    { url: `${base}/`, priority: 1.0 },
+    { url: `${base}/work`, priority: 0.9 },
+    { url: `${base}/thinking`, priority: 0.8 },
+    { url: `${base}/journey`, priority: 0.8 },
+    { url: `${base}/about`, priority: 0.7 },
+    { url: `${base}/contact`, priority: 0.8 },
+    { url: `${base}/humanity`, priority: 0.5 },
+    { url: `${base}/ideas`, priority: 0.5 },
+    { url: `${base}/mind`, priority: 0.5 },
+    { url: `${base}/writing`, priority: 0.5 },
+    { url: `${base}/now`, priority: 0.4 },
+  ].map((entry) => ({ ...entry, lastModified: now }));
 
   const caseRoutes = caseStudies.map((study) => ({
     url: `${base}/work/${study.id}`,
     lastModified: now,
-    alternates: {
-      languages: { en: `/work/${study.id}`, fa: `/fa/work/${study.id}` },
-    },
-  }));
-
-  const faCaseRoutes = caseStudies.map((study) => ({
-    url: `${base}/fa/work/${study.id}`,
-    lastModified: now,
-    alternates: {
-      languages: { en: `/work/${study.id}`, fa: `/fa/work/${study.id}` },
-    },
-  }));
-
-  /* Personal library (English-only) */
-  const libraryRoutes = [
-    "/humanity",
-    "/ideas",
-    "/mind",
-    "/writing",
-    "/now",
-  ].map((path) => ({
-    url: `${base}${path}`,
-    lastModified: now,
-    priority: 0.5,
   }));
 
   const eventRoutes = historyEvents.map((event) => ({
@@ -106,11 +56,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   return [
-    ...coreRoutes,
-    ...faRoutes,
+    ...staticRoutes,
     ...caseRoutes,
-    ...faCaseRoutes,
-    ...libraryRoutes,
     ...eventRoutes,
     ...thinkerRoutes,
     ...questionRoutes,

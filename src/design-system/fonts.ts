@@ -31,18 +31,5 @@ export const mono = localFont({
   weight: "100 800",
 });
 
-/**
- * Persian — Vazirmatn (SIL OFL). Scoped to [dir="rtl"] content in CSS so
- * English pages never download it: the variable font is requested only
- * when a /fa page with actual Persian text is visited.
- */
-export const fa = localFont({
-  src: "../../public/fonts/vazirmatn.woff2",
-  variable: "--font-fa",
-  display: "swap",
-  weight: "100 900",
-  preload: false,
-});
-
 /** Aggregate for the root layout's html className. */
-export const siteFonts = { sans, serif, mono, fa };
+export const siteFonts = { sans, serif, mono };

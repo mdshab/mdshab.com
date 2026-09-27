@@ -22,8 +22,7 @@ export const metadata: Metadata = {
   title: siteMeta.title,
   description: siteMeta.description,
   alternates: {
-    canonical: "/",
-    languages: { en: "/", fa: "/fa" },
+    canonical: "/"
   },
   openGraph: {
     type: "website",
@@ -85,7 +84,7 @@ export default function HomePage() {
     homeThinking,
     depth,
     journeyTeaser,
-    selectedWriting: { ...selectedWriting, english: true, articles: writing },
+    selectedWriting: { ...selectedWriting, articles: writing },
     beyondWork,
     finalCta,
   };

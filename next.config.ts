@@ -4,13 +4,17 @@ import createMDX from "@next/mdx";
 const nextConfig = {
   pageExtensions: ["ts", "tsx", "mdx"],
   async redirects() {
-    /* /lab was superseded by /work; old links keep working. */
+    /* /lab was superseded by /work; /fa was retired (2026-09, owner
+     * decision — English-only site). Old links keep working. */
     return [
       { source: "/lab", destination: "/work", permanent: true },
       { source: "/lab/mdshab-com", destination: "/work/this-website", permanent: true },
       { source: "/lab/communication-timeline-engine", destination: "/work/this-website", permanent: true },
       { source: "/lab/abstraction-ladder", destination: "/thinking#abstraction-ladder", permanent: true },
       { source: "/lab/telecom-evolution-map", destination: "/thinking#telecom-cloud-map", permanent: true },
+      { source: "/fa", destination: "/", permanent: true },
+      { source: "/fa/:path*", destination: "/:path*", permanent: true },
+      { source: "/work/keeping-the-network-up", destination: "/work/support-leadership", permanent: true },
     ];
   },
 };

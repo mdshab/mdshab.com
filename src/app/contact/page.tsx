@@ -12,8 +12,7 @@ export const metadata: Metadata = {
   description:
     "Start a conversation with Mehdi Shabestari — about a technical product role, a project, or a hard infrastructure problem worth thinking about together.",
   alternates: {
-    canonical: "/contact",
-    languages: { en: "/contact", fa: "/fa/contact" },
+    canonical: "/contact"
   },
 };
 

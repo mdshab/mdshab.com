@@ -119,61 +119,6 @@ body {
   }
 }
 
-/* ------------------------------ Persian scope ------------------------------ */
-
-/*
- * Vazirmatn for Persian, with independently tuned optical metrics:
- * Persian x-height runs smaller at equal size, so body text steps up,
- * headings tighten their scale, and letter-spacing is never applied
- * (tracking breaks Arabic script joining).
- */
-[dir="rtl"] {
-  --text-hero: clamp(2.1rem, 1.6rem + 3vw, 3.9rem);
-  --text-4xl: clamp(1.9rem, 1.5rem + 2.4vw, 3rem);
-  --text-3xl: clamp(1.7rem, 1.4rem + 1.6vw, 2.35rem);
-}
-
-[dir="rtl"] body,
-[dir="rtl"] .site-header,
-[dir="rtl"] .site-footer {
-  font-family: var(--font-fa), var(--font-sans), ui-sans-serif, system-ui, sans-serif;
-}
-
-[dir="rtl"] body {
-  font-size: 1.03rem;
-  line-height: 1.85;
-}
-
-[dir="rtl"] .mono-meta {
-  font-family: var(--font-fa), var(--font-sans), sans-serif; /* JetBrains has no Arabic-script glyphs */
-  font-size: 0.78rem;
-  letter-spacing: 0;
-  text-transform: none;
-  color: var(--ink-muted);
-  font-weight: 500;
-}
-
-[dir="rtl"] .prose-editorial {
-  font-family: var(--font-fa), var(--font-sans), sans-serif;
-  font-size: clamp(1.05rem, 1rem + 0.25vw, 1.14rem);
-  line-height: 2;
-}
-
-[dir="rtl"] .fa-num {
-  font-variant-numeric: normal;
-}
-
-/* Persian headings: heavier weight reads better at display sizes */
-[dir="rtl"] h1,
-[dir="rtl"] h2,
-[dir="rtl"] h3,
-[dir="rtl"] .page-title,
-[dir="rtl"] .home-hero,
-[dir="rtl"] .section-heading {
-  letter-spacing: 0;
-  font-family: var(--font-fa), var(--font-sans), sans-serif;
-}
-
 /* ---- editorial reading (Writing, event pages, reflections) ---- */
 
 .prose-editorial {
@@ -359,34 +304,6 @@ body {
   display: flex;
   align-items: center;
   gap: 0.55rem;
-}
-
-.lang-switch {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.15rem;
-  padding: 0.3rem 0.4rem;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-s);
-  background: var(--bg-raised);
-  font-family: var(--font-sans), sans-serif;
-  font-size: 0.82rem;
-  line-height: 1.2;
-  text-decoration: none;
-  color: var(--ink-muted);
-  transition: color 0.15s ease, border-color 0.15s ease;
-}
-.lang-switch:hover {
-  color: var(--ink);
-  border-color: var(--border-strong);
-}
-
-.lang-switch .lang-active {
-  color: var(--ink);
-  font-weight: 600;
-}
-[dir="rtl"] .lang-switch .lang-latin {
-  font-family: var(--font-sans), sans-serif;
 }
 
 .header-cta {
@@ -707,19 +624,6 @@ body {
   max-width: 26rem;
 }
 
-.site-footer-line + .site-footer-lang {
-  margin-top: 0.9rem;
-}
-
-.site-footer-lang a {
-  color: var(--accent);
-  text-decoration: none;
-  font-family: var(--font-fa), var(--font-sans), sans-serif;
-}
-.site-footer-lang a:hover {
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
 
 .site-footer-links {
   list-style: none;
@@ -2191,10 +2095,6 @@ body {
   padding: 0.18rem 0.5rem;
 }
 
-[dir="rtl"] .journey-entry-tech li {
-  direction: ltr;
-  font-family: var(--font-mono), monospace;
-}
 
 .journey-entry-links {
   margin-top: 1.1rem;

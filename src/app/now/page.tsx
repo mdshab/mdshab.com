@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 
 import { SiteHeader } from "@/components/navigation/site-header";
 import { SiteFooter } from "@/components/navigation/site-footer";
-import { CommandPalette } from "@/components/command-palette/command-palette";
 import { now } from "@/content/mind/mind";
 
 export const metadata: Metadata = {
@@ -25,7 +24,6 @@ export default function NowPage() {
   return (
     <>
       <SiteHeader />
-      <CommandPalette />
       <main id="main" className="page">
         <header className="page-header">
           <p className="page-kicker mono-meta">A living page</p>

@@ -3,7 +3,6 @@ import Link from "next/link";
 
 import { SiteHeader } from "@/components/navigation/site-header";
 import { SiteFooter } from "@/components/navigation/site-footer";
-import { CommandPalette } from "@/components/command-palette/command-palette";
 import {
   SpatialTimeline,
   TimelineList,
@@ -64,7 +63,6 @@ export default async function HumanityPage({
   return (
     <>
       <SiteHeader />
-      <CommandPalette />
       <main id="main" className="page">
         <header className="page-header">
           <p className="page-kicker mono-meta">

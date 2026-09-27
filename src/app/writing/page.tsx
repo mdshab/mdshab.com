@@ -3,7 +3,6 @@ import Link from "next/link";
 
 import { SiteHeader } from "@/components/navigation/site-header";
 import { SiteFooter } from "@/components/navigation/site-footer";
-import { CommandPalette } from "@/components/command-palette/command-palette";
 import { getPublishedArticles } from "@/content/writing";
 import { formatDate } from "@/lib/format";
 
@@ -19,7 +18,6 @@ export default function WritingPage() {
   return (
     <>
       <SiteHeader />
-      <CommandPalette />
       <main id="main" className="page">
         <header className="page-header">
           <p className="page-kicker mono-meta">Long-form</p>

@@ -55,7 +55,7 @@ export const now: Now = {
   items: [
     {
       label: "Building",
-      value: "This website — mdshab.com, as a personal knowledge graph",
+      value: "mdshab.com — my professional platform, still growing its knowledge graph",
     },
     {
       label: "Working on",

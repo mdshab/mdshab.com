@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 
 import { SiteHeader } from "@/components/navigation/site-header";
 import { SiteFooter } from "@/components/navigation/site-footer";
-import { CommandPalette } from "@/components/command-palette/command-palette";
 import { EventCard } from "@/components/humanity/timeline";
 import {
   getEvent,
@@ -57,7 +56,6 @@ export default async function EventPage({ params }: EventPageProps) {
   return (
     <>
       <SiteHeader />
-      <CommandPalette />
       <main id="main" className="page">
         <article className="event-page">
           <nav aria-label="Breadcrumb" className="breadcrumb mono-meta">

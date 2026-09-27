@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 
 import { SiteHeader } from "@/components/navigation/site-header";
 import { SiteFooter } from "@/components/navigation/site-footer";
-import { CommandPalette } from "@/components/command-palette/command-palette";
 import { BreathingExercise } from "@/components/mind/breathing-exercise";
 import { reflections } from "@/content/mind";
 
@@ -16,7 +15,6 @@ export default function MindPage() {
   return (
     <>
       <SiteHeader />
-      <CommandPalette />
       <main id="main" className="page mind-page">
         <header className="mind-header">
           <h1 className="mind-title">Be here.</h1>

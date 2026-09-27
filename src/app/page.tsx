@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 
 import { SiteHeader } from "@/components/navigation/site-header";
 import { SiteFooter } from "@/components/navigation/site-footer";
-import { CommandPalette } from "@/components/command-palette/command-palette";
 import { HomeMain, type HomeContent } from "@/components/home/home-sections";
 import { getPublishedArticles } from "@/content/writing";
 import { caseStudies, featuredCaseStudyIds } from "@/content/work";
@@ -92,7 +91,6 @@ export default function HomePage() {
   return (
     <>
       <SiteHeader />
-      <CommandPalette />
       <HomeMain content={content} />
       <SiteFooter />
     </>

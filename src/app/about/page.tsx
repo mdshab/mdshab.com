@@ -3,7 +3,6 @@ import Link from "next/link";
 
 import { SiteHeader } from "@/components/navigation/site-header";
 import { SiteFooter } from "@/components/navigation/site-footer";
-import { CommandPalette } from "@/components/command-palette/command-palette";
 import { site } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -26,7 +25,6 @@ export default function AboutPage() {
   return (
     <>
       <SiteHeader />
-      <CommandPalette />
       <main id="main" className="page">
         <div className="about-page">
           <header className="page-header">

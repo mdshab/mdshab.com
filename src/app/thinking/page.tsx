@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 
 import { SiteHeader } from "@/components/navigation/site-header";
 import { SiteFooter } from "@/components/navigation/site-footer";
-import { CommandPalette } from "@/components/command-palette/command-palette";
 import {
   principles,
   abstractionLadder,
@@ -22,7 +21,6 @@ export default function ThinkingPage() {
   return (
     <>
       <SiteHeader />
-      <CommandPalette />
       <main id="main" className="page">
         <header className="page-header">
           <p className="page-kicker mono-meta">How I think</p>

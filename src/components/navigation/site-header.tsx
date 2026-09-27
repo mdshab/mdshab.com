@@ -1,10 +1,11 @@
 import Link from "next/link";
 
+import { CommandPalette } from "@/components/command-palette/command-palette";
 import { primaryNav } from "@/content/site";
 
 /**
  * Global navigation. Professional routes first; the personal library
- * lives in the footer.
+ * lives in the footer. The ⌘K search trigger docks in the actions row.
  */
 export function SiteHeader() {
   return (
@@ -20,6 +21,7 @@ export function SiteHeader() {
         </Link>
 
         <div className="site-header-actions">
+          <CommandPalette />
           <Link href="/contact" className="header-cta">
             Let&apos;s talk
           </Link>

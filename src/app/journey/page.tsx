@@ -3,7 +3,6 @@ import Link from "next/link";
 
 import { SiteHeader } from "@/components/navigation/site-header";
 import { SiteFooter } from "@/components/navigation/site-footer";
-import { CommandPalette } from "@/components/command-palette/command-palette";
 import {
   journeyChapters,
   entriesByChapter,
@@ -54,7 +53,6 @@ export default function JourneyPage() {
   return (
     <>
       <SiteHeader />
-      <CommandPalette />
       <main id="main" className="page">
         <header className="page-header">
           <p className="page-kicker mono-meta">A career in five chapters</p>

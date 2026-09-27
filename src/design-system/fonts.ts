@@ -12,6 +12,7 @@ export const sans = localFont({
   variable: "--font-sans",
   display: "swap",
   weight: "300 700",
+  preload: false,
 });
 
 /** Editorial serif — history, philosophy, long-form reading */
@@ -21,6 +22,7 @@ export const serif = localFont({
   display: "swap",
   weight: "200 800",
   style: "normal",
+  preload: false,
 });
 
 /** Monospace — dates, coordinates, technical metadata, terminal */
@@ -29,6 +31,7 @@ export const mono = localFont({
   variable: "--font-mono",
   display: "swap",
   weight: "100 800",
+  preload: false,
 });
 
 /** Aggregate for the root layout's html className. */

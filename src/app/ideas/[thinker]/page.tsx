@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 
 import { SiteHeader } from "@/components/navigation/site-header";
 import { SiteFooter } from "@/components/navigation/site-footer";
-import { CommandPalette } from "@/components/command-palette/command-palette";
 import {
   thinkers,
   getThinker,
@@ -42,7 +41,6 @@ export default async function ThinkerPage({ params }: ThinkerPageProps) {
   return (
     <>
       <SiteHeader />
-      <CommandPalette />
       <main id="main" className="page">
         <article className="thinker-page">
           <nav aria-label="Breadcrumb" className="breadcrumb mono-meta">

@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 
 import { SiteHeader } from "@/components/navigation/site-header";
 import { SiteFooter } from "@/components/navigation/site-footer";
-import { CommandPalette } from "@/components/command-palette/command-palette";
 import { caseStudies, getCaseStudy } from "@/content/work";
 import { getEvents } from "@/content/history";
 import { articles } from "@/content/writing";
@@ -64,7 +63,6 @@ export default async function CasePage({ params }: CasePageProps) {
   return (
     <>
       <SiteHeader />
-      <CommandPalette />
       <main id="main" className="page">
         <article className="project-page">
           <nav aria-label="Breadcrumb" className="breadcrumb mono-meta">

@@ -4,6 +4,7 @@ import { mergeClasses } from "@fluentui/react-components";
 import { SearchRegular } from "@fluentui/react-icons";
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 
 import { searchContent, type SearchItem } from "@/lib/search-index";
 
@@ -19,9 +20,11 @@ const kindLabels: Record<SearchItem["kind"], string> = {
 };
 
 /**
- * Global command palette. Opens with ⌘K / Ctrl+K, works with keyboard
- * and with touch (tap the search button). Results come from the shared
- * search index built over the whole content graph.
+ * Global command palette. The trigger docks in the site header (next to
+ * the primary CTA); when open, the dialog portals to <body> so the
+ * sticky header's backdrop-filter can't trap or clip it. Works with
+ * keyboard and touch. Results come from the shared search index built
+ * over the whole content graph.
  */
 export function CommandPalette() {
   const router = useRouter();
@@ -106,94 +109,96 @@ export function CommandPalette() {
         </kbd>
       </button>
 
-      {open && (
-        <div
-          className="palette-overlay"
-          onClick={(event) => {
-            if (event.target === event.currentTarget) close();
-          }}
-        >
+      {open &&
+        createPortal(
           <div
-            className="palette-panel"
-            role="dialog"
-            aria-modal="true"
-            aria-label="Search the site"
+            className="palette-overlay"
+            onClick={(event) => {
+              if (event.target === event.currentTarget) close();
+            }}
           >
-            <div className="palette-input-row">
-              <SearchRegular aria-hidden="true" className="palette-input-icon" />
-              <input
-                ref={inputRef}
-                type="text"
-                role="combobox"
-                aria-expanded={results.length > 0}
-                aria-controls="palette-results"
-                aria-activedescendant={
-                  results[activeIndex]
-                    ? `palette-option-${activeIndex}`
-                    : undefined
-                }
-                aria-label="Search events, thinkers, questions, articles"
-                placeholder="Search events, thinkers, questions…"
-                value={query}
-                onChange={(event) => {
-                  setQuery(event.target.value);
-                  setActiveIndex(0);
-                }}
-                onKeyDown={onInputKeyDown}
-                autoComplete="off"
-                spellCheck={false}
-              />
-              <kbd className="palette-kbd" aria-hidden="true">
-                esc
-              </kbd>
-            </div>
+            <div
+              className="palette-panel"
+              role="dialog"
+              aria-modal="true"
+              aria-label="Search the site"
+            >
+              <div className="palette-input-row">
+                <SearchRegular aria-hidden="true" className="palette-input-icon" />
+                <input
+                  ref={inputRef}
+                  type="text"
+                  role="combobox"
+                  aria-expanded={results.length > 0}
+                  aria-controls="palette-results"
+                  aria-activedescendant={
+                    results[activeIndex]
+                      ? `palette-option-${activeIndex}`
+                      : undefined
+                  }
+                  aria-label="Search events, thinkers, questions, articles"
+                  placeholder="Search events, thinkers, questions…"
+                  value={query}
+                  onChange={(event) => {
+                    setQuery(event.target.value);
+                    setActiveIndex(0);
+                  }}
+                  onKeyDown={onInputKeyDown}
+                  autoComplete="off"
+                  spellCheck={false}
+                />
+                <kbd className="palette-kbd" aria-hidden="true">
+                  esc
+                </kbd>
+              </div>
 
-            {query && results.length === 0 && (
-              <p className="palette-empty">Nothing found for “{query}”.</p>
-            )}
+              {query && results.length === 0 && (
+                <p className="palette-empty">Nothing found for “{query}”.</p>
+              )}
 
-            {!query && (
-              <p className="palette-hint">
-                Try “paper”, “stoic”, “Kubernetes”, “Mansa Musa” — or a
-                section name.
-              </p>
-            )}
+              {!query && (
+                <p className="palette-hint">
+                  Try “paper”, “stoic”, “Kubernetes”, “Mansa Musa” — or a
+                  section name.
+                </p>
+              )}
 
-            {results.length > 0 && (
-              <ul id="palette-results" className="palette-results" ref={listRef} role="listbox" aria-label="Search results">
-                {results.map((item, index) => (
-                  <li key={item.id} role="none">
-                    <button
-                      type="button"
-                      id={`palette-option-${index}`}
-                      role="option"
-                      aria-selected={index === activeIndex}
-                      className={mergeClasses(
-                        "palette-option",
-                        index === activeIndex && "palette-option-active",
-                      )}
-                      onClick={() => go(item)}
-                      onMouseEnter={() => setActiveIndex(index)}
-                    >
-                      <span className={`palette-kind palette-kind-${item.kind}`}>
-                        {kindLabels[item.kind]}
-                      </span>
-                      <span className="palette-option-text">
-                        <span className="palette-option-title">{item.title}</span>
-                        {item.subtitle && (
-                          <span className="palette-option-subtitle">
-                            {item.subtitle}
-                          </span>
+              {results.length > 0 && (
+                <ul id="palette-results" className="palette-results" ref={listRef} role="listbox" aria-label="Search results">
+                  {results.map((item, index) => (
+                    <li key={item.id} role="none">
+                      <button
+                        type="button"
+                        id={`palette-option-${index}`}
+                        role="option"
+                        aria-selected={index === activeIndex}
+                        className={mergeClasses(
+                          "palette-option",
+                          index === activeIndex && "palette-option-active",
                         )}
-                      </span>
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div>
-        </div>
-      )}
+                        onClick={() => go(item)}
+                        onMouseEnter={() => setActiveIndex(index)}
+                      >
+                        <span className={`palette-kind palette-kind-${item.kind}`}>
+                          {kindLabels[item.kind]}
+                        </span>
+                        <span className="palette-option-text">
+                          <span className="palette-option-title">{item.title}</span>
+                          {item.subtitle && (
+                            <span className="palette-option-subtitle">
+                              {item.subtitle}
+                            </span>
+                          )}
+                        </span>
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          </div>,
+          document.body,
+        )}
     </>
   );
 }

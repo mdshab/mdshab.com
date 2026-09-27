@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 
 import { FluentProviderWrapper } from "@/components/providers/fluent-provider";
 import { siteFonts } from "@/design-system/fonts";
+import { siteMeta, site } from "@/content/site";
 
 import "./globals.css";
 
@@ -10,39 +11,58 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://mdshab.com";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "mdshab.com — three thousand years, one moment",
+    default: siteMeta.title,
     template: "%s — mdshab.com",
   },
-  description:
-    "A personal knowledge site connecting 3,000 years of history, the history of ideas, and a career in telecommunications and cloud infrastructure.",
+  description: siteMeta.description,
   keywords: [
-    "history",
-    "philosophy",
+    "technical product manager",
     "cloud infrastructure",
-    "telecom",
-    "VoIP",
     "product management",
+    "platform products",
+    "AI infrastructure",
+    "VoIP",
+    "network engineering",
   ],
   openGraph: {
     type: "website",
     siteName: "mdshab.com",
     url: siteUrl,
-    title: "mdshab.com — three thousand years, one moment",
-    description:
-      "History, ideas, and one infrastructure career — connected as a knowledge graph.",
+    title: siteMeta.ogTitle,
+    description: siteMeta.ogDescription,
   },
   twitter: {
     card: "summary_large_image",
-    title: "mdshab.com",
-    description:
-      "History, ideas, and one infrastructure career — connected as a knowledge graph.",
+    title: siteMeta.ogTitle,
+    description: siteMeta.ogDescription,
   },
   robots: { index: true, follow: true },
+  alternates: {
+    languages: { en: "/", fa: "/fa" },
+  },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#151412",
-  colorScheme: "dark",
+  themeColor: "#faf9f6",
+  colorScheme: "light",
+};
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: site.name,
+  alternateName: "mdshab",
+  url: siteUrl,
+  jobTitle: "Technical Product Manager",
+  description: siteMeta.ogDescription,
+  knowsAbout: [
+    "Cloud infrastructure",
+    "Product management",
+    "Network engineering",
+    "VoIP and telecommunications",
+    "AI infrastructure",
+  ],
+  sameAs: ["https://github.com/mdshab"],
 };
 
 export default function RootLayout({
@@ -51,13 +71,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${siteFonts.sans.variable} ${siteFonts.serif.variable} ${siteFonts.mono.variable}`}>
+    <html
+      lang="en"
+      className={`${siteFonts.sans.variable} ${siteFonts.serif.variable} ${siteFonts.mono.variable} ${siteFonts.fa.variable}`}
+    >
       <body>
         <FluentProviderWrapper>
           <a href="#main" className="skip-link">
             Skip to content
           </a>
           {children}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+          />
         </FluentProviderWrapper>
       </body>
     </html>

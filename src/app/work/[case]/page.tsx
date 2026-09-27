@@ -5,48 +5,63 @@ import { notFound } from "next/navigation";
 import { SiteHeader } from "@/components/navigation/site-header";
 import { SiteFooter } from "@/components/navigation/site-footer";
 import { CommandPalette } from "@/components/command-palette/command-palette";
-import { labProjects, getProject } from "@/content/lab";
+import { caseStudies, getCaseStudy } from "@/content/work";
 import { getEvents } from "@/content/history";
 import { articles } from "@/content/writing";
 
-interface ProjectPageProps {
-  params: Promise<{ project: string }>;
+interface CasePageProps {
+  params: Promise<{ case: string }>;
 }
 
 export function generateStaticParams() {
-  return labProjects.map((project) => ({ project: project.id }));
+  return caseStudies.map((study) => ({ case: study.id }));
 }
 
 export async function generateMetadata({
   params,
-}: ProjectPageProps): Promise<Metadata> {
-  const { project: id } = await params;
-  const project = getProject(id);
-  if (!project) return { title: "Project not found" };
-  return { title: project.title, description: project.summary };
+}: CasePageProps): Promise<Metadata> {
+  const { case: id } = await params;
+  const study = getCaseStudy(id);
+  if (!study) return { title: "Case study not found" };
+  return {
+    title: study.title,
+    description: study.summary,
+    alternates: {
+      canonical: `/work/${study.id}`,
+      languages: {
+        en: `/work/${study.id}`,
+        fa: `/fa/work/${study.id}`,
+      },
+    },
+  };
 }
 
 const sectionTitles: Record<string, string> = {
   context: "Context",
   problem: "The problem",
   "why-it-mattered": "Why it mattered",
+  "my-role": "My role",
   constraints: "Constraints",
+  discovery: "Discovery",
   options: "Options considered",
   decision: "The decision",
   architecture: "Architecture",
   "product-reasoning": "Product reasoning",
   "trade-offs": "Trade-offs",
+  execution: "Execution",
   outcome: "Outcome",
   "what-i-learned": "What I learned",
 };
 
-export default async function ProjectPage({ params }: ProjectPageProps) {
-  const { project: id } = await params;
-  const project = getProject(id);
-  if (!project) notFound();
+const trackLabels = { practice: "Practice", build: "Build" } as const;
 
-  const relatedHistory = getEvents(project.relatedHistory ?? []);
-  const relatedArticles = (project.relatedArticles ?? [])
+export default async function CasePage({ params }: CasePageProps) {
+  const { case: id } = await params;
+  const study = getCaseStudy(id);
+  if (!study) notFound();
+
+  const relatedHistory = getEvents(study.relatedHistory ?? []);
+  const relatedArticles = (study.relatedArticles ?? [])
     .map((slug) => articles.find((a) => a.slug === slug))
     .filter((a): a is NonNullable<typeof a> => Boolean(a));
 
@@ -57,32 +72,38 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       <main id="main" className="page">
         <article className="project-page">
           <nav aria-label="Breadcrumb" className="breadcrumb mono-meta">
-            <Link href="/lab">Lab</Link>
+            <Link href="/work">Work</Link>
             <span aria-hidden="true"> / </span>
-            <span>{project.title}</span>
+            <span>{study.title}</span>
           </nav>
 
-          <header className="project-header">
-            <p className="project-status mono-meta">
-              {project.status} · {project.kind} · {project.period}
+          <header className="case-header">
+            <p className="case-meta mono-meta">
+              <span>{trackLabels[study.track]}</span>
+              <span>{study.period}</span>
             </p>
-            <h1 className="page-title">{project.title}</h1>
-            <p className="page-lede">{project.summary}</p>
+            <h1 className="case-title">{study.title}</h1>
+            <p className="case-lede">{study.lede}</p>
+            <p className="case-role-line mono-meta">
+              {study.role} — {study.organization}
+            </p>
           </header>
 
           <div className="project-toc" aria-label="Case study outline">
             <p className="mono-meta project-toc-label">Outline</p>
             <ol className="project-toc-list">
-              {project.sections.map((section) => (
+              {study.sections.map((section) => (
                 <li key={section.heading}>
-                  <a href={`#${section.heading}`}>{sectionTitles[section.heading]}</a>
+                  <a href={`#${section.heading}`}>
+                    {sectionTitles[section.heading]}
+                  </a>
                 </li>
               ))}
             </ol>
           </div>
 
           <div className="prose-editorial project-body">
-            {project.sections.map((section) => (
+            {study.sections.map((section) => (
               <section key={section.heading} id={section.heading}>
                 <h2>{sectionTitles[section.heading]}</h2>
                 <p>{section.body}</p>
@@ -93,7 +114,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           <aside className="project-meta">
             <p className="mono-meta project-toc-label">Technologies</p>
             <ul className="journey-entry-tech">
-              {project.technologies.map((tech) => (
+              {study.technologies.map((tech) => (
                 <li key={tech}>{tech}</li>
               ))}
             </ul>

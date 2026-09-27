@@ -14,7 +14,11 @@ import { articles } from "@/content/writing";
 export const metadata: Metadata = {
   title: "Journey",
   description:
-    "From a home computer and a mailed CD to cloud product management — a career told in five chapters.",
+    "From a home computer and a mailed CD to cloud product management — the path that gives the product judgment its technical depth, in five chapters.",
+  alternates: {
+    canonical: "/journey",
+    languages: { en: "/journey", fa: "/fa/journey" },
+  },
 };
 
 const ladder = [
@@ -34,12 +38,12 @@ const ladder = [
     example: "Regions, IaaS, elastic scale",
   },
   {
-    rung: "Cloud Native",
+    rung: "Cloud native",
     question: "Servers stop mattering.",
     example: "Containers, orchestration, services",
   },
   {
-    rung: "Intelligent Infrastructure",
+    rung: "Intelligent infrastructure",
     question: "Configuration starts writing itself.",
     example: "Automation, AI-assisted operations",
   },
@@ -57,9 +61,11 @@ export default function JourneyPage() {
           <p className="page-kicker mono-meta">A career in five chapters</p>
           <h1 className="page-title">Journey</h1>
           <p className="page-lede">
-            Twenty years from analog systems to cloud products — told
-            chronologically, with the history that rhymes. Only dated facts
-            carry dates; the early years are honestly untimed.
+            The unusual part of this career is the direction: up the whole
+            stack, from analog systems to cloud products, one rung at a time.
+            This is why the product judgment has the smell of the datacenter
+            on it — told chronologically, with the history that rhymes. Only
+            dated facts carry dates; the early years are honestly untimed.
           </p>
         </header>
 
@@ -208,7 +214,7 @@ export default function JourneyPage() {
         </section>
 
         {/* abstraction ladder */}
-        <section className="ladder" aria-labelledby="ladder-h">
+        <section className="ladder" aria-labelledby="ladder-h" id="abstraction-ladder">
           <h2 id="ladder-h" className="page-title-sm">
             The abstraction ladder
           </h2>

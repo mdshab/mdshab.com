@@ -2,7 +2,7 @@ import { getPublishedArticles } from "@/content/writing";
 import { historyEvents, threads } from "@/content/history";
 import { thinkers, philosophicalQuestions } from "@/content/ideas";
 import { journeyEntries, journeyChapters } from "@/content/journey";
-import { labProjects } from "@/content/lab";
+import { caseStudies } from "@/content/work";
 
 export interface SearchItem {
   id: string;
@@ -30,14 +30,16 @@ function buildIndex(): SearchItem[] {
 
   /* Static pages */
   const pages: Array<[string, string, string]> = [
-    ["Home", "/", "Three thousand years, one moment"],
+    ["Home", "/", "Technical product management for cloud and AI infrastructure"],
+    ["Work", "/work", "Case studies from infrastructure and product work"],
+    ["How I think", "/thinking", "Principles and models, earned in infrastructure"],
     ["Journey", "/journey", "From a home computer to cloud product management"],
+    ["Writing", "/writing", "Essays on infrastructure, history and ideas"],
+    ["About", "/about", "Who is behind this site"],
+    ["Contact", "/contact", "Start a conversation"],
     ["Humanity", "/humanity", "History 1000 BCE to present, as threads"],
     ["Ideas", "/ideas", "Thinkers and questions across traditions"],
     ["Mind", "/mind", "A quiet corner: breathe, reflect, be here"],
-    ["Lab", "/lab", "Infrastructure and product case studies"],
-    ["Writing", "/writing", "Essays on infrastructure, history and ideas"],
-    ["About", "/about", "Who is behind this site"],
     ["Now", "/now", "What I'm doing currently"],
   ];
   for (const [title, href, subtitle] of pages) {
@@ -121,15 +123,15 @@ function buildIndex(): SearchItem[] {
     });
   }
 
-  /* Lab */
-  for (const project of labProjects) {
+  /* Case studies */
+  for (const study of caseStudies) {
     items.push({
-      id: `project:${project.id}`,
-      title: project.title,
+      id: `project:${study.id}`,
+      title: study.title,
       kind: "project",
-      subtitle: project.summary,
-      href: `/lab/${project.id}`,
-      haystack: `${project.title} ${project.summary} ${project.technologies.join(" ")}`.toLowerCase(),
+      subtitle: study.summary,
+      href: `/work/${study.id}`,
+      haystack: `${study.title} ${study.summary} ${study.technologies.join(" ")}`.toLowerCase(),
     });
   }
 
@@ -164,7 +166,6 @@ export function searchContent(query: string, limit = 12): SearchItem[] {
     return getSearchIndex().filter((item) => item.kind === "page");
   }
   const terms = q.split(/\s+/);
-
   const scored: Array<{ item: SearchItem; score: number }> = [];
   for (const item of getSearchIndex()) {
     let score = 0;

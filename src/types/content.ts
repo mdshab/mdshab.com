@@ -182,12 +182,15 @@ export type CaseStudySection =
   | "context"
   | "problem"
   | "why-it-mattered"
+  | "my-role"
   | "constraints"
+  | "discovery"
   | "options"
   | "decision"
   | "architecture"
   | "product-reasoning"
   | "trade-offs"
+  | "execution"
   | "outcome"
   | "what-i-learned";
 
@@ -199,6 +202,34 @@ export interface LabProject {
   period: string;
   summary: string;
   /** Ordered narrative sections — see CaseStudySection */
+  sections: { heading: CaseStudySection; body: string }[];
+  technologies: string[];
+  relatedArticles?: string[];
+  relatedHistory?: string[];
+}
+
+/* ------------------------------------ Work ----------------------------------- */
+
+/**
+ * Professional case study. Facts stay inside the boundaries published on
+ * this site (see journey + about): employers already named there may be
+ * named here; everything else is described at the level of judgment, not
+ * confidential internals. Outcomes are qualitative unless a number was
+ * already public.
+ */
+export interface CaseStudy {
+  id: string;
+  title: string;
+  /** One-line card description */
+  summary: string;
+  /** "practice" = professional work, "build" = something I built in public */
+  track: "practice" | "build";
+  domain: "cloud" | "product" | "infrastructure" | "telecom" | "web";
+  period: string;
+  role: string;
+  organization: string;
+  /** Shown as the opening line of the detail page */
+  lede: string;
   sections: { heading: CaseStudySection; body: string }[];
   technologies: string[];
   relatedArticles?: string[];

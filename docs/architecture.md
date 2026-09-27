@@ -9,35 +9,47 @@ amount of hydration for interactive islands.
 ```
 src/
 ├── app/                    # Routes (App Router)
-│   ├── layout.tsx          # Metadata, fonts, FluentProvider, skip link
-│   ├── page.tsx            # Homepage (four narrative acts)
+│   ├── layout.tsx          # Metadata, fonts, FluentProvider, JSON-LD, skip link
+│   ├── page.tsx            # Homepage (professional narrative, 10 sections)
+│   ├── opengraph-image.tsx # Build-time generated OG image (satori)
 │   ├── globals.css         # Design tokens + all custom styling
-│   ├── sitemap.ts          # 179-URL sitemap from content modules
+│   ├── sitemap.ts          # ~190-URL sitemap with hreflang alternates
 │   ├── robots.ts
 │   ├── not-found.tsx
-│   ├── humanity/           # Timeline + [event] detail pages
+│   ├── work/               # Case studies + [case] detail (was /lab)
+│   ├── thinking/           # Principles + models
+│   ├── contact/            # Conversion page
+│   ├── fa/                 # Persian edition (layout + home, work, [case],
+│   │                       #   thinking, journey, about, contact)
+│   ├── humanity/           # Timeline + [event] detail pages (EN)
 │   ├── journey/            # Career chapters
-│   ├── ideas/              # [thinker] + questions/[question]
-│   ├── mind/               # Breathing + reflections
-│   ├── lab/                # Case studies + [project]
+│   ├── ideas/              # [thinker] + questions/[question] (EN)
+│   ├── mind/               # Breathing + reflections (EN)
 │   ├── writing/            # Article list + [article] (MDX bodies)
 │   ├── about/  now/
 ├── components/
-│   ├── command-palette/    # ⌘K global search (client component)
+│   ├── command-palette/    # ⌘K global search (client component, EN pages)
+│   ├── home/               # HomeMain — shared EN/FA homepage sections
 │   ├── humanity/           # SpatialTimeline, EventCard, TimelineList
 │   ├── mind/               # BreathingExercise (motion, reduced-motion aware)
-│   ├── navigation/         # SiteHeader, SiteFooter
+│   ├── navigation/         # SiteHeader, SiteFooter (locale-aware)
+│   ├── icons.tsx           # Inline SVG channel icons
 │   └── providers/          # FluentProvider wrapper ("use client")
 ├── content/                # The content graph (typed data, no CMS)
+│   ├── site.ts             # Identity, contact channels, nav model
+│   ├── home.ts             # Homepage copy (EN)
+│   ├── contact.ts          # Contact page copy (EN)
+│   ├── work/               # Case studies (EN)
+│   ├── thinking/           # Principles + models (EN)
+│   ├── i18n/fa.ts          # Persian edition content (home, work, thinking…)
 │   ├── history/            # 115 events in 4 era files + threads + index
 │   ├── ideas/              # 34 thinkers, 10 questions
 │   ├── journey/            # 5 chapters, 11 entries
-│   ├── lab/                # 4 projects (8-section case studies)
 │   ├── mind/               # 6 reflections + the Now list
 │   └── writing/            # 6 article metas + MDX bodies
 ├── design-system/
-│   ├── theme.ts            # mdshab theme on a Fluent dark theme
-│   └── fonts.ts            # next/font/local, siteFonts export
+│   ├── theme.ts            # mdshab light theme on a Fluent light theme
+│   └── fonts.ts            # next/font/local incl. Vazirmatn (fa)
 ├── lib/
 │   ├── format.ts           # formatYear (BCE), formatEventRange, formatDate
 │   └── search-index.ts     # ⌘K index built from the content graph
@@ -48,8 +60,8 @@ src/
 ## Rendering strategy
 
 - Everything is static. `generateStaticParams` prerenders all 115 event
-  pages, 34 thinker pages, 10 question pages, 4 lab projects and 6
-  articles. The production build emits 183 pages.
+  pages, 34 thinker pages, 10 question pages, 4+4 case study pages (EN
+  + FA) and 6 articles. The production build emits ~196 pages.
 - `/humanity` accepts `?thread=&region=&category=` search params. The page
   reads them via `await searchParams` (Next 16 async request API) and
   renders filtered static HTML per request; filter "navigation" is plain
@@ -58,34 +70,51 @@ src/
   `src/app/writing/[article]/page.tsx` and mapped by slug. `next.config.ts`
   sets `providerImportSource: null` so the MDX output has no
   `@mdx-js/react` dependency — articles are React Server Components.
+- `/lab/*` URLs 308-redirect to their successors under `/work` and
+  `/thinking` (`next.config.ts` redirects).
+
+## Localization architecture
+
+English pages live at the root (`/work`, `/thinking`, …); the Persian
+edition mirrors the professional core under `/fa/…`. The root layout owns
+`<html lang="en">`; the fa subtree wraps its pages in
+`<div lang="fa" dir="rtl">`, which scopes Vazirmatn and mirrors layout
+via CSS logical properties. FA pages render through the *same* server
+components (e.g. `HomeMain`) fed from `content/i18n/fa.ts`, so structure
+cannot drift between locales. Every bilingual route declares
+`alternates.languages` metadata (hreflang) and the sitemap emits
+`xhtml:link` alternates. The command palette is EN-only (it searches the
+EN content graph); fa pages therefore omit it.
 
 ## Theming
 
 `FluentProvider` wraps the app through a `"use client"` boundary
 (`src/components/providers/fluent-provider.tsx`). The mdshab theme spreads
-overrides over `createDarkTheme(webBrandRamp)`:
+overrides over `createLightTheme(brandRamp)`:
 
-- surfaces `#151412` / raised `#1c1a17`, ink `#ece5d6`
-- section accents: history `#d4a24e`, tech `#6fb3c4`, ideas `#a493c7`,
-  mind `#93ac99`
+- surfaces `#faf9f6` / raised `#ffffff`, ink `#1a1d23`
+- brand ramp: deep cobalt, primary `#1e58cc`
+- the provider inherits the site font stack (`--font-family-base`
+  override) so Fluent primitives never fall back to Segoe UI
 
 Most visible styling does not come from Fluent components — Fluent supplies
-the accessible interaction primitives and token system, while the archive ×
-terminal × editorial look is custom CSS in `globals.css` driven by CSS
-custom properties.
+the accessible interaction primitives and token system, while the
+editorial look is custom CSS in `globals.css` driven by CSS custom
+properties. See [design-system.md](design-system.md).
 
 Fonts are self-hosted with `next/font/local` (variable woff2 files under
-`public/fonts/`), exposed as CSS variables `--font-sans`, `--font-serif`,
-`--font-mono`.
+`public/fonts/`, Vazirmatn excluded from preload so EN pages never fetch
+it), exposed as CSS variables `--font-sans`, `--font-serif`,
+`--font-mono`, `--font-fa`.
 
 ## Interactive islands
 
 Only three components ship JavaScript:
 
-1. **CommandPalette** — global ⌘K/Ctrl+K. The search index
+1. **CommandPalette** — global ⌘K/Ctrl+K (EN pages only). The search index
    (`src/lib/search-index.ts`) is built from the same content modules the
-   pages use: 9 static pages + every event, thread, thinker, question,
-   journey entry, lab project and article. implements the WAI-ARIA
+   pages use: static pages + every event, thread, thinker, question,
+   journey entry, case study and article. Implements the WAI-ARIA
    combobox pattern (`role=combobox`, `aria-activedescendant`,
    `role=listbox`/`option`), Arrow/Enter/Escape keys, and navigates with
    `router.push`. An empty query returns the section pages as entry
@@ -104,21 +133,26 @@ is links and CSS.
 `/humanity` renders the same dataset twice:
 
 - **Spatial timeline** (`.timeline-spatial-only`): a horizontally
-  scrollable band, positioned with `d3-scale`
-  (`scaleLinear` domain `[-1200, 2030]` → `[0, 100]%`). Cards alternate
-  above/below a center rail with a `--stagger` custom property for
-  collision avoidance. Inside an `overflow-x: auto` group with
-  `tabIndex=0` and an explanatory `aria-label`, it is hidden below
-  64rem and from users who don't want it.
+  scrollable band, positioned with `d3-scale` (`scaleLinear` domain
+  `[-1200, 2030]` → `[0, 100]%`) via a `--spatial-x` translate custom
+  property (logical-property safe). Cards alternate above/below a center
+  rail with a `--stagger` custom property for collision avoidance.
+  Inside an `overflow-x: auto` group with `tabIndex=0` and an
+  explanatory `aria-label`, it is hidden below 64rem.
 - **Chronological list** (`.timeline-list-only`): a semantic `<ol>` of
   event cards, the only view on mobile (`< 64rem`) — and the one screen
-  readers and text browsers get on desktop (`display: none` is visual
-  only; the list is also the accessible fallback because the spatial band
-  is `aria-hidden`-free but wrapped in a labeled group pointing to the
-  list).
+  readers and text browsers get on desktop.
 
 Filters keep both views in sync because both derive from the same
 filtered array.
+
+## OG image generation
+
+`app/opengraph-image.tsx` renders the share card at build time with
+`next/og` (satori) using subset Space Grotesk TTFs from `assets/`
+(static instances cut from the variable font with fonttools — satori
+does not accept woff2/variable fonts). Twitter metadata falls back to
+the same image.
 
 ## Build pipeline
 

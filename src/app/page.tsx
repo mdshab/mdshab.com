@@ -1,95 +1,100 @@
-import Link from "next/link";
+import type { Metadata } from "next";
 
 import { SiteHeader } from "@/components/navigation/site-header";
 import { SiteFooter } from "@/components/navigation/site-footer";
 import { CommandPalette } from "@/components/command-palette/command-palette";
+import { HomeMain, type HomeContent } from "@/components/home/home-sections";
+import { getPublishedArticles } from "@/content/writing";
+import { caseStudies, featuredCaseStudyIds } from "@/content/work";
+import {
+  hero,
+  selectedImpact,
+  helpWith,
+  homeThinking,
+  journeyTeaser,
+  selectedWriting,
+  beyondWork,
+  finalCta,
+} from "@/content/home";
+import { siteMeta } from "@/content/site";
+
+export const metadata: Metadata = {
+  title: siteMeta.title,
+  description: siteMeta.description,
+  alternates: {
+    canonical: "/",
+    languages: { en: "/", fa: "/fa" },
+  },
+  openGraph: {
+    type: "website",
+    title: siteMeta.ogTitle,
+    description: siteMeta.ogDescription,
+    url: "/",
+  },
+};
+
+const trackLabels: Record<string, string> = {
+  practice: "Practice",
+  build: "Build",
+};
+
+const depth = {
+  title: "The stack under the product",
+  lede: "One career, climbed bottom to top. Product decisions made here are grounded in what each layer actually does when it fails — because I have been the person it failed on.",
+  layers: [
+    { name: "Product", note: "Direction, promises, defaults — since 2022" },
+    { name: "Cloud & platform", note: "Fleets, control planes, abstractions — 2019" },
+    { name: "Networking", note: "Routing, switching, the paths packets take — 2012" },
+    { name: "Telecom", note: "Voice, signaling, the century of copper — 2007" },
+    { name: "Systems", note: "The physical layer that answers eventually" },
+  ],
+  coda: "Most product managers learn this stack from slide decks. I learned it from pager alerts — which is why my roadmaps tend to remember the on-call rotation.",
+};
 
 export default function HomePage() {
+  const featured = featuredCaseStudyIds
+    .map((id) => caseStudies.find((c) => c.id === id))
+    .filter((c): c is NonNullable<typeof c> => Boolean(c));
+
+  const writing = getPublishedArticles()
+    .filter((a) =>
+      [
+        "why-infrastructure-products-are-different",
+        "what-infrastructure-taught-me",
+        "from-pbx-to-cloud-communications",
+      ].includes(a.slug),
+    )
+    .map((a) => ({ href: `/writing/${a.slug}`, title: a.title, desc: a.description }));
+
+  const content: HomeContent = {
+    hero,
+    selectedImpact,
+    helpWith,
+    featuredWork: {
+      title: "Featured work",
+      lede: "Three case studies from the practice — judgment, constraints, trade-offs — plus the site you're reading, documented like it matters.",
+      cta: { href: "/work", label: "All case studies" },
+      cards: featured.map((c) => ({
+        href: `/work/${c.id}`,
+        kind: trackLabels[c.track],
+        period: c.period,
+        title: c.title,
+        summary: c.summary,
+      })),
+    },
+    homeThinking,
+    depth,
+    journeyTeaser,
+    selectedWriting: { ...selectedWriting, english: true, articles: writing },
+    beyondWork,
+    finalCta,
+  };
+
   return (
     <>
       <SiteHeader />
       <CommandPalette />
-      <main id="main" className="home">
-        {/* ---------------------------------------------------------- */}
-        {/* Act I — The deep past                                       */}
-        {/* ---------------------------------------------------------- */}
-        <section className="home-act home-act-1" aria-labelledby="home-h1">
-          <p className="home-kicker mono-meta">A personal knowledge site</p>
-          <h1 id="home-h1" className="home-hero">
-            Three thousand years,
-            <br />
-            one moment.
-          </h1>
-          <p className="home-lede">
-            This site connects the long history of human civilization —
-            empires, ideas, inventions — with the history of ideas, and with
-            one career spent building communication infrastructure. It is a
-            knowledge graph, not a blog: every event, thinker and story here
-            is linked.
-          </p>
-          <div className="home-cta-row">
-            <Link href="/humanity" className="btn btn-primary">
-              Explore 3,000 years →
-            </Link>
-            <Link href="/journey" className="btn btn-ghost">
-              Or start with my journey
-            </Link>
-          </div>
-        </section>
-
-        {/* ---------------------------------------------------------- */}
-        {/* Act II — Ideas                                              */}
-        {/* ---------------------------------------------------------- */}
-        <section className="home-act home-act-2" aria-labelledby="home-ideas-h">
-          <h2 id="home-ideas-h" className="home-act-title">
-            Ideas are the oldest technology
-          </h2>
-          <p className="home-act-lede">
-            Questions about reality, freedom, suffering and the good life have
-            been asked on every continent, in every century.{" "}
-            <Link href="/ideas">Meet the thinkers</Link> who sharpened them —
-            from Athens to Nishapur to Kyoto — and{" "}
-            <Link href="/ideas">the questions themselves</Link>, framed so you
-            can hold your own answer.
-          </p>
-        </section>
-
-        {/* ---------------------------------------------------------- */}
-        {/* Act III — Industry & infrastructure                         */}
-        {/* ---------------------------------------------------------- */}
-        <section className="home-act home-act-3" aria-labelledby="home-infra-h">
-          <h2 id="home-infra-h" className="home-act-title">
-            Then industrial, then electronic, then connected
-          </h2>
-          <p className="home-act-lede">
-            Steam, telegraph, telephone, transistor, packet switching — the
-            modern world is a stack of communication machines. Follow the{" "}
-            <Link href="/humanity?thread=communication">communication thread</Link>{" "}
-            through the whole timeline, or read how a telephony career became
-            a cloud career in the{" "}
-            <Link href="/journey">Journey section</Link>.
-          </p>
-        </section>
-
-        {/* ---------------------------------------------------------- */}
-        {/* Act IV — Now                                                */}
-        {/* ---------------------------------------------------------- */}
-        <section className="home-act home-act-4" aria-labelledby="home-mind-h">
-          <p className="mono-meta home-mind-kicker">
-            All of it — the empires, the proofs, the packets — happened in
-            somebody&apos;s present tense.
-          </p>
-          <h2 id="home-mind-h" className="home-mind-title">
-            Three thousand years of history, and this moment is the only one
-            we&apos;re actually in.
-          </h2>
-          <div className="home-cta-row">
-            <Link href="/mind" className="btn btn-mind">
-              Enter Mind →
-            </Link>
-          </div>
-        </section>
-      </main>
+      <HomeMain content={content} />
       <SiteFooter />
     </>
   );

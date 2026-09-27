@@ -12,7 +12,7 @@ const kindLabels: Record<SearchItem["kind"], string> = {
   thinker: "Thinker",
   question: "Question",
   journey: "Journey",
-  project: "Lab",
+  project: "Work",
   article: "Writing",
   thread: "Thread",
   page: "Page",

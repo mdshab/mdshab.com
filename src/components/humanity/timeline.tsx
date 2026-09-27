@@ -97,7 +97,7 @@ export function SpatialTimeline({ events }: { events: HistoryEvent[] }) {
               <div
                 key={year}
                 className="spatial-timeline-tick"
-                style={{ left: `${scale(year)}%` }}
+                style={{ "--tick-x": `${scale(year)}%` } as React.CSSProperties}
               >
                 <span className="spatial-timeline-tick-label">{label}</span>
               </div>
@@ -116,7 +116,7 @@ export function SpatialTimeline({ events }: { events: HistoryEvent[] }) {
                   className={`spatial-event spatial-event-${above ? "above" : "below"}`}
                   style={
                     {
-                      left: `${x}%`,
+                      "--spatial-x": `${x}%`,
                       "--stagger": `${(index % 3) * 3.4}rem`,
                     } as React.CSSProperties
                   }

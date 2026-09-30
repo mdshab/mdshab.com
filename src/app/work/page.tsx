@@ -8,7 +8,7 @@ import { caseStudies } from "@/content/work";
 export const metadata: Metadata = {
   title: "Work — case studies",
   description:
-    "Case studies from twenty years of infrastructure and product work: cloud services at scale, network operations, telephony platforms, and this site. Judgment, constraints, trade-offs — described honestly.",
+    "Professional work across cloud product management, customer excellence, telecommunications, networks and infrastructure services, plus the design and implementation of this website.",
   alternates: {
     canonical: "/work"
   },
@@ -35,9 +35,10 @@ export default function WorkPage() {
           <p className="page-kicker mono-meta">Work</p>
           <h1 className="page-title">Case studies</h1>
           <p className="page-lede">
-            Each project in the same format: context, problem, my role,
-            constraints, decisions, trade-offs, outcome. Where a number
-            doesn&apos;t exist, none is invented.
+            Role overviews and case studies from cloud, customer excellence
+            and telecommunications. Each explains the scope, my contribution
+            and the decisions involved. A role overview is labeled as one;
+            project results appear only where they can be shared.
           </p>
         </header>
 

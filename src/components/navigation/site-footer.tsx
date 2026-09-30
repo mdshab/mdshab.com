@@ -14,9 +14,9 @@ export function SiteFooter() {
         <div className="site-footer-col">
           <p className="site-footer-title">{site.domain}</p>
           <p className="site-footer-line">
-            Technical PM for cloud infrastructure — Cloud Server, VPC,
-            Storage, Migration. Fifteen years in telecom, networking and
-            datacenters before product.
+            Technical product manager for cloud infrastructure. A background
+            in telecommunications, networks, systems, service development
+            and customer excellence.
           </p>
         </div>
         <div className="site-footer-col">

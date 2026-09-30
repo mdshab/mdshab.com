@@ -26,16 +26,22 @@ export default function ContactPage() {
           <p className="page-lede">{contactPage.lede}</p>
         </header>
 
-        <ul className="contact-intents">
-          {contactPage.intents.map((intent) => (
-            <li className="contact-intent" key={intent.title}>
-              <h2 className="contact-intent-title">{intent.title}</h2>
-              <p className="contact-intent-body">{intent.body}</p>
-            </li>
-          ))}
-        </ul>
-
         <div className="contact-channels">
+          {contact.linkedin && (
+            <a
+              href={contact.linkedin}
+              className="channel-card channel-card-primary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <LinkedInIcon />
+              <span>
+                <span className="channel-card-name">LinkedIn</span>
+                <br />
+                <span className="channel-card-handle">Message Mehdi Shabestari</span>
+              </span>
+            </a>
+          )}
           <a
             href={contact.github}
             className="channel-card"
@@ -49,21 +55,6 @@ export default function ContactPage() {
               <span className="channel-card-handle">github.com/mdshab</span>
             </span>
           </a>
-          {contact.linkedin && (
-            <a
-              href={contact.linkedin}
-              className="channel-card"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <LinkedInIcon />
-              <span>
-                <span className="channel-card-name">LinkedIn</span>
-                <br />
-                <span className="channel-card-handle">Mehdi Shabestari</span>
-              </span>
-            </a>
-          )}
           {contact.email && (
             <a href={`mailto:${contact.email}`} className="channel-card">
               <MailIcon />
@@ -75,6 +66,15 @@ export default function ContactPage() {
             </a>
           )}
         </div>
+
+        <ul className="contact-intents">
+          {contactPage.intents.map((intent) => (
+            <li className="contact-intent" key={intent.title}>
+              <h2 className="contact-intent-title">{intent.title}</h2>
+              <p className="contact-intent-body">{intent.body}</p>
+            </li>
+          ))}
+        </ul>
 
         <p className="contact-note">{contactPage.channelsNote}</p>
       </main>

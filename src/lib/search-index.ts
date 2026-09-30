@@ -30,7 +30,7 @@ function buildIndex(): SearchItem[] {
 
   /* Static pages */
   const pages: Array<[string, string, string]> = [
-    ["Home", "/", "Technical product management for cloud and AI infrastructure"],
+    ["Home", "/", "Technical product management for cloud infrastructure"],
     ["Work", "/work", "Case studies from infrastructure and product work"],
     ["How I think", "/thinking", "Principles and models, earned in infrastructure"],
     ["Journey", "/journey", "From a home computer to cloud product management"],

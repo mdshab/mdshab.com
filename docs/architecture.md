@@ -10,7 +10,7 @@ amount of hydration for interactive islands.
 src/
 ├── app/                    # Routes (App Router)
 │   ├── layout.tsx          # Metadata, fonts, FluentProvider, JSON-LD, skip link
-│   ├── page.tsx            # Homepage (professional narrative, 10 sections)
+│   ├── page.tsx            # Homepage (professional narrative, 8 sections)
 │   ├── opengraph-image.tsx # Build-time generated OG image (satori)
 │   ├── globals.css         # Design tokens + all custom styling
 │   ├── sitemap.ts          # ~190-URL sitemap with hreflang alternates

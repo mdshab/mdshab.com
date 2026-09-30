@@ -8,112 +8,85 @@
 export const hero = {
   kicker: "Mehdi Shabestari",
   roleLine: "Technical Product Manager · Cloud Infrastructure",
-  h1: "I do product management for cloud infrastructure. Before that, I ran it for fifteen years.",
+  h1: "Technical product management for cloud infrastructure.",
   support:
-    "Since 2022 I've been a technical product manager at a global-scale cloud provider, working on services like Cloud Server, VPC, Storage and Migration that hundreds of thousands of people rely on. Before product, I came up through the same stack: VoIP administration, network engineering, cloud operations, support leadership.",
+    "I work on a 200,000-user cloud product, translating customer needs into product requirements and roadmap decisions. My background spans telecommunications, network and systems engineering, infrastructure service development, DevOps and customer excellence.",
   primaryCta: { href: "/work", label: "See the work" },
   secondaryCta: { href: "/contact", label: "Let's talk" },
   facts: [
-    { value: "Since 2007", label: "VoIP · networking · datacenter · product" },
-    { value: "Hundreds of thousands", label: "people on services I work on" },
+    { value: "Since 2007", label: "telecom · infrastructure · cloud · product" },
+    { value: "200,000 users", label: "on the cloud product I work on" },
     { value: "Cloud Server · VPC · Storage", label: "the product surfaces I cover" },
   ],
 };
 
-export const selectedImpact = {
-  title: "What I've done",
-  lede: "What I worked on, what my part was, and what changed. Where I don't have a number, I don't write one.",
-  items: [
-    {
-      headline: "Cloud services with hundreds of thousands of users",
-      body: "Since 2022 I've owned product direction for infrastructure services at a global-scale cloud provider — compute, networking, storage, migration. The work: deciding what gets built, which defaults ship, and which promises the platform can keep.",
-      link: { href: "/work/cloud-services-at-scale", label: "Case study" },
-    },
-    {
-      headline: "Customer support through 2020",
-      body: "I led the support operation in 2020, the year everyone's traffic moved home. Service design, escalation paths, shift handovers, and runbooks a tired engineer could actually follow.",
-      link: { href: "/work/support-leadership", label: "Case study" },
-    },
-    {
-      headline: "Voice platforms, 2007–2018",
-      body: "Eleven years in telephony while the phone network became software — VoIP administration at Tel4Tel, then network engineering and leading the voice function at FCP.",
-      link: { href: "/work/voice-becomes-software", label: "Case study" },
-    },
-    {
-      headline: "This site",
-      body: "A static site of ~190 pages with typed content models and no trackers. Designed, built and written by one person.",
-      link: { href: "/work/this-website", label: "Case study" },
-    },
-  ],
-};
-
 export const helpWith = {
-  title: "What I can help with",
-  lede: "The situations I'm actually useful in, rather than a list of skills.",
+  title: "The product work I do",
+  lede: "The decisions behind an infrastructure service customers can use and engineering can support.",
   items: [
     {
-      title: "Productizing infrastructure",
-      body: "My day job: taking things like Cloud Server, VPC, Storage and Migration and making them a product a customer can understand, evaluate and operate.",
+      title: "Customer problems and requirements",
+      body: "Understand what customers need to accomplish, define product requirements and translate business needs into technical requirements teams can act on.",
     },
     {
-      title: "Deciding what gets built",
-      body: "When reliability is the differentiator, the main decisions are which promises to make and what keeping them costs engineering. That is where most of my time goes.",
+      title: "Priorities and the roadmap",
+      body: "Prioritize features and manage the roadmap. Make the case for what should happen next, including improvements to existing services.",
     },
     {
-      title: "Between engineering and business",
-      body: "Turning architecture constraints into roadmap decisions a business can evaluate, and business goals into constraints engineering accepts. I've sat on both sides of that table.",
+      title: "Cross-functional decisions",
+      body: "Work with engineering, infrastructure, operations, sales and support. Align teams on priorities and explain the business value behind technical choices.",
     },
     {
-      title: "Products with several audiences",
-      body: "The engineer who integrates, the operator on call, the finance owner, the security reviewer. A change that helps one can hurt another; the product has to hold all of them.",
+      title: "Product performance",
+      body: "Monitor usage and performance data, identify areas for improvement and use those signals to inform feature and product strategy decisions.",
     },
     {
-      title: "Discovery on technical systems",
-      body: "Starting from usage data, support tickets and postmortems rather than surveys — and figuring out what the product should be.",
+      title: "Pricing and product strategy",
+      body: "Contribute to pricing and new-feature decisions with customer needs, business goals and the cost of operating the infrastructure in view.",
     },
     {
-      title: "AI infrastructure",
-      body: "GPU and AI services are the newest layer of the stack, with the same physics underneath. The same discipline applies.",
+      title: "Technical depth",
+      body: "Discuss system constraints with engineering at a detailed level. My experience includes networks, Linux, OpenStack, Ceph, DNS, CDN and cloud operations.",
     },
   ],
 };
 
 export const homeThinking = {
   title: "How I think",
-  lede: "Working principles, each traceable to an incident or a decision rather than a book.",
+  lede: "A few working principles from cloud product management and years in operations.",
   principles: [
     {
-      claim: "Users buy outcomes, tolerate products",
-      body: "Nobody wants your infrastructure. They want their application to work. Design for that.",
+      claim: "Start with the customer's task",
+      body: "Understand what someone is trying to run, connect or recover before turning their request into a feature requirement.",
     },
     {
-      claim: "Abstractions are promises",
-      body: "Each layer of the stack promises you can stop thinking about the one below. When it leaks, someone answers for it — usually at 3 a.m.",
+      claim: "Priorities include what waits",
+      body: "A roadmap choice uses capacity that could go elsewhere. Make the reason for the choice and its opportunity cost clear.",
     },
     {
-      claim: "Coordination problems are technical problems",
-      body: "Most 'technical' failures at scale are failures between humans or teams. Fixing that interface is real engineering.",
+      claim: "The cost continues after launch",
+      body: "A service needs capacity, maintenance and support after it ships. Those costs belong in product and pricing decisions.",
     },
   ],
   cta: { href: "/thinking", label: "All principles" },
 };
 
 export const journeyTeaser = {
-  title: "From analog to cloud native",
-  lede: "The path started in analog telephony, went through networking and the datacenter, and reached product in 2022. Every step has dates.",
+  title: "From operations to product",
+  lede: "Fifteen years running infrastructure before moving into product in 2022. That background helps me evaluate what a roadmap asks of the systems and people behind it.",
   chapters: [
     { era: "Early years", label: "A home computer, a Linux CD that came by post" },
-    { era: "2007", label: "VoIP administration at Tel4Tel" },
-    { era: "2011 – 2018", label: "Networks and voice at FCP" },
-    { era: "2019 – 2020", label: "Cloud engineering, then support leadership" },
-    { era: "2022 –", label: "Infrastructure as a product" },
+    { era: "2007", label: "Technical support, administration and supervision at Tel4Tel" },
+    { era: "2011 – 2018", label: "NOC, network, systems and infrastructure services at FCP" },
+    { era: "2019 – 2020", label: "Cloud operations, then customer excellence leadership" },
+    { era: "2022 –", label: "Technical product management for cloud infrastructure" },
   ],
   cta: { href: "/journey", label: "The whole journey" },
 };
 
 export const selectedWriting = {
   title: "Selected writing",
-  lede: "Longer versions of these arguments.",
+  lede: "Notes on infrastructure products, operating systems and the move from telecom to cloud.",
   cta: { href: "/writing", label: "All essays" },
 };
 
@@ -149,7 +122,7 @@ export const finalCta = {
   paths: [
     {
       title: "A role",
-      body: "Technical product management on cloud, platform or AI infrastructure products.",
+      body: "Technical product management on cloud and platform infrastructure products.",
       href: "/contact",
       label: "Start the conversation",
     },

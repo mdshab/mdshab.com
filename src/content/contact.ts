@@ -6,7 +6,7 @@
 
 export const contactPage = {
   title: "Let's talk",
-  lede: "The fastest way to reach me is GitHub or LinkedIn — I read everything and I answer. If you're writing about a role or a project, two sentences of context is plenty; I'll ask for the rest.",
+  lede: "LinkedIn is the best place to reach me about a role, a project or infrastructure products. Two sentences of context is plenty; I'll ask for the rest.",
   intents: [
     {
       title: "Hiring for a technical product role",

@@ -1,268 +1,199 @@
 import type { CaseStudy } from "@/types/content";
 
 /**
- * Professional case studies.
- *
- * Writing rules for this file:
- * - Plain sentences over impressive ones. Evidence over positioning
- *   language. A senior peer explaining their work, not an award entry.
- * - Employers appear only with names already published on this site
- *   (Tel4Tel, FCP) or at the published abstraction ("a global-scale
- *   cloud provider").
- * - No confidential internals: architecture, customers, numbers, roadmaps.
- * - Outcomes qualitative unless a figure was already public.
+ * Professional work. Scope and responsibilities use owner-supplied facts.
+ * No confidential architecture, invented metrics or implied project results.
+ * A role overview is identified as such rather than presented as one launch.
  */
 export const caseStudies: CaseStudy[] = [
   {
     id: "cloud-services-at-scale",
-    title: "Product decisions for cloud services at scale",
+    title: "Technical product management for cloud infrastructure",
     summary:
-      "Cloud Server, VPC, Storage, Migration: deciding what gets built, which defaults ship, and which promises the platform can keep. Hundreds of thousands of users.",
+      "A 200,000-user cloud product: customer problems, requirements, feature priorities, roadmap, pricing and product strategy.",
     track: "practice",
     domain: "cloud",
     period: "2022 – present",
     role: "Technical Product Manager",
     organization: "Global-scale cloud provider",
     lede:
-      "Since 2022 I've decided what gets built, for whom and why, for cloud services used by hundreds of thousands of people. This is how those decisions actually get made.",
+      "My product scope covers cloud infrastructure services. This is an overview of my responsibilities and recurring decisions, rather than a report on a single launch.",
     sections: [
       {
         heading: "context",
-        body: "I work on the IaaS layer of a global-scale cloud provider: Cloud Server, networking and VPC, Storage, Migration, and more recently GPU services. The customers are engineers and enterprises running production workloads — their applications, not their spare time. The infrastructure I now shape in product decisions is the kind I operated myself for the decade before.",
-      },
-      {
-        heading: "problem",
-        body: "Users of infrastructure don't want the product. They want their application to work, their backups to exist, their launch to survive its traffic. Success is measured by nothing happening, and only failure is visible. That changes what product work means here: you can't manufacture desire, you can only remove decisions and keep promises.",
-      },
-      {
-        heading: "why-it-mattered",
-        body: "For infrastructure, differentiation isn't delight — it's working under specific, adversarial conditions. Durability figures, latency ceilings, failure-domain behavior: for the customer that is not fine print, it's the thing being purchased.",
+        body: "I work on a cloud product used by 200,000 people, with services including Cloud Server, VPC, Storage, Migration and GPU. The customer needs span running workloads, connecting services, storing data and moving existing systems into the cloud.",
       },
       {
         heading: "my-role",
-        body: "I own the what-for-whom-why side: reading usage and support signals, setting direction with engineering, negotiating scope with stakeholders, and turning architecture constraints into roadmap items the business can evaluate. Ten years of operating this class of system is what I use daily — when I read an architecture proposal, I can tell which shortcuts will page someone later.",
-      },
-      {
-        heading: "constraints",
-        body: "Four audiences at once: the engineer who integrates the service, the operator who runs it at 3 a.m., finance, and security. A change that helps one can hurt another. Enterprise sales cycles are long, compliance requirements are real, and switching costs work in both directions.",
+        body: "My main responsibility is to make sure we build the right products and solve the right customer problems. I define product requirements, prioritize features and manage the roadmap. I also contribute to decisions about new features, pricing and overall product strategy.",
       },
       {
         heading: "discovery",
-        body: "The honest signals are behavioral: what users do during an incident at 2 a.m., which API calls cluster together, which tickets repeat, what prospects ask before buying, what the ops floor says in postmortems. Feature requests are data about frustration, not specifications — the work is digging back to the task the user was trying to finish.",
+        body: "I monitor product performance and usage data to identify areas for improvement. Customer issues and input from sales and support help explain those signals. The task is to understand the problem behind a request before turning it into a requirement.",
       },
       {
         heading: "product-reasoning",
-        body: "Three rules I actually apply: default to defaults — make the right path the one with the fewest decisions. Price the promise — every reliability figure is a roadmap item with an engineering cost. Write like an operator — if the runbook can't be followed at 3 a.m., the feature isn't done.",
+        body: "Customer and business needs have to become clear technical requirements. I work closely with engineering, infrastructure, operations, sales and support to establish priorities and keep the roadmap aligned. My technical background helps me discuss system constraints with engineering in detail and explain their business implications to non-technical stakeholders.",
       },
       {
         heading: "trade-offs",
-        body: "The recurring one is flexibility versus defaults. Every option we expose is a decision we push onto the user, and a state the platform supports forever. Removing an option is often worth more than adding one, though it's the harder conversation. The other is transparency versus noise: showing every failure domain builds trust with some users and overwhelms the rest, so the work is layering.",
-      },
-      {
-        heading: "outcome",
-        body: "Services that kept their promises as scale grew, and setup paths where users take fewer decisions to reach a safe working configuration. I can't publish internal figures; the shape of the outcome is what I can describe.",
-      },
-      {
-        heading: "what-i-learned",
-        body: "You can't price a promise you've never had to keep. The decade in operations wasn't a detour before product — it was the qualification.",
-      },
-    ],
-    technologies: [
-      "Product strategy",
-      "Cloud services",
-      "Roadmapping",
-      "Developer experience",
-      "Enterprise requirements",
-    ],
-    relatedArticles: ["why-infrastructure-products-are-different"],
-    relatedHistory: ["aws-launch"],
-  },
-  {
-    id: "support-leadership",
-    title: "Customer service design and support leadership",
-    summary:
-      "2020, the first pandemic year: leading the support operation of a global-scale cloud platform — service design, escalations, handovers, and runbooks for the people awake at 3 a.m.",
-    track: "practice",
-    domain: "infrastructure",
-    period: "2020",
-    role: "Team Lead — Customer Service & Support",
-    organization: "Global-scale cloud provider",
-    lede:
-      "In 2020 I led the customer support operation of a global-scale cloud provider — the year work, school and family traffic all moved home at once. This is what running support at scale taught me about how service fails.",
-    sections: [
-      {
-        heading: "context",
-        body: "I had joined as a cloud engineer in 2019. A year later the pandemic moved everything onto the platform at the same time, and I was leading the team that answered when it broke — customer-facing support and network operations in one function.",
-      },
-      {
-        heading: "problem",
-        body: "Support fails two ways. Technically: an incident outruns our understanding. As service: the right information exists somewhere in the company but never reaches the person waiting for it — the customer, or the engineer who could fix it. The second failure is more common and more damaging, and it's a design problem, not a staffing one.",
-      },
-      {
-        heading: "my-role",
-        body: "Owning the service end to end: how customers get helped, escalation paths, shift handovers, runbooks, and the people awake at 3 a.m.",
+        body: "Infrastructure choices carry an operating cost after launch. A configuration option may help a specialist while increasing setup effort and the number of states support must understand. A reliability commitment affects what engineering must build and operations must maintain. These are recurring product questions, alongside the business case for a new feature or a pricing change.",
       },
       {
         heading: "constraints",
-        body: "At that scale no single person holds the system in their head, so context has to survive handovers intact. The customer on the other end of a broken service doesn't care whose layer it is. And the constraint I cared about most: the youngest engineer on the 4 a.m. shift still had to make good calls with incomplete information.",
-      },
-      {
-        heading: "discovery",
-        body: "Patterns across incidents and tickets taught the durable lessons: which alerts predicted trouble and which were noise, which escalation paths worked and which just relocated anxiety, where runbooks had been written for their author instead of their reader, and what customers actually needed to hear during an outage — honest status, not reassurance. Postmortems were the curriculum.",
-      },
-      {
-        heading: "decision",
-        body: "Three decisions that stuck. One: a fixed handover format — what we know, what we've ruled out, what we're watching, who owns the next step. Two: runbooks written to be executed by a tired stranger, not their author. Three: an explicit norm that 'we don't know yet' is an acceptable status. Stated ambiguity beats false confidence every time.",
-      },
-      {
-        heading: "trade-offs",
-        body: "Structure costs speed in quiet moments to buy correctness in bad ones. A fixed handover format feels bureaucratic on a quiet Tuesday and is priceless during a multi-region event. Choosing clarity over heroics also means the brilliant-improvisation path is deliberately closed.",
-      },
-      {
-        heading: "execution",
-        body: "Working with engineering on alert quality, with shift leads on handover discipline, with every incident review on feeding lessons back into the runbooks — and keeping what we told customers during incidents honest. Half the job was protocol; the other half was trust.",
-      },
-      {
-        heading: "outcome",
-        body: "A support function that got through the platform's hardest traffic year, and incident reports engineering could act on without re-deriving them.",
+        body: "The same product serves people with different responsibilities: the engineer integrating it, the operator maintaining it, the budget owner and the security reviewer. Requirements need to account for those differences. Internal architecture, commercial details and roadmap commitments remain private, so this overview does not claim a published project-level result.",
       },
       {
         heading: "what-i-learned",
-        body: "Most 'technical' failures at scale are interface failures between humans. That conclusion is what later moved me toward product.",
+        body: "My earlier roles help me connect the product decision to its consequences. Network and systems work provide technical context; customer excellence provides the view from the user who is blocked. Product management brings those perspectives together with business goals and a decision about what to do next.",
       },
     ],
     technologies: [
-      "Customer service design",
-      "Incident management",
-      "Support operations",
-      "On-call",
+      "Product requirements",
+      "Feature prioritization",
+      "Roadmapping",
+      "Usage & performance data",
+      "Pricing",
+      "Product strategy",
+      "Cloud infrastructure",
+    ],
+    relatedArticles: ["why-infrastructure-products-are-different"],
+  },
+  {
+    id: "support-leadership",
+    title: "Customer excellence and technical support leadership",
+    summary:
+      "Leading customer-facing technical problem solving at a cloud provider, with service design and coordination across support, engineering and operations.",
+    track: "practice",
+    domain: "infrastructure",
+    period: "2020",
+    role: "Customer Excellence Lead",
+    organization: "Global-scale cloud provider",
+    lede:
+      "After a first year in systems administration and DevOps, I moved into customer excellence leadership. The focus changed from operating the systems to helping the people using them.",
+    sections: [
+      {
+        heading: "context",
+        body: "I joined the cloud provider in a systems administration and DevOps role. Moving into customer excellence meant bringing that technical understanding to user issues and leading the function that helped resolve them.",
+      },
+      {
+        heading: "problem",
+        body: "A technical issue crosses several boundaries: the customer's environment, the product, the infrastructure and the teams operating it. Resolving it requires diagnosis, but also a shared account of what is known, what remains uncertain and who owns the next step.",
+      },
+      {
+        heading: "my-role",
+        body: "I led customer-facing technical support work, coordinating problem resolution with engineering and operations. The scope included service design, escalation paths, handovers and runbooks, as well as the quality of communication with users.",
+      },
+      {
+        heading: "decision",
+        body: "The working practices included a consistent handover format, runbooks that another engineer could execute, and clear communication when a diagnosis was not yet known. A handover needed to preserve what we knew, what we had ruled out and who owned the next action.",
+      },
+      {
+        heading: "trade-offs",
+        body: "Structure takes time during a routine issue, but reduces the need to reconstruct context when several people or teams become involved. The balance is enough shared information to make the next action clear, without making every ticket a documentation exercise.",
+      },
+      {
+        heading: "what-i-learned",
+        body: "This role moved my attention toward the service as the customer experienced it. I studied service design, nonviolent communication and enterprise product management alongside the work. That learning supported the later move into product: recurring user issues became questions about requirements, priorities and the product itself.",
+      },
+    ],
+    technologies: [
+      "Customer excellence",
+      "Technical support",
+      "Service design",
+      "Incident coordination",
       "Runbooks",
+      "Cross-functional communication",
     ],
     relatedArticles: ["what-infrastructure-taught-me"],
   },
   {
     id: "voice-becomes-software",
-    title: "Voice platforms, 2007–2018",
+    title: "Telecommunications, networks and infrastructure services",
     summary:
-      "Eleven years while the phone network became software: VoIP administration at Tel4Tel, then network engineering and leading the voice team at FCP.",
+      "Tel4Tel and FCP: support and supervision, NOC and network engineering, telecom platforms, Linux systems and service development.",
     track: "practice",
     domain: "telecom",
     period: "2007 – 2018",
-    role: "VoIP Administrator → Network Engineer → Voice Team Lead",
+    role: "Support & supervision → Network & systems engineering → Service development",
     organization: "Tel4Tel, then FCP",
     lede:
-      "Between 2007 and 2018 the phone network stopped being hardware and became software. I spent those years at Tel4Tel and FCP, moving from administering VoIP systems to leading the voice team.",
+      "My telecom career covered several kinds of work. Voice platforms were one part of it, alongside networks, systems administration and the infrastructure behind services.",
     sections: [
       {
         heading: "context",
-        body: "I started in 2007 administering VoIP at Tel4Tel: call flows, SIP trunks, codecs, gateways. In 2011 I moved to FCP — technical support first, network engineering a year later, then VoIP specialization and eventually managing the voice function through 2018.",
-      },
-      {
-        heading: "problem",
-        body: "Voice is unforgiving product territory. Users notice a broken call instantly — everyone from a CEO to a grandmother — and the system spans analog handsets, ISDN lines, IP networks and carrier interconnects, each with its own failure modes. When a call breaks, 'the network' gets blamed; finding which layer actually broke is the work.",
-      },
-      {
-        heading: "why-it-mattered",
-        body: "For the businesses we served, telephony wasn't a feature. It was revenue, safety, and sometimes the only line to their own customers.",
+        body: "I started in technical support at Tel4Tel, an international telecom carrier, in 2007. After six months I moved into administration and an acting head / supervisor role. In 2011 I joined FCP in the NOC, then moved across network engineering, telecom platforms, systems administration and service development.",
       },
       {
         heading: "my-role",
-        body: "Across the years: administering production VoIP platforms; answering the phone when things broke; engineering the networks voice ran over; designing NGN and Cisco voice platforms; and finally leading the people who kept them alive.",
+        body: "At Tel4Tel the work combined technical support, telecom systems administration and supervision. At FCP I worked on network solutions and access infrastructure, later moving into voice platform specialization and management, Linux systems administration and infrastructure services. This is a career overview, not a single project with one outcome.",
+      },
+      {
+        heading: "architecture",
+        body: "The technical scope included Cisco routers and switches, Huawei and Siemens equipment, fiber, GPON and DSLAM. Telecom platform work included SDN, MGCP, Cisco voice, CUCM, UCCX, NGN and softswitch systems. Systems and service development extended into Linux, Ceph, OpenStack, DNS and CDN, including operation and maintenance.",
       },
       {
         heading: "constraints",
-        body: "Legacy everywhere: equipment designed decades before IP, interconnects with monolithic carriers, customers who couldn't describe their own call flows — and voice's hard real-time constraint. Latency and jitter aren't degraded UX; they're broken calls.",
-      },
-      {
-        heading: "discovery",
-        body: "Answering the support line was the best product education I ever received, years before I heard the word discovery. Every ticket showed how systems actually fail and how people experience the failure. Reproduce, isolate, verify — the one skill that has outlived every technology I've used since.",
-      },
-      {
-        heading: "decision",
-        body: "As the voice lead: which platforms to standardize on; how to structure the team so knowledge lived in systems and documentation instead of one expert's head; and how to keep physical-layer thinking alive in an IP world that preferred to forget it.",
-      },
-      {
-        heading: "trade-offs",
-        body: "Deep specialization in voice was narrowing; the compensation was knowing one vertical end to end — signaling, transport, switching, and the organization around them. Managing meant solving problems through people instead of my own keyboard, which felt slower and turned out to scale.",
-      },
-      {
-        heading: "outcome",
-        body: "Voice platforms designed and operated for real customers over years, and a team that didn't depend on any single expert.",
+        body: "Telecom services run across equipment generations and organizational boundaries. Access infrastructure, transport, signaling and service platforms have different failure modes. A customer issue can involve several of them, so diagnosis requires understanding both the individual layer and its connections to the rest of the service.",
       },
       {
         heading: "what-i-learned",
-        body: "Voice was my first infrastructure product: invisible when working, binary when broken. Every product principle I hold has a telephony ancestor.",
+        body: "Working across these roles gave me a broader view than any one specialization. Support showed how a failure reaches the customer. Network and systems work showed what it takes to operate the service. Supervision and service development added the people and process around it. Those are useful perspectives when evaluating a cloud product requirement today.",
       },
     ],
     technologies: [
-      "VoIP",
-      "SIP",
-      "Asterisk",
-      "Cisco VoIP",
-      "NGN",
-      "Routing & switching",
-      "BGP",
+      "Telecommunications",
+      "Network operations",
+      "Cisco routing & switching",
+      "Huawei / Siemens",
+      "Fiber / GPON / DSLAM",
+      "SDN / MGCP",
+      "CUCM / UCCX / NGN",
+      "Linux",
+      "Ceph / OpenStack",
+      "DNS / CDN",
     ],
-    relatedArticles: [
-      "from-pbx-to-cloud-communications",
-      "what-infrastructure-taught-me",
-    ],
-    relatedHistory: ["bell-telephone", "voip-vocaltec"],
+    relatedArticles: ["from-pbx-to-cloud-communications", "what-infrastructure-taught-me"],
   },
   {
     id: "this-website",
     title: "This website",
     summary:
-      "A static site of about 190 pages: typed content models, no trackers, built by one person.",
+      "A personal content platform with typed models, connected essays and a searchable library. No trackers or third-party fonts.",
     track: "build",
     domain: "web",
     period: "Built 2026",
-    role: "Design, engineering, writing",
+    role: "Product direction, content and implementation",
     organization: "Personal project",
     lede:
-      "My own site: about 190 static pages, no trackers. It serves as its own case study.",
+      "A professional portfolio and a personal library on one content model. The site is a working example of the choices described here.",
     sections: [
       {
         heading: "context",
-        body: "A personal site where the content is supposed to connect: history events link to essays, essays link to projects, all on a shared data model.",
+        body: "The site has two audiences: people evaluating my professional work, and readers exploring history, ideas and writing. The professional path needs to be easy to scan while the library remains available one level deeper.",
       },
       {
         heading: "problem",
-        body: "Personal sites are usually disconnected pages: an about, some posts, no relationships. I wanted a graph. And since some of the readers sit behind restricted networks, the fonts are self-hosted too.",
-      },
-      {
-        heading: "my-role",
-        body: "Design, engineering and writing — one person, in the time that's left over.",
+        body: "The content should connect rather than become a collection of unrelated pages. History events link to essays, essays link to work, and search uses the same content model. Self-hosted fonts avoid a third-party request and work for readers behind restricted networks.",
       },
       {
         heading: "architecture",
-        body: "Content lives as typed TypeScript data, not a CMS — heavier to write, but type-checked and diffable in git. Fully static rendering. The timeline has two views: a spatial one for desktop, a semantic list for screen readers and small screens. No analytics served at all.",
+        body: "Content lives in TypeScript modules and MDX, with Next.js rendering the pages. The timeline has a spatial desktop view and a semantic list for smaller screens and assistive technology. Search is built from the shared content graph.",
       },
       {
         heading: "trade-offs",
-        body: "TypeScript data files over a CMS cost writing speed and buy type safety and zero runtime dependencies — the right trade for a site that must survive neglect. Dual-rendering the timeline costs code and buys accessibility. Serving no analytics protects readers and costs me data I decided I don't need.",
-      },
-      {
-        heading: "execution",
-        body: "Next.js App Router with static prerendering, a command palette built over the same content modules the pages render, MDX essays compiled as React Server Components with no client-side MDX runtime, and a command palette over the same content graph.",
+        body: "Typed files make editing more technical than a CMS, but keep the content versioned and diffable. The timeline's two presentations add code in exchange for accessibility. No analytics protects reader privacy and means I assess the site through content review and direct feedback rather than visitor tracking.",
       },
       {
         heading: "outcome",
-        body: "This site. A content model one person can extend by editing typed files — you're reading one of its pages.",
+        body: "A published site with connected content, self-hosted fonts, keyboard search and no trackers. Professional work comes first; the personal library stays accessible without competing for the opening screen.",
       },
       {
         heading: "what-i-learned",
-        body: "The content model is the architecture. Deciding what fields an 'event' has was harder and more useful than any page layout.",
+        body: "The content model determines what the site can explain. Deciding what a case study or history event needs to contain is a product decision before it is a layout decision.",
       },
     ],
-    technologies: [
-      "Next.js",
-      "TypeScript",
-      "Fluent UI v9",
-      "MDX",
-      "Accessibility",
-    ],
-    relatedArticles: ["why-infrastructure-products-are-different"],
+    technologies: ["Next.js", "TypeScript", "MDX", "Accessibility", "Content modeling"],
     relatedHistory: ["world-wide-web"],
   },
 ];

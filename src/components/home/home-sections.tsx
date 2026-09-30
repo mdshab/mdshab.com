@@ -1,11 +1,6 @@
 import Link from "next/link";
 
-/**
- * Shared homepage sections. Server components that receive typed content,
- * so the English and Persian editions render identical structure from
- * their own dictionaries (see content/home.ts and content/i18n/fa.ts).
- */
-
+/** Homepage sections, rendered on the server from the content model. */
 export interface HomeContent {
   hero: {
     kicker: string;
@@ -15,15 +10,6 @@ export interface HomeContent {
     primaryCta: { href: string; label: string };
     secondaryCta: { href: string; label: string };
     facts: { value: string; label: string }[];
-  };
-  selectedImpact: {
-    title: string;
-    lede: string;
-    items: {
-      headline: string;
-      body: string;
-      link: { href: string; label: string };
-    }[];
   };
   helpWith: {
     title: string;
@@ -40,6 +26,7 @@ export interface HomeContent {
       period: string;
       title: string;
       summary: string;
+      role: string;
     }[];
   };
   homeThinking: {
@@ -47,12 +34,6 @@ export interface HomeContent {
     lede: string;
     principles: { claim: string; body: string }[];
     cta: { href: string; label: string };
-  };
-  depth: {
-    title: string;
-    lede: string;
-    layers: { name: string; note: string }[];
-    coda: string;
   };
   journeyTeaser: {
     title: string;
@@ -79,20 +60,18 @@ export interface HomeContent {
   };
 }
 
-export function HomeMain({ content }: { content: HomeContent }) {
-  const t = content;
+export function HomeMain({ content: t }: { content: HomeContent }) {
   return (
     <main id="main" className="home">
-      {/* 01 — Hero / positioning */}
       <section className="hero" aria-labelledby="home-h1">
         <div className="hero-kicker">
           <p className="hero-kicker-name">{t.hero.kicker}</p>
           <span className="hero-kicker-rule" aria-hidden="true" />
         </div>
+        <p className="hero-role mono-meta">{t.hero.roleLine}</p>
         <h1 id="home-h1" className="home-hero">
           {t.hero.h1}
         </h1>
-        <p className="hero-role mono-meta">{t.hero.roleLine}</p>
         <p className="home-lede">{t.hero.support}</p>
         <div className="home-cta-row">
           <Link href={t.hero.primaryCta.href} className="btn btn-primary">
@@ -112,56 +91,10 @@ export function HomeMain({ content }: { content: HomeContent }) {
         </dl>
       </section>
 
-      {/* 02 — Selected impact */}
-      <section className="home-section" aria-labelledby="impact-h">
-        <header className="home-section-head">
-          <span className="section-index mono-meta">01</span>
-          <h2 id="impact-h" className="section-heading">
-            {t.selectedImpact.title}
-          </h2>
-          <p className="section-lede">{t.selectedImpact.lede}</p>
-        </header>
-        <ul className="impact-list">
-          {t.selectedImpact.items.map((item) => (
-            <li className="impact-item" key={item.headline}>
-              <div>
-                <h3 className="impact-headline">{item.headline}</h3>
-                <p className="impact-body">{item.body}</p>
-              </div>
-              <Link href={item.link.href} className="impact-link">
-                {item.link.label} →
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      {/* 03 — Problems I help solve */}
-      <section className="home-section" aria-labelledby="help-h">
-        <header className="home-section-head">
-          <span className="section-index mono-meta">02</span>
-          <h2 id="help-h" className="section-heading">
-            {t.helpWith.title}
-          </h2>
-          <p className="section-lede">{t.helpWith.lede}</p>
-        </header>
-        <ul className="help-grid">
-          {t.helpWith.items.map((item) => (
-            <li className="help-item" key={item.title}>
-              <h3 className="help-item-title">{item.title}</h3>
-              <p className="help-item-body">{item.body}</p>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      {/* 04 — Featured work */}
       <section className="home-section" aria-labelledby="work-h">
         <header className="home-section-head">
-          <span className="section-index mono-meta">03</span>
-          <h2 id="work-h" className="section-heading">
-            {t.featuredWork.title}
-          </h2>
+          <span className="section-index mono-meta">01</span>
+          <h2 id="work-h" className="section-heading">{t.featuredWork.title}</h2>
           <p className="section-lede">{t.featuredWork.lede}</p>
         </header>
         <ul className="home-work-grid">
@@ -174,6 +107,8 @@ export function HomeMain({ content }: { content: HomeContent }) {
                 </p>
                 <h3 className="work-card-title">{card.title}</h3>
                 <p className="work-card-summary">{card.summary}</p>
+                <p className="work-card-role">{card.role}</p>
+                <span className="work-card-read">Read the study →</span>
               </Link>
             </li>
           ))}
@@ -185,13 +120,26 @@ export function HomeMain({ content }: { content: HomeContent }) {
         </p>
       </section>
 
-      {/* 05 — How I think */}
+      <section className="home-section" aria-labelledby="help-h">
+        <header className="home-section-head">
+          <span className="section-index mono-meta">02</span>
+          <h2 id="help-h" className="section-heading">{t.helpWith.title}</h2>
+          <p className="section-lede">{t.helpWith.lede}</p>
+        </header>
+        <ul className="help-grid">
+          {t.helpWith.items.map((item) => (
+            <li className="help-item" key={item.title}>
+              <h3 className="help-item-title">{item.title}</h3>
+              <p className="help-item-body">{item.body}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
       <section className="home-section" aria-labelledby="think-h">
         <header className="home-section-head">
-          <span className="section-index mono-meta">04</span>
-          <h2 id="think-h" className="section-heading">
-            {t.homeThinking.title}
-          </h2>
+          <span className="section-index mono-meta">03</span>
+          <h2 id="think-h" className="section-heading">{t.homeThinking.title}</h2>
           <p className="section-lede">{t.homeThinking.lede}</p>
         </header>
         <ul className="principles-teaser">
@@ -209,33 +157,10 @@ export function HomeMain({ content }: { content: HomeContent }) {
         </p>
       </section>
 
-      {/* 06 — Technical depth */}
-      <section className="home-section" aria-labelledby="depth-h">
-        <header className="home-section-head">
-          <span className="section-index mono-meta">05</span>
-          <h2 id="depth-h" className="section-heading">
-            {t.depth.title}
-          </h2>
-          <p className="section-lede">{t.depth.lede}</p>
-        </header>
-        <ol className="depth-strip">
-          {t.depth.layers.map((layer) => (
-            <li className="depth-layer" key={layer.name}>
-              <p className="depth-layer-name">{layer.name}</p>
-              <p className="depth-layer-note">{layer.note}</p>
-            </li>
-          ))}
-        </ol>
-        <p className="depth-coda">{t.depth.coda}</p>
-      </section>
-
-      {/* 07 — Journey teaser */}
       <section className="home-section" aria-labelledby="journey-h">
         <header className="home-section-head">
-          <span className="section-index mono-meta">06</span>
-          <h2 id="journey-h" className="section-heading">
-            {t.journeyTeaser.title}
-          </h2>
+          <span className="section-index mono-meta">04</span>
+          <h2 id="journey-h" className="section-heading">{t.journeyTeaser.title}</h2>
           <p className="section-lede">{t.journeyTeaser.lede}</p>
         </header>
         <ul className="journey-strip">
@@ -253,13 +178,10 @@ export function HomeMain({ content }: { content: HomeContent }) {
         </p>
       </section>
 
-      {/* 08 — Selected writing */}
       <section className="home-section" aria-labelledby="writing-h">
         <header className="home-section-head">
-          <span className="section-index mono-meta">07</span>
-          <h2 id="writing-h" className="section-heading">
-            {t.selectedWriting.title}
-          </h2>
+          <span className="section-index mono-meta">05</span>
+          <h2 id="writing-h" className="section-heading">{t.selectedWriting.title}</h2>
           <p className="section-lede">{t.selectedWriting.lede}</p>
         </header>
         <ul className="home-writing-list">
@@ -279,13 +201,10 @@ export function HomeMain({ content }: { content: HomeContent }) {
         </p>
       </section>
 
-      {/* 09 — Beyond work */}
       <section className="home-section" aria-labelledby="beyond-h">
         <header className="home-section-head">
-          <span className="section-index mono-meta">08</span>
-          <h2 id="beyond-h" className="section-heading">
-            {t.beyondWork.title}
-          </h2>
+          <span className="section-index mono-meta">06</span>
+          <h2 id="beyond-h" className="section-heading">{t.beyondWork.title}</h2>
           <p className="section-lede">{t.beyondWork.lede}</p>
         </header>
         <ul className="beyond-grid">
@@ -301,21 +220,16 @@ export function HomeMain({ content }: { content: HomeContent }) {
         </ul>
       </section>
 
-      {/* 10 — Final CTA */}
       <section className="final-cta" aria-labelledby="final-h">
         <p className="final-cta-kicker mono-meta">{t.finalCta.kicker}</p>
-        <h2 id="final-h" className="final-cta-title">
-          {t.finalCta.title}
-        </h2>
+        <h2 id="final-h" className="final-cta-title">{t.finalCta.title}</h2>
         <p className="final-cta-body">{t.finalCta.body}</p>
         <ul className="final-cta-paths">
           {t.finalCta.paths.map((path) => (
             <li key={path.title}>
               <h3 className="final-cta-path-title">{path.title}</h3>
               <p className="final-cta-path-body">{path.body}</p>
-              <Link href={path.href} className="text-cta">
-                {path.label} →
-              </Link>
+              <Link href={path.href} className="text-cta">{path.label} →</Link>
             </li>
           ))}
         </ul>

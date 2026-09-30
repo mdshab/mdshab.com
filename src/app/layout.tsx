@@ -20,8 +20,8 @@ export const metadata: Metadata = {
     "cloud infrastructure",
     "product management",
     "platform products",
-    "AI infrastructure",
-    "VoIP",
+    "infrastructure products",
+    "telecommunications",
     "network engineering",
   ],
   openGraph: {
@@ -57,7 +57,10 @@ const personJsonLd = {
     "IaaS",
     "Product management",
     "Network engineering",
-    "VoIP and telecommunications",
+    "Telecommunications",
+    "Systems administration",
+    "Infrastructure service development",
+    "Customer experience",
   ],
   sameAs: ["https://github.com/mdshab", "https://www.linkedin.com/in/mdshab/"],
 };

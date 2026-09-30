@@ -16,6 +16,30 @@ export interface Principle {
 
 export const principles: Principle[] = [
   {
+    id: "problem-before-requirement",
+    claim: "A request needs a problem behind it",
+    body: "A requested feature is useful input, but it is not yet a requirement. I want to understand the task, who is blocked, how often it happens and what they do instead. That distinction helps avoid building a precise solution to the wrong problem.",
+    origin: "Customer excellence and product requirements",
+  },
+  {
+    id: "priorities-have-opportunity-cost",
+    claim: "Priorities include what waits",
+    body: "A roadmap decision spends capacity that could have gone elsewhere. The case for a feature should explain the customer problem, the business reason, the dependencies and what will wait if we choose it. A useful roadmap makes those decisions visible rather than just listing dates.",
+    origin: "Feature prioritization and roadmap management",
+  },
+  {
+    id: "usage-needs-context",
+    claim: "Usage data needs context",
+    body: "Usage can show where behavior changes; it cannot always explain why. I read performance and usage signals alongside customer issues and input from sales and support. A change in a metric is a reason to investigate before it is a reason to celebrate or add a feature.",
+    origin: "Product performance and cross-functional input",
+  },
+  {
+    id: "operating-cost-is-product-cost",
+    claim: "The cost continues after launch",
+    body: "Pricing and product strategy have to account for the service after it ships: infrastructure capacity, maintenance, support effort and the commitments made to customers. These are part of the product's economics. A feature can be inexpensive to build and expensive to operate.",
+    origin: "Infrastructure operations and product strategy",
+  },
+  {
     id: "users-buy-outcomes",
     claim: "Users buy outcomes, tolerate products",
     body: "Nobody wakes up wanting your infrastructure. They wake up wanting their application to work, their backups to exist, their launch to survive its traffic. When desire is already fixed at 'make it work', every screen, concept and required decision is friction against the outcome they came for. The best infrastructure UX often looks like less UX.",
@@ -49,7 +73,7 @@ export const principles: Principle[] = [
     id: "coordination-is-technical",
     claim: "Coordination problems are technical problems",
     body: "The hardest scale-up I ever faced was not call volume — it was the coordination between the people keeping the calls alive. Most 'technical' failures at scale turn out to be interface failures between humans: between teams, shifts, vendors, or a company and its customers. A product is an interface between an organization and its users; designing it well includes designing the organization's side.",
-    origin: "Leading voice infrastructure and a NOC",
+    origin: "Telecom supervision and customer excellence",
   },
   {
     id: "write-like-an-operator",
@@ -125,7 +149,7 @@ export const telecomCloudMap = {
       concept: "Addressing",
       telecom: "Number plan",
       cloud: "IP addressing / DNS",
-      confidence: "exact",
+      confidence: "analogous",
     },
     {
       concept: "Traffic steering",
@@ -155,7 +179,7 @@ export const telecomCloudMap = {
       concept: "Availability engineering",
       telecom: "Five-nines culture",
       cloud: "SLAs and error budgets",
-      confidence: "exact",
+      confidence: "analogous",
     },
     {
       concept: "Billing unit",

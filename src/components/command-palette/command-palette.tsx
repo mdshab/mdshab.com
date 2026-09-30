@@ -99,6 +99,7 @@ export function CommandPalette() {
         type="button"
         className="palette-trigger"
         onClick={() => setOpen(true)}
+        aria-label="Search the site"
         aria-haspopup="dialog"
         aria-expanded={open}
       >
@@ -136,8 +137,8 @@ export function CommandPalette() {
                       ? `palette-option-${activeIndex}`
                       : undefined
                   }
-                  aria-label="Search events, thinkers, questions, articles"
-                  placeholder="Search events, thinkers, questions…"
+                  aria-label="Search work, writing and the personal library"
+                  placeholder="Search work, writing, telecom…"
                   value={query}
                   onChange={(event) => {
                     setQuery(event.target.value);
@@ -158,8 +159,8 @@ export function CommandPalette() {
 
               {!query && (
                 <p className="palette-hint">
-                  Try “paper”, “stoic”, “Kubernetes”, “Mansa Musa” — or a
-                  section name.
+                  Try “roadmap”, “OpenStack”, “telecom” or “service design”.
+                  The personal library is searchable here too.
                 </p>
               )}
 

@@ -58,10 +58,10 @@ export default function JourneyPage() {
           <p className="page-kicker mono-meta">A career in five chapters</p>
           <h1 className="page-title">Journey</h1>
           <p className="page-lede">
-            The path ran from analog systems up through networking and the
-            datacenter, one rung at a time, and reached product in 2022.
-            Told chronologically, with the history that rhymes. Only dated
-            facts carry dates; the early years are deliberately untimed.
+            The path ran through telecommunications, network operations,
+            systems administration, infrastructure services, cloud operations
+            and customer excellence before reaching product in 2022. This is
+            the technical and professional context behind the product work.
           </p>
         </header>
 

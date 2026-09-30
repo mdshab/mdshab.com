@@ -1,114 +1,80 @@
 # LinkedIn positioning brief
 
-Recommendations for [linkedin.com/in/mdshab](https://www.linkedin.com/in/mdshab/),
-written to match mdshab.com: same plain voice, same facts, no invented
-achievements. The two surfaces express one identity — LinkedIn is
-discovery and professional credibility; the site is the depth layer.
+Match [linkedin.com/in/mdshab](https://www.linkedin.com/in/mdshab/) to mdshab.com.
+LinkedIn provides professional discovery; the site provides the detail.
+These are recommendations, not changes made to the external profile.
 
-Rules used throughout: evidence over adjectives; no "passionate /
-results-driven / visionary"; concrete product names (Cloud Server, VPC,
-Storage, Migration, GPU) instead of abstractions; no numbers that
-aren't supplied by you.
+## Headline
 
-## Headline (current assumption: generic)
+> Technical Product Manager — Cloud Infrastructure | Product Strategy & Roadmaps | Background in Telecom, Networks, Systems & Customer Excellence
 
-Recommended:
+Use the current role title. A senior-level portfolio should demonstrate
+seniority through decisions and scope rather than add an unconfirmed job title.
 
-> Technical Product Manager — Cloud Infrastructure | Cloud Server, VPC,
-> Storage, Migration | 15 years in telecom, networking & datacenters
-> before product
+## About
 
-LinkedIn headlines are searchable — these are the terms recruiters
-actually query (technical product manager, cloud infrastructure,
-IaaS). Keep the stack line concrete; drop any "helping companies
-innovate" style phrasing.
+> I work as a technical product manager for a cloud product used by 200,000
+> people. My responsibility is to help the team build the right products and
+> solve the right customer problems: define requirements, prioritize
+> features and manage the roadmap.
+>
+> I work with engineering, infrastructure, operations, sales and support,
+> translating customer and business needs into technical requirements. I
+> monitor usage and product performance and contribute to decisions about
+> new features, pricing and product strategy.
+>
+> Before product, my career ran through telecommunications, network
+> operations, Linux systems, infrastructure service development, DevOps and
+> customer excellence. I started in support at Tel4Tel, an international
+> telecom carrier, then moved into administration and supervision. At FCP
+> I worked across networks, telecom platforms and services including Ceph,
+> OpenStack, DNS and CDN. At a global-scale cloud provider I moved from
+> systems administration and DevOps into customer excellence leadership,
+> then product in 2022.
+>
+> That background helps me discuss engineering constraints in depth and
+> explain their business consequences. Work overviews, writing and the
+> longer career story are at mdshab.com.
 
-Shorter alternative if 220 characters feels heavy:
+## Featured
 
-> Technical Product Manager — Cloud Infrastructure | IaaS: Cloud
-> Server, VPC, Storage, Migration | ex-Network & VoIP Engineer
+1. mdshab.com — professional work and writing.
+2. The cloud product role overview — requirements, roadmap and product strategy.
+3. “Why Infrastructure Products Are Different” — product thinking.
+4. Customer excellence overview — the path from technical issues to product work.
 
-## About section
+## Experience
 
-Suggested structure (write it in first person, ~150–200 words):
+- **Technical Product Manager, 2022–present:** requirements, prioritization,
+  roadmap, usage/performance data, cross-functional alignment and contribution
+  to pricing and product strategy. Product scale: 200,000 users; do not relabel
+  this as paying customers or active users without further evidence.
+- **Customer excellence, 2020:** technical user issue resolution and leadership,
+  with service design and coordination across support, engineering and operations.
+- **Systems administration / DevOps, 2019:** operating cloud infrastructure.
+- **FCP, 2011–2018:** NOC and networks; telecom platform engineering and management;
+  Linux systems administration; infrastructure service development. Keep these
+  roles distinct. Exact sub-role dates need confirmation before adding them.
+- **Tel4Tel, starting 2007:** technical support at an international carrier;
+  administration and acting head / supervision after six months.
 
-1. **Open with the plain claim** (mirrors the site's hero):
-   "I do product management for cloud infrastructure. Before that, I
-   ran it for fifteen years — VoIP administration, network
-   engineering, cloud operations, support leadership."
-2. **What I actually work on**: "Since 2022 I've been a technical PM
-   at a global-scale cloud provider, on services like Cloud Server,
-   VPC, Storage and Migration that hundreds of thousands of people
-   rely on. Most of my work is deciding what gets built, which
-   defaults ship, and which promises the platform can keep."
-3. **The pattern behind the career** (one or two sentences, from the
-   site's Journey): support taught me how failure feels from the
-   outside; telecom taught me reliability is a feature.
-4. **The invitation**: "If you want the long version — case studies,
-   how I think, and the twenty-year path from analog telephony to
-   cloud product — it's at mdshab.com."
+## Technical detail and training
 
-Do not paste the whole site into About; the site's job is depth.
+Use telecom as the career category. Voice/VoIP is a specialization within it,
+not the headline for the whole background. Put Cisco, Huawei, Siemens, GPON,
+DSLAM, CUCM, UCCX, NGN, Linux, Ceph and OpenStack in relevant experience entries.
+Avoid a long technology list in the headline.
 
-## Featured section
+CCNA, CCNP, CEH, CHFI, MTCNA and LPIC were described as learning undertaken.
+Do not imply active certifications without confirmation. Service design,
+nonviolent communication and enterprise product management explain the
+transition into customer excellence and product; they need not become a
+certificate wall.
 
-Pin three or four items, in this order:
+## Consistency
 
-1. **mdshab.com** (link) — the platform itself. Description: "My site:
-   case studies, working principles, and a 3,000-year timeline of the
-   technology behind this career."
-2. **"Why infrastructure products are different"** (link to
-   `/writing/why-infrastructure-products-are-different`) — the essay
-   that best previews how you think.
-3. **"From PBX to cloud communications"** (link to
-   `/writing/from-pbx-to-cloud-communications`) — the career arc in
-   one story; strong for telecom-to-cloud credibility.
-4. Optional: the support-leadership case study link if you want a
-   services/leadership signal.
-
-## Experience entries
-
-Keep the site's factual envelope; LinkedIn allows slightly more
-recruiter-oriented phrasing but the same restraint:
-
-- **Current PM role** — describe scope, not slogans: "Product
-  direction for IaaS services (Cloud Server, VPC, Storage,
-  Migration) used by hundreds of thousands of customers." Use
-  bullets like the site's case study: what decisions you own, what
-  you trade off. No invented metrics.
-- **Earlier roles** — one or two lines each, factual: NOC/support
-  lead 2020; cloud engineer 2019; network engineer & voice team lead
-  at FCP 2011–2018; VoIP administrator at Tel4Tel 2007.
-- Consider framing the 2020 entry as *customer service & support
-  leadership* (matching the site's case study) rather than purely
-  "NOC" — it reads broader to non-technical recruiters.
-
-## Skills & endorsements
-
-Keep the list short and honest, weighted to what you want to be
-found for: Technical Product Management, Product Strategy, Cloud
-Infrastructure, IaaS, Product Discovery, Developer Experience. Avoid
-the trophy-wall of 50 skills; it dilutes.
-
-## Other profile elements
-
-- **Photo**: yes on LinkedIn (unlike the site) — a clear, current
-  headshot materially raises profile performance there.
-- **Banner image**: use a quiet brand-colored crop (warm paper +
-  cobalt) or the OG card artwork; avoid stock tech collages.
-- **Custom URL** is already `linkedin.com/in/mdshab` — good, matches
-  the domain.
-- **Open-to-work settings**: if actively looking, set
-  recruiter-only visibility with roles: Technical Product Manager,
-  Senior/Lead Product Manager (Platform/Infrastructure).
-
-## Consistency checklist (site ↔ LinkedIn)
-
-- Same role title phrasing: "Technical Product Manager — Cloud
-  Infrastructure".
-- Same service names in both places.
-- Same dates: 2007 Tel4Tel · 2011 FCP · 2019 cloud · 2020 support
-  lead · 2022 product.
-- Site link in the Featured section and in Contact Info.
-- The voice: if a sentence would feel at home on a billboard, it
-  doesn't belong on either surface.
+- Same role title and product scale on both surfaces.
+- Telecom and infrastructure as the broad background; specializations one layer deeper.
+- No fabricated launches, revenue, team sizes or outcome metrics.
+- Employer confidentiality maintained at “a global-scale cloud provider.”
+- Link the site from Featured and Contact Info.

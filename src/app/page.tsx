@@ -7,7 +7,6 @@ import { getPublishedArticles } from "@/content/writing";
 import { caseStudies, featuredCaseStudyIds } from "@/content/work";
 import {
   hero,
-  selectedImpact,
   helpWith,
   homeThinking,
   journeyTeaser,
@@ -36,19 +35,6 @@ const trackLabels: Record<string, string> = {
   build: "Build",
 };
 
-const depth = {
-  title: "The stack under the product",
-  lede: "This career went bottom to top. When I make product decisions, I know what each layer does when it fails, because I've debugged most of them myself.",
-  layers: [
-    { name: "Product", note: "Direction, promises, defaults — since 2022" },
-    { name: "Cloud & platform", note: "Hosts, virtualization, automation — 2019" },
-    { name: "Networking", note: "Routing, switching, the paths packets take — 2012" },
-    { name: "Telecom", note: "Voice, signaling, lines — 2007" },
-    { name: "Systems", note: "The physical layer that answers eventually" },
-  ],
-  coda: "Most product managers learn these layers from slides. I learned them from the pager.",
-};
-
 export default function HomePage() {
   const featured = featuredCaseStudyIds
     .map((id) => caseStudies.find((c) => c.id === id))
@@ -66,11 +52,9 @@ export default function HomePage() {
 
   const content: HomeContent = {
     hero,
-    selectedImpact,
-    helpWith,
     featuredWork: {
-      title: "Case studies",
-      lede: "Each in a fixed format: what it was, the problem, my role, the decisions, the constraints, the outcome.",
+      title: "Selected work",
+      lede: "Cloud product management, customer excellence and the telecom background behind both. Scope, responsibilities and recurring decisions.",
       cta: { href: "/work", label: "All case studies" },
       cards: featured.map((c) => ({
         href: `/work/${c.id}`,
@@ -78,10 +62,11 @@ export default function HomePage() {
         period: c.period,
         title: c.title,
         summary: c.summary,
+        role: c.role,
       })),
     },
+    helpWith,
     homeThinking,
-    depth,
     journeyTeaser,
     selectedWriting: { ...selectedWriting, articles: writing },
     beyondWork,

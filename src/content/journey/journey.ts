@@ -17,26 +17,26 @@ export const journeyChapters: JourneyChapter[] = [
   {
     id: "telecom",
     index: "CH·02",
-    title: "Voice over someone else's network",
+    title: "Starting in international telecommunications",
     era: "2007",
     description:
-      "VoIP administration at Tel4Tel: the moment telephony stopped being wires and became software.",
+      "Technical support at Tel4Tel, an international telecom carrier, followed by administration and acting supervision.",
   },
   {
     id: "networking",
     index: "CH·03",
-    title: "Under the cables at FCP",
+    title: "Networks, systems and services at FCP",
     era: "2011 – 2018",
     description:
-      "Technical support, network engineering, then VoIP expertise at FCP — learning the whole stack from ticket queue to trunk.",
+      "From the NOC and network engineering to telecom platforms, Linux systems and infrastructure service development.",
   },
   {
     id: "datacenter",
     index: "CH·04",
-    title: "The abstraction ladder",
+    title: "Cloud operations and customer excellence",
     era: "2019 – 2022",
     description:
-      "Cloud engineering and support leadership at a global-scale cloud provider: from physical hosts to fleets, from fixing to coordinating.",
+      "Systems administration and DevOps at a global-scale cloud provider, followed by leadership of customer-facing technical support.",
   },
   {
     id: "cloud-product",
@@ -44,7 +44,7 @@ export const journeyChapters: JourneyChapter[] = [
     title: "Infrastructure as a product",
     era: "2022 – present",
     description:
-      "Technical product management for services used by hundreds of thousands of people — turning reliability into something you can design.",
+      "Technical product management for a 200,000-user cloud product: customer problems, requirements, priorities, roadmap and product strategy.",
   },
 ];
 
@@ -96,14 +96,14 @@ export const journeyEntries: JourneyEntry[] = [
     chapter: "telecom",
     year: 2007,
     period: "2007",
-    role: "VoIP Administrator",
-    organization: "Tel4Tel",
-    title: "Voice becomes software",
+    role: "Technical Support → Administrator / Acting Head",
+    organization: "Tel4Tel — International telecom carrier",
+    title: "From support to supervision",
     story:
-      "At Tel4Tel I administered VoIP systems: call flows, SIP trunks, codecs, gateways. Telephony — the century-old empire of copper and switches — was being rewritten as applications, and I was on the team doing the rewriting for real customers.",
+      "I started in technical support at Tel4Tel, an international telecommunications carrier. After six months I moved into administration and an acting head / supervisor role. The work combined hands-on telecom systems administration with responsibility for the support function.",
     reflection:
-      "This is where the two halves of my future met: the analog discipline of the phone network and the programmable logic of software. Voice stopped being physics and became configuration.",
-    technologies: ["VoIP", "SIP", "Asterisk", "Gateways", "Codecs"],
+      "Starting with customer issues gave me a practical way into the system. Moving into supervision meant paying attention to how other people could diagnose and resolve those issues too.",
+    technologies: ["Telecommunications", "Technical support", "Systems administration", "Supervision", "VoIP", "SIP"],
     relatedHistory: ["voip-vocaltec", "bell-telephone"],
     relatedArticles: ["from-pbx-to-cloud-communications"],
   },
@@ -114,11 +114,11 @@ export const journeyEntries: JourneyEntry[] = [
     chapter: "networking",
     year: 2011,
     period: "2011",
-    role: "Technical Support / TSD",
-    organization: "FCP",
-    title: "Learning by answering the phone",
+    role: "NOC / Technical Support",
+    organization: "FCP — Telecommunications",
+    title: "Network operations",
     story:
-      "Joining FCP in technical support meant owning the moment when things break for real users. Every ticket was a lesson in how systems actually fail — and how people experience that failure.",
+      "I joined FCP in the NOC, working on technical issues and network services in a telecom environment. This was the starting point for broader work across access networks, routing, switching and the platforms those networks carried.",
     reflection:
       "Support taught me the most durable engineering skill I know: reproduce, isolate, verify. It's also where I learned that reliability is a form of respect.",
     technologies: ["Ticketing systems", "Networking", "Windows / Linux"],
@@ -130,13 +130,13 @@ export const journeyEntries: JourneyEntry[] = [
     year: 2012,
     period: "2012",
     role: "Network Engineer",
-    organization: "FCP",
-    title: "Under the cables",
+    organization: "FCP — Telecommunications",
+    title: "Network engineering",
     story:
-      "A year later I moved into network engineering: routing, switching, firewalls, the paths packets take. From inside the network, 'the cloud' stopped being a marketing word and became routers, tables and failover plans.",
+      "I moved into network engineering, working with Cisco routing and switching, Huawei and Siemens equipment, fiber, GPON and DSLAM access infrastructure. The scope covered how customers connected to the network as well as how traffic moved through it.",
     reflection:
       "Networks are the nearest thing infrastructure has to a nervous system. Once you've traced a packet across one, every abstraction above feels earned.",
-    technologies: ["Routing & switching", "Firewalls", "VPN", "BGP"],
+    technologies: ["Cisco routing & switching", "Huawei", "Siemens", "Fiber", "GPON", "DSLAM", "BGP"],
     relatedHistory: ["arpanet", "tcp-ip"],
   },
   {
@@ -144,15 +144,40 @@ export const journeyEntries: JourneyEntry[] = [
     chapter: "networking",
     year: 2018,
     period: "2012 – 2018",
-    role: "VoIP Expert / Manager",
+    role: "Telecom Platform Engineer / Manager",
     organization: "FCP",
-    title: "From trunks to teams",
+    title: "Telecom service platforms",
     story:
-      "At FCP I grew into VoIP expertise and eventually management of the VoIP function — NGN architecture, Cisco VoIP, PBX systems, and the people who kept them alive. Designing call platforms turned into designing how a team operates.",
+      "At FCP I moved into telecom platform engineering and management, working with SDN, MGCP, Cisco voice, CUCM, UCCX, NGN and softswitch systems. This added the service and signaling layer to my network engineering background.",
     reflection:
-      "The hardest scale-up was never the call volume; it was the coordination. Managing engineers taught me that most 'technical' problems are actually interface problems between humans.",
-    technologies: ["Cisco VoIP", "NGN", "PBX", "SIP trunking", "Team leadership"],
+      "Understanding the network and the service above it helped me follow a customer issue across layers rather than stop at one team's boundary.",
+    technologies: ["Cisco voice", "SDN", "MGCP", "CUCM", "UCCX", "NGN", "Softswitch"],
     relatedArticles: ["from-pbx-to-cloud-communications", "what-infrastructure-taught-me"],
+  },
+  {
+    id: "fcp-systems-administration",
+    chapter: "networking",
+    period: "Later at FCP · before 2019",
+    role: "Linux Systems Administrator",
+    organization: "FCP — Telecommunications",
+    title: "From networks to systems",
+    story:
+      "I moved into Linux systems administration, extending my work from the network into the servers and operating systems behind the services. Linux and LPIC studies supported that transition.",
+    technologies: ["Linux", "Systems administration", "Service operations"],
+    relatedArticles: ["physical-servers-vms-containers"],
+  },
+  {
+    id: "fcp-service-development",
+    chapter: "networking",
+    period: "Later at FCP · before 2019",
+    role: "Infrastructure Service Development",
+    organization: "FCP — Telecommunications",
+    title: "Developing and operating infrastructure services",
+    story:
+      "In the service development function, my work covered developing, running and maintaining infrastructure built around Ceph, OpenStack, DNS and CDN. This brought systems administration together with the ongoing work of delivering a service.",
+    reflection:
+      "The service needs to work beyond its first deployment. Maintenance and operation became part of how I evaluated a technical choice.",
+    technologies: ["Ceph", "OpenStack", "DNS", "CDN", "Operations & maintenance"],
   },
 
   /* -------------------------- CH·04 — datacenter --------------------------- */
@@ -161,14 +186,14 @@ export const journeyEntries: JourneyEntry[] = [
     chapter: "datacenter",
     year: 2019,
     period: "2019",
-    role: "Cloud Engineer / System Administrator",
+    role: "Systems Administrator / DevOps",
     organization: "Global-scale cloud provider",
-    title: "Into the datacenter era",
+    title: "Operating cloud infrastructure",
     story:
-      "Moving to a global-scale cloud provider in 2019 meant living inside the abstraction ladder: physical hosts, virtualization, orchestration, automation. Systems I had administered one by one now existed as fleets with dashboards.",
+      "I joined a global-scale cloud provider in systems administration and DevOps. The work was operating cloud infrastructure as a service: maintaining systems, investigating failures and improving the automation and processes around them.",
     reflection:
-      "The ladder — physical, virtual, cloud, cloud native — isn't marketing. Each rung changes what 'failure' means and who can fix it.",
-    technologies: ["Virtualization", "Linux at scale", "Automation", "Monitoring"],
+      "This was the point where my telecom and systems background met cloud delivery. The underlying work was still about reliable services, but the scale and the customer expectation were different.",
+    technologies: ["Linux", "Cloud operations", "DevOps", "Automation", "Monitoring"],
     relatedHistory: ["aws-launch", "docker-kubernetes"],
     relatedArticles: ["physical-servers-vms-containers"],
   },
@@ -177,14 +202,14 @@ export const journeyEntries: JourneyEntry[] = [
     chapter: "datacenter",
     year: 2020,
     period: "2020",
-    role: "Team Lead — Customer Service & Support",
+    role: "Customer Excellence Lead",
     organization: "Global-scale cloud provider",
-    title: "Leading the room where it never sleeps",
+    title: "From technical support to customer excellence",
     story:
-      "Leading the customer service and support function meant owning incidents end to end: the escalation paths, the runbooks, the handovers, and the humans at 3 a.m. In the year the world's traffic moved indoors, this was where the internet stayed up.",
+      "I moved into customer excellence and led the work of resolving technical user issues. That meant understanding the system well enough to diagnose problems, coordinating with engineering and operations, and improving the service around recurring issues. Alongside the role I studied service design, nonviolent communication and enterprise product management.",
     reflection:
       "Incident response is applied epistemology: what do we know, how do we know it, and who needs to know it next? Everything else is keyboard work.",
-    technologies: ["Customer service design", "Incident management", "On-call", "Runbooks"],
+    technologies: ["Customer excellence", "Technical support", "Service design", "Nonviolent communication", "Enterprise product management"],
     relatedArticles: ["what-infrastructure-taught-me"],
   },
 
@@ -199,10 +224,10 @@ export const journeyEntries: JourneyEntry[] = [
     organization: "Global-scale cloud provider",
     title: "Infrastructure as a product",
     story:
-      "Since 2022 I've worked as a technical product manager on cloud services serving hundreds of thousands of users — deciding what gets built, for whom, and why, with the infrastructure discipline of the previous decade behind every choice.",
+      "I moved into technical product management for a cloud product used by 200,000 people. My responsibility is to make sure we are building the right product and solving the right customer problems: defining requirements, prioritizing features, managing the roadmap, and contributing to decisions about new features, pricing and product strategy.",
     reflection:
-      "A product manager's job at infrastructure scale is translation: users' needs into architecture, architecture into roadmaps, roadmaps into promises the ops floor can keep.",
-    technologies: ["Product strategy", "Cloud services", "Developer experience", "Roadmapping"],
+      "The role is translation with accountability: customer and business needs into clear technical requirements, engineering constraints into product decisions, and priorities into a roadmap that multiple teams can execute.",
+    technologies: ["Technical product management", "Product requirements", "Prioritization", "Roadmapping", "Product strategy", "Usage data", "Cloud infrastructure"],
     relatedHistory: ["aws-launch", "world-wide-web"],
     relatedArticles: ["why-infrastructure-products-are-different"],
   },

@@ -28,6 +28,17 @@ export async function generateMetadata({
     alternates: {
       canonical: `/work/${study.id}`,
     },
+    openGraph: {
+      type: "article",
+      title: study.title,
+      description: study.summary,
+      url: `/work/${study.id}`,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: study.title,
+      description: study.summary,
+    },
   };
 }
 
@@ -83,7 +94,7 @@ export default async function CasePage({ params }: CasePageProps) {
             </p>
           </header>
 
-          <div className="project-toc" aria-label="Case study outline">
+          <nav className="project-toc" aria-label="Case study outline">
             <p className="mono-meta project-toc-label">Outline</p>
             <ol className="project-toc-list">
               {study.sections.map((section) => (
@@ -94,7 +105,7 @@ export default async function CasePage({ params }: CasePageProps) {
                 </li>
               ))}
             </ol>
-          </div>
+          </nav>
 
           <div className="prose-editorial project-body">
             {study.sections.map((section) => (
@@ -106,7 +117,7 @@ export default async function CasePage({ params }: CasePageProps) {
           </div>
 
           <aside className="project-meta">
-            <p className="mono-meta project-toc-label">Technologies</p>
+            <p className="mono-meta project-toc-label">Scope and tools</p>
             <ul className="journey-entry-tech">
               {study.technologies.map((tech) => (
                 <li key={tech}>{tech}</li>
@@ -142,6 +153,9 @@ export default async function CasePage({ params }: CasePageProps) {
               </div>
             )}
           </aside>
+          <p className="home-section-cta">
+            <Link href="/contact" className="text-cta">Discuss a role or product problem →</Link>
+          </p>
         </article>
       </main>
       <SiteFooter />

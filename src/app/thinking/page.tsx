@@ -24,12 +24,11 @@ export default function ThinkingPage() {
       <main id="main" className="page">
         <header className="page-header">
           <p className="page-kicker mono-meta">How I think</p>
-          <h1 className="page-title">Principles, not frameworks</h1>
+          <h1 className="page-title">Product decisions and working principles</h1>
           <p className="page-lede">
-            Nine claims about products and infrastructure, each earned the
-            long way — through incidents, trade-offs, and systems that stayed
-            up (or didn&apos;t). No textbook definitions; each principle
-            carries its origin with it.
+            How I approach customer problems, priorities and the cost of
+            running infrastructure. The principles below connect product
+            work with the systems and services I worked on before it.
           </p>
         </header>
 
@@ -49,7 +48,7 @@ export default function ThinkingPage() {
         {/* Model 1 — the abstraction ladder */}
         <section
           className="model-section"
-          aria-labelledby={abstractionLadder.id}
+          aria-labelledby={`${abstractionLadder.id}-h`}
           id={abstractionLadder.id}
         >
           <h2 id={`${abstractionLadder.id}-h`} className="page-title-sm">
@@ -75,7 +74,7 @@ export default function ThinkingPage() {
         {/* Model 2 — telecom → cloud evolution map */}
         <section
           className="model-section"
-          aria-labelledby={telecomCloudMap.id}
+          aria-labelledby={`${telecomCloudMap.id}-h`}
           id={telecomCloudMap.id}
         >
           <h2 id={`${telecomCloudMap.id}-h`} className="page-title-sm">

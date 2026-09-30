@@ -82,15 +82,21 @@ his Product × Technology combination is unusual.
 
 ## Positioning
 
-> **Product-minded, technically deep.**
-> I do product management for cloud infrastructure. Before that, I ran it
-> for fifteen years.
+> **Technical product management for cloud infrastructure.**
+> A background across telecommunications, networks, systems,
+> infrastructure service development, DevOps and customer excellence.
 
-- Direction: **technical product management** for cloud & AI
-  infrastructure.
-- Differentiator: the career climbed the *whole stack* — analog telephony
-  → networking → datacenter/NOC → cloud → product. Product judgment with
-  operational scar tissue.
+- Direction: **technical product management** for cloud infrastructure.
+  GPU services are part of the technical scope, not a substitute for AI-specific evidence.
+- Differentiator: support and supervision at Tel4Tel (international telecom
+  carrier) → NOC, networks, telecom platforms, Linux and service development
+  at FCP → cloud systems administration/DevOps → customer excellence → product.
+- Product scale supplied by the owner: **200,000 users**. Do not reframe as
+  paid customers, monthly active users or personally acquired users.
+- Product responsibilities: requirements, prioritization, roadmap,
+  cross-functional alignment, usage/performance analysis, and contribution
+  to pricing, new features and strategy.
+- Voice/VoIP belongs in technical detail, never as the umbrella career identity.
 - Voice: calm, senior, specific, evidence over adjectives. Never
   "visionary/rockstar/passionate". Never CV language ("responsible
   for…").
@@ -108,8 +114,8 @@ Professional conversion dominates; the personal library is preserved
 one click deep, never deleted.
 
 ```
-/                hero → impact → problems → work → thinking → depth →
-                 journey → writing → beyond work → final CTA
+/                hero → selected work → product responsibilities → thinking →
+                 journey → writing → beyond work → contact
 /work            case studies (practice + built in public)
 /thinking        principles + models (abstraction ladder, telecom→cloud map)
 /journey         five chapters, artifact, ladder
@@ -134,8 +140,10 @@ one click deep, never deleted.
 2. **Confidentiality.** The cloud employer is named only as "a
    global-scale cloud provider". Case studies describe judgment, not
    internal architecture. The `/work` page says this out loud.
-3. **No course/certificate signaling.** Knowledge is demonstrated via
-   reasoning, case studies, and writing — not announced.
+3. **No certificate wall.** Owner-supplied learning in service design,
+   nonviolent communication and enterprise product management may explain
+   the career transition. Technical studies are not claimed as active
+   certifications. Knowledge is primarily demonstrated through the work.
 4. **No placeholders.** No "coming soon", no fake channels. Contact
    channels render only what exists in `content/site.ts`
    (GitHub is verified via the repository remote; LinkedIn/email

@@ -47,12 +47,12 @@ CaseStudy ──relatedArticles/relatedHistory──> above
 | home copy (EN) | `content/home.ts` | 1 | hero, impact, help, teasers, final CTA |
 | contact copy (EN) | `content/contact.ts` | 1 | intents + notes |
 | CaseStudy | `content/work/work.ts` | 4 | `track: practice \| build`; sections from `CaseStudySection` union |
-| Principle + models | `content/thinking/thinking.ts` | 9 + 2 | ladder rungs, telecom↔cloud pairs with confidence markers |
+| Principle + models | `content/thinking/thinking.ts` | 13 + 2 | product decisions, ladder rungs, telecom↔cloud analogies |
 | HistoryEvent | `content/history/{ancient,medieval,modern,computing}.ts` | 115 | 14 categories, 9 regions |
 | Thread | `content/history/threads.ts` | 7 | communication, computation, knowledge, … |
 | Thinker | `content/ideas/thinkers.ts` | 34 | Greek, Eastern, Persian/Islamic, modern |
 | Question | `content/ideas/questions.ts` | 10 | `framing`, `voices` (thinker ids) |
-| JourneyChapter / JourneyEntry | `content/journey/journey.ts` | 5 / 11 | `artifact: true` marks the Ubuntu CD |
+| JourneyChapter / JourneyEntry | `content/journey/journey.ts` | 5 / 13 | `artifact: true` marks the Ubuntu CD; FCP sub-role dates remain unspecified |
 | Reflection, Now | `content/mind/mind.ts` | 6 + now | `now.updated` is `YYYY-MM` |
 | ArticleMeta | `content/writing/articles.ts` | 6 | bodies are MDX files in `content/writing/mdx/` |
 

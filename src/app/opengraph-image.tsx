@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 
 export const alt =
-  "Mehdi Shabestari — technical product manager for cloud and AI infrastructure";
+  "Mehdi Shabestari — technical product manager for cloud infrastructure";
 export const size = {
   width: 1200,
   height: 630,
@@ -85,7 +85,7 @@ export default async function Image() {
               letterSpacing: -1.2,
             }}
           >
-            Product management for cloud infrastructure. Before that, I ran it for fifteen years.
+            Technical product management for cloud infrastructure.
           </div>
           <div
             style={{
@@ -95,7 +95,7 @@ export default async function Image() {
               color: "#565c66",
             }}
           >
-            Cloud Server · VPC · Storage · Migration — hundreds of thousands of users
+            Cloud infrastructure · 200,000-user product · telecom to product
           </div>
         </div>
 
@@ -110,7 +110,7 @@ export default async function Image() {
             color: "#7c828c",
           }}
         >
-          <div style={{ display: "flex" }}>Since 2007 · VoIP → cloud → product</div>
+          <div style={{ display: "flex" }}>Since 2007 · telecom → infrastructure → product</div>
           <div
             style={{
               display: "flex",

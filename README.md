@@ -13,7 +13,7 @@ history, the great questions, a quiet breathing space) one click deep.
 
 | Route | What it is |
 | --- | --- |
-| `/` | The front door: hero → selected impact → problems I solve → featured work → how I think → technical depth → journey → writing → beyond work → final CTA |
+| `/` | A personal opening → one documented working decision → two product principles → the Ubuntu CD and the history timeline → contact |
 | `/work` | Case studies in a fixed format: context, problem, constraints, decision, trade-offs, outcome, learning — employers anonymized where promised, no invented numbers |
 | `/work/[case]` | 4 studies: cloud services at scale · customer service & support leadership 2020 · voice→software 2007–2018 · this website |
 | `/thinking` | Nine product principles with their origins, plus two working models: the abstraction ladder and the telecom→cloud evolution map |

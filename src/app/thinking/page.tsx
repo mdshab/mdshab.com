@@ -34,7 +34,7 @@ export default function ThinkingPage() {
 
         <section aria-label="Principles">
           {principles.map((principle, index) => (
-            <article className="principle" key={principle.id}>
+            <article className="principle" key={principle.id} id={principle.id}>
               <span className="principle-index mono-meta">
                 {String(index + 1).padStart(2, "0")}
               </span>

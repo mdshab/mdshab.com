@@ -15,9 +15,9 @@ export const site = {
   domain: "mdshab.com",
   role: "Technical Product Manager — Cloud Infrastructure",
   positioning:
-    "Technical product management for cloud infrastructure.",
+    "I spent years keeping infrastructure running. Now I help decide what gets built.",
   supportLine:
-    "Technical product manager for a 200,000-user cloud product. Before product: telecom support and supervision, network and systems engineering, infrastructure service development, DevOps and customer excellence.",
+    "Technical product manager for a cloud product used by 200,000 people, with a background in support, networks, systems and operations.",
   location: "Tehran, Iran · working internationally",
 } as const;
 
@@ -35,10 +35,10 @@ export const contact = {
 export const siteMeta = {
   title: "Mehdi Shabestari — Technical Product Manager, Cloud Infrastructure",
   description:
-    "Mehdi Shabestari, technical product manager for a 200,000-user cloud product. A career across telecom, networks, systems, infrastructure services, DevOps and customer excellence.",
+    "Mehdi Shabestari works on cloud products used by 200,000 people. Years in support, networks, systems and operations inform how he approaches product decisions.",
   ogTitle: "Mehdi Shabestari — Technical Product Manager",
   ogDescription:
-    "Technical product manager for cloud infrastructure, with a career across telecom, networks, systems, infrastructure services, DevOps and customer excellence.",
+    "Years keeping infrastructure running inform how I approach cloud product decisions — especially what happens after launch.",
 } as const;
 
 /* ------------------------------------------------------------------ */

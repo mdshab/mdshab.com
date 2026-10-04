@@ -44,7 +44,7 @@ CaseStudy ──relatedArticles/relatedHistory──> above
 | Kind | Module | Count | Notes |
 | --- | --- | --- | --- |
 | site/contact/nav model | `content/site.ts` | 1 | identity, grounded contact channels, nav lists |
-| home copy (EN) | `content/home.ts` | 1 | hero, impact, help, teasers, final CTA |
+| home copy (EN) | `content/home.ts` | 1 | hero, featured decision, principles, personal thread, contact CTA |
 | contact copy (EN) | `content/contact.ts` | 1 | intents + notes |
 | CaseStudy | `content/work/work.ts` | 4 | `track: practice \| build`; sections from `CaseStudySection` union |
 | Principle + models | `content/thinking/thinking.ts` | 13 + 2 | product decisions, ladder rungs, telecom↔cloud analogies |

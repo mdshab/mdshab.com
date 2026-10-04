@@ -27,7 +27,7 @@ src/
 │   ├── about/  now/
 ├── components/
 │   ├── command-palette/    # ⌘K global search (client component, EN pages)
-│   ├── home/               # HomeMain — shared EN/FA homepage sections
+│   ├── home/               # HomeMain — homepage sections
 │   ├── humanity/           # SpatialTimeline, EventCard, TimelineList
 │   ├── mind/               # BreathingExercise (motion, reduced-motion aware)
 │   ├── navigation/         # SiteHeader, SiteFooter (locale-aware)

@@ -104,9 +104,9 @@ his Product × Technology combination is unusual.
 ### The 10-second test
 
 The first viewport must communicate: who (Mehdi Shabestari), what
-category (technical PM, cloud & AI infrastructure), why valuable (20
-years up the stack + scale of services), evidence hint (facts strip),
-next action (Explore my work / Let's talk).
+category (technical PM, cloud infrastructure), why this background matters
+(support and operations inform product decisions), product scale without
+implying individual credit, and a next action (Explore my work / Let's talk).
 
 ## Hierarchy
 
@@ -114,8 +114,8 @@ Professional conversion dominates; the personal library is preserved
 one click deep, never deleted.
 
 ```
-/                hero → selected work → product responsibilities → thinking →
-                 journey → writing → beyond work → contact
+/                personal opening → documented working decision → two principles →
+                 personal thread → contact; deeper work and writing one click away
 /work            case studies (practice + built in public)
 /thinking        principles + models (abstraction ladder, telecom→cloud map)
 /journey         five chapters, artifact, ladder

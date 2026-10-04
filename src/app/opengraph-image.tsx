@@ -77,15 +77,15 @@ export default async function Image() {
           <div
             style={{
               display: "flex",
-              fontSize: 58,
-              lineHeight: 1.16,
+              fontSize: 52,
+              lineHeight: 1.15,
               color: "#1a1d23",
               maxWidth: 940,
               fontWeight: 600,
               letterSpacing: -1.2,
             }}
           >
-            Technical product management for cloud infrastructure.
+            I spent years keeping infrastructure running. Now I help decide what gets built.
           </div>
           <div
             style={{
@@ -95,7 +95,7 @@ export default async function Image() {
               color: "#565c66",
             }}
           >
-            Cloud infrastructure · 200,000-user product · telecom to product
+            Technical Product Manager · Cloud Infrastructure
           </div>
         </div>
 

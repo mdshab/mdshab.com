@@ -665,7 +665,7 @@ body {
 
 .hero {
   padding-block: clamp(2.5rem, 6vw, 5.5rem) clamp(2.5rem, 5vw, 4rem);
-  max-width: 56rem;
+  max-width: 68rem;
 }
 
 .hero-kicker {
@@ -702,7 +702,7 @@ body {
   font-weight: 600;
   margin-bottom: 1.7rem;
   text-wrap: balance;
-  max-width: 19ch;
+  max-width: 24ch;
 }
 
 @media (max-width: 30rem) {
@@ -792,6 +792,98 @@ body {
   color: var(--accent);
   margin-bottom: 0.9rem;
   display: block;
+}
+
+/* ---- homepage story and principles ---- */
+
+.home-decision {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
+  max-width: 70rem;
+}
+
+.home-decision-context {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: var(--text-xl);
+  line-height: 1.55;
+  max-width: 36ch;
+}
+
+.home-decision-details {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.home-decision-details div {
+  border-top: 1px solid var(--border-strong);
+  padding-top: 0.8rem;
+}
+
+.home-decision-details dt {
+  color: var(--accent);
+  margin-bottom: 0.45rem;
+}
+
+.home-decision-details dd {
+  color: var(--ink-secondary);
+  line-height: 1.65;
+  max-width: 52ch;
+}
+
+.home-decision-note {
+  margin-top: 1.5rem;
+  color: var(--ink-muted);
+  font-size: var(--text-sm);
+}
+
+.home-link-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem 2rem;
+  margin-top: 1.5rem;
+}
+
+.home-principles {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.5rem, 4vw, 4rem);
+  max-width: 70rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.home-principles li {
+  border-top: 1px solid var(--border-strong);
+  padding-top: 1.2rem;
+}
+
+.home-principles h3 {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: var(--text-xl);
+  line-height: 1.35;
+  margin-bottom: 0.65rem;
+}
+
+.home-principles p {
+  color: var(--ink-secondary);
+  line-height: 1.65;
+  margin-bottom: 1rem;
+}
+
+.home-personal-body {
+  max-width: 52ch;
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: var(--text-xl);
+  line-height: 1.6;
+}
+
+@media (max-width: 47.9375rem) {
+  .home-decision,
+  .home-principles {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ---- 02 selected impact ---- */

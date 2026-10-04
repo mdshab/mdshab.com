@@ -1,142 +1,59 @@
-/**
- * Homepage copy.
- *
- * Voice: a real senior technical PM writing his own site. Plain
- * sentences over impressive ones, facts over positioning language.
- */
+/** Homepage copy. Specific experience over a list of responsibilities. */
 
 export const hero = {
   kicker: "Mehdi Shabestari",
   roleLine: "Technical Product Manager · Cloud Infrastructure",
-  h1: "Technical product management for cloud infrastructure.",
+  h1: "I spent years keeping infrastructure running. Now I help decide what gets built.",
   support:
-    "I work on a 200,000-user cloud product, translating customer needs into product requirements and roadmap decisions. My background spans telecommunications, network and systems engineering, infrastructure service development, DevOps and customer excellence.",
-  primaryCta: { href: "/work", label: "See the work" },
+    "I work on a cloud product used by 200,000 people. Support, networks, systems and operations shaped how I approach product decisions — especially what happens after launch.",
+  primaryCta: { href: "/work", label: "Explore my work" },
   secondaryCta: { href: "/contact", label: "Let's talk" },
-  facts: [
-    { value: "Since 2007", label: "telecom · infrastructure · cloud · product" },
-    { value: "200,000 users", label: "on the cloud product I work on" },
-    { value: "Cloud Server · VPC · Storage", label: "the product surfaces I cover" },
-  ],
 };
 
-export const helpWith = {
-  title: "The product work I do",
-  lede: "The decisions behind an infrastructure service customers can use and engineering can support.",
-  items: [
-    {
-      title: "Customer problems and requirements",
-      body: "Understand what customers need to accomplish, define product requirements and translate business needs into technical requirements teams can act on.",
-    },
-    {
-      title: "Priorities and the roadmap",
-      body: "Prioritize features and manage the roadmap. Make the case for what should happen next, including improvements to existing services.",
-    },
-    {
-      title: "Cross-functional decisions",
-      body: "Work with engineering, infrastructure, operations, sales and support. Align teams on priorities and explain the business value behind technical choices.",
-    },
-    {
-      title: "Product performance",
-      body: "Monitor usage and performance data, identify areas for improvement and use those signals to inform feature and product strategy decisions.",
-    },
-    {
-      title: "Pricing and product strategy",
-      body: "Contribute to pricing and new-feature decisions with customer needs, business goals and the cost of operating the infrastructure in view.",
-    },
-    {
-      title: "Technical depth",
-      body: "Discuss system constraints with engineering at a detailed level. My experience includes networks, Linux, OpenStack, Ceph, DNS, CDN and cloud operations.",
-    },
-  ],
+export const featuredDecision = {
+  label: "A decision from the work",
+  title: "What should the next person know?",
+  context:
+    "In customer excellence, a technical issue could cross a customer's environment, the product, infrastructure and several teams. The next person taking over needed more than a ticket marked ‘in progress.’",
+  decision:
+    "We used a consistent handover: what was known, what had been ruled out and who owned the next action. Runbooks had to be usable by someone other than the person who wrote them.",
+  tradeoff:
+    "That structure takes time on a routine issue. The alternative is spending time reconstructing the same context when an issue crosses teams. The aim was enough detail to make the next step clear, without turning every ticket into a document.",
+  note: "This is a working practice from a role overview, not a claim about a measured project outcome.",
+  cta: { href: "/work/support-leadership", label: "Read the role overview" },
+  allWork: { href: "/work", label: "See all work" },
 };
 
 export const homeThinking = {
-  title: "How I think",
-  lede: "A few working principles from cloud product management and years in operations.",
+  title: "How I think about the work",
   principles: [
     {
-      claim: "Start with the customer's task",
-      body: "Understand what someone is trying to run, connect or recover before turning their request into a feature requirement.",
-    },
-    {
-      claim: "Priorities include what waits",
-      body: "A roadmap choice uses capacity that could go elsewhere. Make the reason for the choice and its opportunity cost clear.",
+      claim: "A request needs a problem behind it",
+      example:
+        "Customer issues and usage data tell me where to look. Before writing a requirement, I want to know what the customer was trying to do and what blocked them.",
+      href: "/thinking#problem-before-requirement",
     },
     {
       claim: "The cost continues after launch",
-      body: "A service needs capacity, maintenance and support after it ships. Those costs belong in product and pricing decisions.",
+      example:
+        "A new cloud option can be useful and still add setup choices, support cases and operating cost. Those consequences belong in the product decision, not in a post-launch surprise.",
+      href: "/thinking#operating-cost-is-product-cost",
     },
   ],
-  cta: { href: "/thinking", label: "All principles" },
 };
 
-export const journeyTeaser = {
-  title: "From operations to product",
-  lede: "Fifteen years running infrastructure before moving into product in 2022. That background helps me evaluate what a roadmap asks of the systems and people behind it.",
-  chapters: [
-    { era: "Early years", label: "A home computer, a Linux CD that came by post" },
-    { era: "2007", label: "Technical support, administration and supervision at Tel4Tel" },
-    { era: "2011 – 2018", label: "NOC, network, systems and infrastructure services at FCP" },
-    { era: "2019 – 2020", label: "Cloud operations, then customer excellence leadership" },
-    { era: "2022 –", label: "Technical product management for cloud infrastructure" },
-  ],
-  cta: { href: "/journey", label: "The whole journey" },
-};
-
-export const selectedWriting = {
-  title: "Selected writing",
-  lede: "Notes on infrastructure products, operating systems and the move from telecom to cloud.",
-  cta: { href: "/writing", label: "All essays" },
-};
-
-export const beyondWork = {
-  title: "Beyond work",
-  lede: "Work is most of this site. The rest is history, ideas, and a quiet page.",
-  items: [
-    {
-      title: "3,000 years of communication technology",
-      body: "115 events from the alphabet to packet switching — the long warm-up for the network you're using right now.",
-      href: "/humanity",
-      label: "Humanity",
-    },
-    {
-      title: "The people behind the questions",
-      body: "Thirty-four thinkers across Greek, Eastern, Persian and modern traditions.",
-      href: "/ideas",
-      label: "Ideas",
-    },
-    {
-      title: "A breathing space",
-      body: "A small page for being where you are. No gamification, no claims.",
-      href: "/mind",
-      label: "Mind",
-    },
-  ],
+export const personalThread = {
+  label: "A little of the backstory",
+  title: "An Ubuntu CD came by post.",
+  body:
+    "Before cloud products and roadmaps, there was a computer at home and a Linux CD that arrived in the mail. I still like following a system down to the layer where it becomes understandable. That curiosity is also why I built a timeline of communication technology, from the alphabet to packet switching.",
+  story: { href: "/writing/the-cd-in-the-mail", label: "Read the story" },
+  library: { href: "/humanity", label: "Explore the timeline" },
 };
 
 export const finalCta = {
-  kicker: "Contact",
-  title: "Get in touch",
-  body: "If you're hiring for a technical product role, or you have an infrastructure product that needs someone who understands what's under it, I'd like to hear about it. I read everything and I answer.",
-  paths: [
-    {
-      title: "A role",
-      body: "Technical product management on cloud and platform infrastructure products.",
-      href: "/contact",
-      label: "Start the conversation",
-    },
-    {
-      title: "A project",
-      body: "Productizing infrastructure, discovery on a technical system, or a product strategy problem.",
-      href: "/contact",
-      label: "Tell me about it",
-    },
-    {
-      title: "First, look around",
-      body: "Case studies, principles and the journey are all one click away.",
-      href: "/work",
-      label: "See the work",
-    },
-  ],
+  title: "Let's compare notes.",
+  body:
+    "If you're building an infrastructure product and want to talk through a role, a product problem or how a service works for its users, I'd like to hear from you.",
+  cta: { href: "/contact", label: "Get in touch" },
 };
